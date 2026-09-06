@@ -69,5 +69,14 @@ scrape:
   - id: national-building-museum
     module: scripts.scrapers.nbm
 
+  - id: national-childrens-museum
+    module: scripts.scrapers.national_childrens_museum
+
+  # Montgomery Parks HTML fallback — remove once iCal endpoint is verified
+  # and added above, or leave in place so dedupe favors the iCal version.
+  - id: montgomery-parks
+    module: scripts.scrapers.montgomery_parks
+
+  # Aggregator — put LAST so canonical sources win in dedupe.
   - id: kidfriendly-dc
     module: scripts.scrapers.kidfriendly_dc

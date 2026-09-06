@@ -169,10 +169,20 @@ def main() -> int:
     if ical_errs or scrape_errs:
         print("\nErrors:", file=sys.stderr)
         for e in ical_errs + scrape_errs:
+            # ::warning:: is a GitHub Actions annotation — shows in the workflow
+            # summary and on the commit page without failing the job. Em sees
+            # the flake without losing the successful sources.
+            print(f"::warning title=Source failed::{e}")
             print(f"  - {e}", file=sys.stderr)
-        # Non-zero exit so the GitHub Actions job goes red — Em can see the badge
-        # and re-run. But we still wrote successful sources to events.json.
-        return 2
+
+    # Exit code contract:
+    #   0  — at least one event was written (partial success is still success)
+    #   1  — everything failed AND we had at least one configured source
+    #   0  — no sources configured at all (empty registry is a valid state)
+    total_configured = len(sources["ical"]) + len(sources["scrape"])
+    if total_configured > 0 and not events:
+        print("::error::All sources failed and no events were written.")
+        return 1
     return 0
 
 
