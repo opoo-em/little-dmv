@@ -4,26 +4,61 @@
 
 ## What just shipped
 
-Full Python pipeline scaffold + 6 HTML scrapers + weekly GitHub Actions cron. See
-the commit history on the branch for the full diff; TL;DR of new files:
+Full Python pipeline scaffold + **12 HTML scrapers** + weekly GitHub Actions cron
++ **seasonal event support** + **pytest suite** + **per-source health tracking** + CLI mode for
+manual event add. See the commit history on the branch for the full diff; TL;DR
+of new files:
 
 ```
 scripts/
-  main.py               — orchestrator (fetch, normalize, filter, dedupe, write)
-  sources.yaml          — registry (4 iCal candidates DOCUMENTED but empty; 6 scrapers WIRED)
+  main.py               — orchestrator (fetch, normalize, filter, dedupe, write + health)
+  sources.yaml          — registry (4 iCal candidates DOCUMENTED but empty; 12 scrapers WIRED)
   ical_fetch.py         — iCal fetch with RRULE expansion, 21-day horizon
   filter.py             — age overlap rule (~1-3yr), permissive on unrecognized
   distance.py           — haversine + banding, reads HOME_LAT/HOME_LNG env
   normalize.py          — raw event → canonical schema
-  add_event.py          — manual add (interactive or stdin JSON)
+  seasonal.py           — loads data/seasonal.json, expands windows to daily events
+  add_event.py          — manual add (interactive / stdin JSON / CLI flags)
   scrapers/
     jsonld.py           — shared Schema.org Event extractor
-    butlers.py, glen_echo.py, nbm.py,
-    national_childrens_museum.py, montgomery_parks.py,
-    kidfriendly_dc.py
+    butlers.py, glen_echo.py, nbm.py, national_childrens_museum.py,
+    national_zoo.py, pike_and_rose.py, bethesda_row.py, rockville.py,
+    montgomery_parks.py, mcpl.py, kennedy_center.py, kidfriendly_dc.py
+  tests/                — 53 pytest cases (filter, distance, dedupe, normalize)
 
-.github/workflows/refresh.yml   — Sunday 12:00 UTC + workflow_dispatch
+data/
+  events.json           — canonical event data (dashboard reads this)
+  seasonal.json         — annual/one-off events (pumpkin patch, Zoo Boo, etc.)
+
+.github/workflows/
+  refresh.yml           — Sunday 12:00 UTC + workflow_dispatch (commits events.json)
+  test.yml              — pytest on every push
 ```
+
+## Per-source health tracking
+
+`events.json` carries a top-level `sources` object:
+
+```json
+"sources": {
+  "mcpl": {
+    "last_success_at": "2026-09-06T12:00:03Z",
+    "last_count": 47,
+    "last_error": null
+  },
+  "kennedy-center-millennium": {
+    "last_success_at": "2026-08-30T12:00:12Z",
+    "last_count": 3,
+    "last_error_at": "2026-09-06T12:00:18Z",
+    "last_error": "HTTPSConnectionPool: max retries exceeded..."
+  }
+}
+```
+
+Persists across runs — successful runs clear `last_error` but leave
+`last_success_at` alone, so Em can see "hasn't worked since Aug 30" at a
+glance. Not surfaced in the dashboard UI yet — settled row layout doesn't
+show it. Future addition: a small footer or `?debug` view.
 
 Tests I ran locally (from container with blocked network):
 - Age filter: 10/10 cases pass, including edge cases (K+, months-only, unrecognized).

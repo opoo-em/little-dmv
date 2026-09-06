@@ -84,6 +84,15 @@ scrape:
   - id: rockville-city
     module: scripts.scrapers.rockville
 
+  # MCPL fallback — remove once iCal endpoint is verified and added above,
+  # or leave in place so dedupe favors the iCal version.
+  - id: mcpl
+    module: scripts.scrapers.mcpl
+
+  # Kennedy Center fallback — likely permanent (React SPA rarely has iCal).
+  - id: kennedy-center-millennium
+    module: scripts.scrapers.kennedy_center
+
   # Montgomery Parks HTML fallback — remove once iCal endpoint is verified
   # and added above, or leave in place so dedupe favors the iCal version.
   - id: montgomery-parks
