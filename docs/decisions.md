@@ -94,6 +94,14 @@ New data points, new features, new sources, new display ideas — these are 50/5
 **Decided:** 2026-09-06
 **Why:** If the source's age string doesn't match any pattern, include the event and mark `age_match_reason: "unrecognized"`. Better to over-include and let Em scroll past than silently drop legit toddler events because a source phrases ages oddly. QA is via the `age_match_reason` field — audit it periodically and teach the filter new patterns.
 
+### Weather stamp for outdoor events (from NWS)
+**Decided:** 2026-09-06
+**Why:** Em flagged this as a wanted feature example in the deviation guidance section. Toddler outdoor plans hinge on weather. NWS API is free, government, no key, DMV-covered. Pipeline fetches once per run, per-day forecast for HOME_LAT/LNG, stamps outdoor events in the 7-day window with `weather: {summary, high_f, low_f, precip_pct}`. Per-day granularity, not per-hour — Em makes go/no-go calls on the day. Silent no-op if HOME_LAT/LNG isn't set (same failure mode as distance banding). UI rendering of the field TBD — data exists in the JSON.
+
+### Per-source health tracking in events.json
+**Decided:** 2026-09-06
+**Why:** Em needs to be able to tell "why haven't I seen new MCPL events in a week?" without running the pipeline manually. events.json carries `sources: {<id>: {last_success_at, last_count, last_error}}`. Successful runs clear `last_error` but leave `last_success_at` alone, so staleness is legible even after a subsequent recovery. Not rendered in the dashboard UI yet — future addition.
+
 ### Sharing: mine only, neutral UI copy
 **Decided:** 2026-09-06
 **Why:** Em owns the app but may screen-share to husband/MIL/nanny. No cute in-jokes on the visible UI. (The chat is where the sweet nothings live.)

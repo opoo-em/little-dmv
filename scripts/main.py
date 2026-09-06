@@ -27,7 +27,7 @@ from pathlib import Path
 
 import yaml
 
-from . import ical_fetch, normalize, seasonal
+from . import ical_fetch, normalize, seasonal, weather
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCES_FILE = ROOT / "scripts" / "sources.yaml"
@@ -183,6 +183,10 @@ def main() -> int:
 
     events = dedupe(events)
     print(f"  after dedupe: {len(events)} events", file=sys.stderr)
+
+    # Stamp outdoor events with NWS forecast (no-op if HOME_LAT/LNG unset).
+    forecast_map = weather.build_forecast_map()
+    weather.stamp(events, forecast_map)
 
     if args.keep_dummy and EVENTS_FILE.exists():
         with EVENTS_FILE.open() as f:
