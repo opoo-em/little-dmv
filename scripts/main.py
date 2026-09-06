@@ -55,7 +55,8 @@ def _ical_source_from(raw: dict) -> ical_fetch.ICalSource:
     )
 
 
-def run_ical(sources: list[dict], only: set[str] | None) -> tuple[list[dict], list[str]]:
+def run_ical(sources: list[dict], only: set[str] | None,
+             health: dict[str, dict]) -> tuple[list[dict], list[str]]:
     raws: list[dict] = []
     errors: list[str] = []
     for src in sources:
@@ -64,14 +65,17 @@ def run_ical(sources: list[dict], only: set[str] | None) -> tuple[list[dict], li
         try:
             got = ical_fetch.fetch(_ical_source_from(src))
             raws.extend(got)
+            _mark_ok(health, src["id"], len(got))
             print(f"  iCal {src['id']}: {len(got)} events", file=sys.stderr)
         except Exception as exc:
             errors.append(f"iCal {src['id']}: {exc}")
+            _mark_error(health, src["id"], str(exc))
             print(f"  iCal {src['id']}: FAILED — {exc}", file=sys.stderr)
     return raws, errors
 
 
-def run_scrapers(scrapers: list[dict], only: set[str] | None) -> tuple[list[dict], list[str]]:
+def run_scrapers(scrapers: list[dict], only: set[str] | None,
+                 health: dict[str, dict]) -> tuple[list[dict], list[str]]:
     raws: list[dict] = []
     errors: list[str] = []
     for entry in scrapers:
@@ -83,12 +87,41 @@ def run_scrapers(scrapers: list[dict], only: set[str] | None) -> tuple[list[dict
             for e in got:
                 e.setdefault("source", entry["id"])
             raws.extend(got)
+            _mark_ok(health, entry["id"], len(got))
             print(f"  scrape {entry['id']}: {len(got)} events", file=sys.stderr)
         except Exception as exc:
             errors.append(f"scrape {entry['id']}: {exc}")
+            _mark_error(health, entry["id"], str(exc))
             print(f"  scrape {entry['id']}: FAILED — {exc}", file=sys.stderr)
             traceback.print_exc(file=sys.stderr)
     return raws, errors
+
+
+def _load_prev_health() -> dict[str, dict]:
+    if not EVENTS_FILE.exists():
+        return {}
+    try:
+        with EVENTS_FILE.open() as f:
+            return (json.load(f) or {}).get("sources", {}) or {}
+    except (json.JSONDecodeError, OSError):
+        return {}
+
+
+def _mark_ok(health: dict[str, dict], source_id: str, count: int) -> None:
+    now = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+    entry = health.setdefault(source_id, {})
+    entry["last_success_at"] = now
+    entry["last_count"] = count
+    entry["last_error"] = None
+
+
+def _mark_error(health: dict[str, dict], source_id: str, msg: str) -> None:
+    now = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+    entry = health.setdefault(source_id, {})
+    entry["last_error_at"] = now
+    # last_success_at is deliberately left alone — Em wants "how long since it
+    # last worked" more than "when did it most recently break."
+    entry["last_error"] = msg[:500]
 
 
 def dedupe(events: list[dict]) -> list[dict]:
@@ -126,18 +159,21 @@ def main() -> int:
           file=sys.stderr)
 
     raws: list[dict] = []
-    ical_raws, ical_errs = run_ical(sources["ical"], only)
+    health = _load_prev_health()  # start from previous state; each run updates it
+    ical_raws, ical_errs = run_ical(sources["ical"], only, health)
     raws.extend(ical_raws)
-    scrape_raws, scrape_errs = run_scrapers(sources["scrape"], only)
+    scrape_raws, scrape_errs = run_scrapers(sources["scrape"], only, health)
     raws.extend(scrape_raws)
 
     if only is None or "seasonal" in only:
         try:
             seasonal_raws = seasonal.load()
             raws.extend(seasonal_raws)
+            _mark_ok(health, "seasonal", len(seasonal_raws))
             print(f"  seasonal: {len(seasonal_raws)} events", file=sys.stderr)
         except Exception as exc:
             print(f"  seasonal: FAILED — {exc}", file=sys.stderr)
+            _mark_error(health, "seasonal", str(exc))
             ical_errs.append(f"seasonal: {exc}")
 
     now = datetime.now(timezone.utc)
@@ -162,6 +198,7 @@ def main() -> int:
     payload = {
         "last_updated": now.isoformat().replace("+00:00", "Z"),
         "schema_version": SCHEMA_VERSION,
+        "sources": health,
         "events": events,
     }
 

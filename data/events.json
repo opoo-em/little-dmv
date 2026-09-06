@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-06T00:00:00Z",
+  "last_updated": "2026-09-06T00:45:06.098060Z",
   "schema_version": 1,
   "events": [
     {
@@ -135,7 +135,7 @@
       "place": "indoor",
       "age": "0-24 mo",
       "age_match_reason": "range-explicit-0-2",
-      "description": "Open play with age-appropriate toys and mats. No structured program — good for socializing without a set schedule.",
+      "description": "Open play with age-appropriate toys and mats. No structured program \u2014 good for socializing without a set schedule.",
       "url": "https://mcpl.link/babyplay",
       "source": "manual",
       "added_at": "2026-09-06T00:00:00Z",
@@ -235,7 +235,7 @@
       "place": "outdoor",
       "age": "2+",
       "age_match_reason": "range-includes-toddler",
-      "description": "Family-friendly 40-min yoga on the lawn. Mats provided. Cancelled if raining — check the website morning-of.",
+      "description": "Family-friendly 40-min yoga on the lawn. Mats provided. Cancelled if raining \u2014 check the website morning-of.",
       "url": "https://montgomeryparks.org/brookside-yoga",
       "source": "manual",
       "added_at": "2026-09-06T00:00:00Z",

@@ -1,11 +1,22 @@
 """Manual event add — for the 'I saw a sign for X' flow.
 
-Usage (interactive):
+Usage
+-----
+Interactive prompts:
     python -m scripts.add_event
 
-Or non-interactively with a JSON blob on stdin:
+JSON on stdin:
     echo '{"name":"...","date":"YYYY-MM-DD","time":"HH:MM","venue":"...","url":"..."}' \
         | python -m scripts.add_event --stdin
+
+CLI flags (for Claude to add from chat with one line):
+    python -m scripts.add_event \
+        --name "Congressional Plaza Pumpkin Painting" \
+        --date 2026-10-13 --time 14:00 --end 16:00 \
+        --venue "Congressional Plaza" --venue-key congressional-plaza \
+        --place outdoor --cost free --cost-label "Free" \
+        --age "All ages" --url https://congressionalplaza.com/ \
+        --description "Pumpkin painting on the plaza."
 
 Manual events carry source='manual' and survive `main.py --keep-dummy` refreshes.
 """
@@ -78,12 +89,54 @@ def from_stdin() -> dict:
     return raw
 
 
+def from_args(args) -> dict:
+    date = args.date
+    time = args.time or "10:00"
+    end = args.end
+    start = datetime.fromisoformat(f"{date}T{time}").replace(tzinfo=timezone.utc)
+    end_dt = None
+    if end:
+        end_dt = datetime.fromisoformat(f"{date}T{end}").replace(tzinfo=timezone.utc)
+    return {
+        "name": args.name,
+        "start": start,
+        "end": end_dt,
+        "venue": args.venue or "",
+        "venue_key": args.venue_key or None,
+        "place": args.place or "indoor",
+        "cost_type": args.cost or "free",
+        "cost_label": args.cost_label or ("Free" if (args.cost or "free") == "free" else ""),
+        "age": args.age or "All ages",
+        "url": args.url or "",
+        "description": args.description or "",
+        "source": "manual",
+    }
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--stdin", action="store_true")
+    ap.add_argument("--stdin", action="store_true", help="read JSON blob from stdin")
+    ap.add_argument("--name", help="event name")
+    ap.add_argument("--date", help="YYYY-MM-DD")
+    ap.add_argument("--time", help="HH:MM (default 10:00)")
+    ap.add_argument("--end", help="HH:MM end time")
+    ap.add_argument("--venue")
+    ap.add_argument("--venue-key", dest="venue_key",
+                    help="see scripts/distance.py VENUE_COORDS")
+    ap.add_argument("--place", choices=["indoor", "outdoor"])
+    ap.add_argument("--cost", choices=["free", "paid"])
+    ap.add_argument("--cost-label", dest="cost_label")
+    ap.add_argument("--age", help="age string, e.g. 'All ages', '0-3 yrs', 'toddler'")
+    ap.add_argument("--url")
+    ap.add_argument("--description")
     args = ap.parse_args()
 
-    raw = from_stdin() if args.stdin else interactive()
+    if args.stdin:
+        raw = from_stdin()
+    elif args.name and args.date:
+        raw = from_args(args)
+    else:
+        raw = interactive()
     event = normalize.to_canonical(raw)
     if event is None:
         print("Rejected (missing required fields or failed age filter).", file=sys.stderr)
