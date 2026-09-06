@@ -130,10 +130,41 @@ Not really "sources" — one-off events with predictable annual timing. Should b
 *As we investigate each source, note here what we found: iCal endpoint URL, scraper strategy, quirks, rate limits, robots.txt notes.*
 
 ### MCPL
-- (empty — investigate first)
+- Public site: mcpl.link → redirects to montgomerycountymd.gov/library
+- Event system: MCPL runs their calendar on Springshare LibCal (mcpl.libcal.com pattern is standard for county libraries on this platform).
+- **Verify:** open the kids' calendar page, look for a "Subscribe" / iCal button in the top-right of the LibCal widget. LibCal iCal URLs look like `https://mcpl.libcal.com/calendar/kids?cid=<id>&audience=<id>&iCal=1`.
+- Likely one feed per audience (kids / teens / adults); we want the kids feed.
+- **Status:** URL not yet pasted into `scripts/sources.yaml`. Pipeline scaffold is ready; when the URL is verified, add to the `ical:` list and the next `python -m scripts.main` will start pulling.
 
 ### Montgomery Parks
-- (empty — investigate first)
+- Public site: montgomeryparks.org — runs on WordPress with The Events Calendar (Modern Tribe) plugin.
+- The Events Calendar plugin serves iCal at `/events/feed/ical/` (or from any events archive URL with `?ical=1` appended). Very reliable pattern.
+- **Verify:** try `https://www.montgomeryparks.org/events/feed/ical/` and confirm it returns a `text/calendar` body starting with `BEGIN:VCALENDAR`.
+- Likely covers Wheaton, Cabin John, Brookside, Meadowside, Locust Grove, Black Hill, Rock Creek — one feed for the whole park system.
+- **Note on Glen Echo:** same plugin pattern likely — `glenechopark.org/events/feed/ical/` may exist. If so, move Glen Echo from the HTML scraper into iCal.
+- **Status:** URL not yet pasted into `scripts/sources.yaml`.
 
 ### Kennedy Center
-- (empty — investigate first)
+- Public site: kennedy-center.org, Millennium Stage lives at `/whats-on/millennium-stage/`.
+- Kennedy Center's calendar tech has changed over the years; recent site is React-based which usually means the iCal is behind an API endpoint rather than a plain URL.
+- **Verify approach:** view the Millennium Stage calendar page, open network tab, look for XHR to `/api/calendar/…` or a "Download to calendar" export button on individual event pages.
+- Fallback if no site-wide iCal: scrape the Millennium Stage listing page (Schema.org Event JSON-LD is likely embedded).
+- **Status:** URL not yet pasted; may downgrade to scraper if no iCal exists.
+
+### Smithsonian
+- Public site: si.edu/events — Drupal-based, with per-museum sub-sites.
+- **Verify:** try `https://www.si.edu/events/feed/ical`. Drupal's Views module often serves iCal but the exact URL varies per site.
+- Per-museum calendars may be richer (e.g. Natural History has its own event feed).
+- **Status:** URL not yet pasted; may need per-museum feeds.
+
+### HTML scrapers wired in `scripts/sources.yaml`
+Four scrapers are enabled now and will run on the next pipeline invocation:
+
+| Scraper | Module | Strategy |
+|---|---|---|
+| Butler's Orchard | `scripts.scrapers.butlers` | JSON-LD from `butlersorchard.com/events/` |
+| Glen Echo Park | `scripts.scrapers.glen_echo` | JSON-LD from `glenechopark.org/calendar-of-events` |
+| National Building Museum | `scripts.scrapers.nbm` | JSON-LD from `nbm.org/programs-events/` |
+| KidFriendly DC | `scripts.scrapers.kidfriendly_dc` | JSON-LD from `kidfriendlydc.com/events/` |
+
+All four use the shared `scrapers/jsonld.py` extractor. First real run will happen in GitHub Actions (network egress is restricted in the local Claude Code environment). If any scraper returns zero events, the site probably doesn't emit Schema.org Event nodes — patch the module with per-site HTML parsing.

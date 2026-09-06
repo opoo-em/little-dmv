@@ -1,5 +1,7 @@
 # Little DMV
 
+[![refresh events](https://github.com/opoo-em/little-dmv/actions/workflows/refresh.yml/badge.svg)](https://github.com/opoo-em/little-dmv/actions/workflows/refresh.yml) [![test](https://github.com/opoo-em/little-dmv/actions/workflows/test.yml/badge.svg)](https://github.com/opoo-em/little-dmv/actions/workflows/test.yml)
+
 A phone-first dashboard of kid-friendly events across Montgomery County MD and DC. Built for a specific family — filters age and cost to what actually fits.
 
 **Live:** https://opoo-em.github.io/little-dmv/
@@ -7,7 +9,7 @@ A phone-first dashboard of kid-friendly events across Montgomery County MD and D
 ## Status
 
 **Phase 1 (dashboard + schema): DONE, deployed.**
-**Phase 2 (real data sources): NOT STARTED.** Currently serves 13 hand-written dummy events.
+**Phase 2 (real data sources): IN PROGRESS.** Pipeline scaffold + 4 HTML scrapers landed. iCal endpoints for MCPL / Montgomery Parks / Kennedy Center / Smithsonian pending URL verification (see `docs/sources.md`). Dummy events still in `events.json` — will be replaced on the next successful pipeline run.
 
 ## Repo structure
 
@@ -16,9 +18,26 @@ A phone-first dashboard of kid-friendly events across Montgomery County MD and D
 ├── favicon.svg             — rainbow heart, Lisa Frank vibes
 ├── data/
 │   └── events.json         — source of truth (dummy data for now)
+├── scripts/
+│   ├── main.py             — pipeline orchestrator (writes data/events.json)
+│   ├── sources.yaml        — registry of iCal feeds and HTML scrapers
+│   ├── ical_fetch.py       — iCal fetching + RRULE expansion
+│   ├── filter.py           — age filter (~1-3yr overlap rule)
+│   ├── distance.py         — haversine + banding (reads HOME_LAT/HOME_LNG env)
+│   ├── normalize.py        — raw event → canonical schema
+│   ├── add_event.py        — manual add flow ("I saw a sign for X")
+│   ├── requirements.txt
+│   └── scrapers/           — per-site HTML scrapers (Schema.org JSON-LD first)
+│       ├── jsonld.py       — shared JSON-LD Event extractor
+│       ├── butlers.py
+│       ├── glen_echo.py
+│       ├── nbm.py
+│       └── kidfriendly_dc.py
+├── .github/workflows/
+│   └── refresh.yml         — Sunday 8am ET cron + manual trigger
 ├── docs/
 │   ├── decisions.md        — settled design decisions + WHY (read before proposing changes)
-│   └── sources.md          — Phase 2 attack plan: source inventory + priorities
+│   └── sources.md          — Phase 2 attack plan: source inventory + priorities + investigation notes
 └── README.md               — this file
 ```
 
@@ -79,16 +98,34 @@ Distance is **banded** (0-5 / 6-10 / 11-15 / 16-20 / 20+ miles), never precise, 
 - **`docs/decisions.md`** — settled design decisions with reasoning. **Read this before proposing UI/schema changes.** Includes explicit guidance from Em on when to bring new ideas vs when NOT to relitigate.
 - **`docs/sources.md`** — Phase 2 attack plan. Every source classified by priority and feed type. Investigation notes go here as each source is wired.
 
+## Pipeline
+
+Run manually:
+```
+pip install -r scripts/requirements.txt
+export HOME_LAT=... HOME_LNG=...        # optional; without them, distance is 'unknown'
+python -m scripts.main                  # writes data/events.json
+python -m scripts.main --dry-run        # print to stdout instead
+python -m scripts.main --keep-dummy     # merge with existing manual events
+python -m scripts.main --only butlers-orchard,glen-echo-park   # subset run
+```
+
+Runs automatically Sunday 12:00 UTC (8am ET) via `.github/workflows/refresh.yml`.
+Manual trigger from the Actions tab any time.
+
+Add a one-off event you spotted on a sign:
+```
+python -m scripts.add_event                 # interactive prompts
+```
+
 ## Phase 2 roadmap
 
 Rough order of attack (from `docs/sources.md`):
 
-1. **iCal-having sources first** (fast wins, ~5 min each). Prime candidates: MCPL, Montgomery Parks, Kennedy Center, Smithsonian.
-2. **HTML scrapers for high-volume sources** (~30-60 min each). Butler's Orchard, Glen Echo, National Building Museum, KidFriendly DC.
-3. **Newsletter / manual for the long tail.** Congressional Plaza signage, farmers market seasonal quirks.
+1. **iCal-having sources** — MCPL, Montgomery Parks, Kennedy Center, Smithsonian. *Endpoints still need verification from a network that can reach them.* See `docs/sources.md` → Investigation notes.
+2. **HTML scrapers for high-volume sources** — Butler's Orchard, Glen Echo, National Building Museum, KidFriendly DC. *Landed, using Schema.org JSON-LD extraction.*
+3. **Newsletter / manual for the long tail** — Congressional Plaza signage, farmers market seasonal quirks. Use `scripts/add_event.py`.
 
 Also pending in Phase 2:
-- Home coordinates stored as GitHub Secret
-- Scheduled weekly refresh (GitHub Actions, likely Sunday morning)
-- On-demand refresh via Claude Code ("refresh little dmv")
-- Manual add flow — how Em relays "I saw a sign for X"
+- **Home coordinates** need to be added as GitHub Secrets `HOME_LAT` and `HOME_LNG` before distance banding is meaningful.
+- **On-demand refresh via Claude Code** — Em says "refresh little dmv", I run `python -m scripts.main` locally and push. Also the "Run workflow" button in the Actions tab.
