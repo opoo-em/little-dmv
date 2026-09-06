@@ -1,0 +1,73 @@
+# Source registry for Little DMV pipeline.
+#
+# Shape:
+#   ical:
+#     - id: short-slug             # unique across all sources
+#       name: Human Readable
+#       url: https://.../events.ics
+#       venue_default: "Fallback venue name"
+#       place_default: indoor|outdoor
+#       distance_venue_key: <key in scripts/distance.py VENUE_COORDS>
+#       source: pipeline id written into each event (defaults to `id`)
+#
+#   scrape:
+#     - id: short-slug
+#       module: scripts.scrapers.<name>   # importable Python module
+#       # module exposes: ID, NAME, URL, fetch() -> list[dict]
+
+# =============================================================================
+# iCal feeds (unverified — fill in real endpoints during Phase 2 investigation)
+# =============================================================================
+#
+# These four venues almost certainly publish iCal feeds; the exact URLs need
+# verification from a network that can reach them (this pipeline runs from
+# GitHub Actions, which can). Steps to verify each — see docs/sources.md
+# investigation notes.
+#
+# ical:
+#   - id: mcpl-kids
+#     name: MCPL — Kids programming
+#     url: https://mcpl.libcal.com/calendar/kids?cid=...&audience=...&iCal=1
+#     venue_default: "MCPL branch"
+#     place_default: indoor
+#     source: mcpl
+#
+#   - id: montgomery-parks
+#     name: Montgomery Parks — Events
+#     url: https://www.montgomeryparks.org/events/feed/ical/  # WordPress + Events Calendar Pro
+#     venue_default: "Montgomery County park"
+#     place_default: outdoor
+#     source: montgomery-parks
+#
+#   - id: kennedy-center-millennium
+#     name: Kennedy Center Millennium Stage
+#     url: https://www.kennedy-center.org/whats-on/millennium-stage/?format=ical
+#     venue_default: "Kennedy Center Millennium Stage"
+#     place_default: indoor
+#     distance_venue_key: kennedy-center
+#     source: kennedy-center
+#
+#   - id: smithsonian-events
+#     name: Smithsonian — Events
+#     url: https://www.si.edu/events/feed/ical  # verify — Smithsonian's Drupal likely serves this
+#     venue_default: "Smithsonian"
+#     place_default: indoor
+#     distance_venue_key: smithsonian-national-mall
+#     source: smithsonian
+ical: []
+
+# =============================================================================
+# HTML scrapers (enabled — Schema.org JSON-LD extraction)
+# =============================================================================
+scrape:
+  - id: butlers-orchard
+    module: scripts.scrapers.butlers
+
+  - id: glen-echo-park
+    module: scripts.scrapers.glen_echo
+
+  - id: national-building-museum
+    module: scripts.scrapers.nbm
+
+  - id: kidfriendly-dc
+    module: scripts.scrapers.kidfriendly_dc

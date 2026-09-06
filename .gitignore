@@ -14,3 +14,10 @@
 # Node (if we add scraper tooling later)
 node_modules/
 npm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/

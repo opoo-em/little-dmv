@@ -76,7 +76,23 @@ New data points, new features, new sources, new display ideas — these are 50/5
 ### Freshness: scheduled refresh + on-demand, with visible "last updated"
 **Decided:** 2026-09-06
 **Why:** Em wants a passive weekly cadence AND the ability to trigger a refresh when she wants. "Last updated: X" line at top-right so she knows how stale she's seeing.
-**Cadence not yet set** (open — probably Sunday morning?).
+**Cadence:** Sunday 12:00 UTC (~8am ET). Em plans weekends Sunday morning. Manual trigger available via GitHub Actions "Run workflow" button.
+
+### Pipeline language: Python
+**Decided:** 2026-09-06
+**Why:** iCal parsing (icalendar), Schema.org JSON-LD extraction (beautifulsoup4), and haversine (stdlib math) are all cleanest in Python. Runs in GitHub Actions ubuntu-latest with a 5-line install. No Node needed; the dashboard is static JSON, not a Node app.
+
+### Scraper strategy: Schema.org JSON-LD first, per-site parsing as fallback
+**Decided:** 2026-09-06
+**Why:** Most modern venue sites embed `<script type="application/ld+json">` with Schema.org Event objects. Extracting these is site-agnostic and survives HTML redesigns. Per-site HTML parsing is fragile (breaks on redesign) and only added when JSON-LD returns empty. See `scripts/scrapers/jsonld.py`.
+
+### Dedupe: (date, name, venue) key, first-in wins
+**Decided:** 2026-09-06
+**Why:** KidFriendly DC often carries MCPL / Smithsonian events also pulled via iCal. Sources listed earlier in `sources.yaml` win, so put canonical feeds (iCal for MCPL) ahead of aggregators (KFD). Manual events beat everything when `--keep-dummy` is used.
+
+### Age filter: permissive on unrecognized strings
+**Decided:** 2026-09-06
+**Why:** If the source's age string doesn't match any pattern, include the event and mark `age_match_reason: "unrecognized"`. Better to over-include and let Em scroll past than silently drop legit toddler events because a source phrases ages oddly. QA is via the `age_match_reason` field — audit it periodically and teach the filter new patterns.
 
 ### Sharing: mine only, neutral UI copy
 **Decided:** 2026-09-06
