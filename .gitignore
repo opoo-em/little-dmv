@@ -1,0 +1,16 @@
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+
+# Editor / OS cruft
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (if we add scraper tooling later)
+node_modules/
+npm-debug.log*
