@@ -27,10 +27,10 @@ _MONTHS_ONLY = re.compile(r"\b(\d+)\s*(mo|mos|months?)\b", re.I)
 _YR_RANGE = re.compile(
     r"\b(\d+)\s*(?:-|to|–|—)\s*(\d+)\s*(yr|yrs|year|years)?\b", re.I
 )
-_YR_PLUS = re.compile(r"\b(\d+)\s*\+\s*(yr|yrs|year|years)?\b", re.I)
+_YR_PLUS = re.compile(r"\b(\d+)\s*\+\s*(?:yr|yrs|year|years)?(?=\s|$|[^\w+])", re.I)
 _AGES_N_TO_M = re.compile(r"\bages?\s*(\d+)\s*(?:-|to)\s*(\d+)\b", re.I)
 _TODDLER = re.compile(r"\btoddler(s)?\b", re.I)
-_BABY_INFANT = re.compile(r"\b(baby|babies|infant(s)?|newborn)\b", re.I)
+_BABY_INFANT = re.compile(r"\b(baby|babies|infant(s)?|newborn(s)?)\b", re.I)
 _PRESCHOOL = re.compile(r"\b(pre[- ]?school|preschooler)\b", re.I)
 
 

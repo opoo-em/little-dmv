@@ -27,7 +27,7 @@ from pathlib import Path
 
 import yaml
 
-from . import ical_fetch, normalize
+from . import ical_fetch, normalize, seasonal
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCES_FILE = ROOT / "scripts" / "sources.yaml"
@@ -130,6 +130,15 @@ def main() -> int:
     raws.extend(ical_raws)
     scrape_raws, scrape_errs = run_scrapers(sources["scrape"], only)
     raws.extend(scrape_raws)
+
+    if only is None or "seasonal" in only:
+        try:
+            seasonal_raws = seasonal.load()
+            raws.extend(seasonal_raws)
+            print(f"  seasonal: {len(seasonal_raws)} events", file=sys.stderr)
+        except Exception as exc:
+            print(f"  seasonal: FAILED — {exc}", file=sys.stderr)
+            ical_errs.append(f"seasonal: {exc}")
 
     now = datetime.now(timezone.utc)
     events = [normalize.to_canonical(r, now=now) for r in raws]

@@ -72,6 +72,18 @@ scrape:
   - id: national-childrens-museum
     module: scripts.scrapers.national_childrens_museum
 
+  - id: national-zoo
+    module: scripts.scrapers.national_zoo
+
+  - id: pike-and-rose
+    module: scripts.scrapers.pike_and_rose
+
+  - id: bethesda-row
+    module: scripts.scrapers.bethesda_row
+
+  - id: rockville-city
+    module: scripts.scrapers.rockville
+
   # Montgomery Parks HTML fallback — remove once iCal endpoint is verified
   # and added above, or leave in place so dedupe favors the iCal version.
   - id: montgomery-parks

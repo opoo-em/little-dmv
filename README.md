@@ -1,6 +1,6 @@
 # Little DMV
 
-[![refresh events](https://github.com/opoo-em/little-dmv/actions/workflows/refresh.yml/badge.svg)](https://github.com/opoo-em/little-dmv/actions/workflows/refresh.yml)
+[![refresh events](https://github.com/opoo-em/little-dmv/actions/workflows/refresh.yml/badge.svg)](https://github.com/opoo-em/little-dmv/actions/workflows/refresh.yml) [![test](https://github.com/opoo-em/little-dmv/actions/workflows/test.yml/badge.svg)](https://github.com/opoo-em/little-dmv/actions/workflows/test.yml)
 
 A phone-first dashboard of kid-friendly events across Montgomery County MD and DC. Built for a specific family — filters age and cost to what actually fits.
 
