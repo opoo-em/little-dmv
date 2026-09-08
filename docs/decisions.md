@@ -102,6 +102,12 @@ New data points, new features, new sources, new display ideas — these are 50/5
 **Decided:** 2026-09-06
 **Why:** Em needs to be able to tell "why haven't I seen new MCPL events in a week?" without running the pipeline manually. events.json carries `sources: {<id>: {last_success_at, last_count, last_error}}`. Successful runs clear `last_error` but leave `last_success_at` alone, so staleness is legible even after a subsequent recovery. Not rendered in the dashboard UI yet — future addition.
 
+### Skipped sources: Glen Echo Park (main calendar) and Bethesda Row
+**Decided:** 2026-09-08
+**Why:** Em checked both sites during URL discovery. Glen Echo Park's calendar-of-events page is mostly adult programming, and even the "kid" listings are 4+ (Felix is 15mo, target range 1-3). Bethesda Row does not have a real events calendar — content is fragmented across marketing pages ("fashion + style," "health + beauty") and reads as store promotions (Joe & the Juice launch, Mejuri sale) rather than family events. Neither source is worth scraper maintenance.
+**What replaces Glen Echo:** The Puppet Co — Tiny Tots (`thepuppetco.org/tiny-tots`) runs on the Glen Echo grounds and is *explicitly* designed for 18mo-4yr (30 min runtime, no dark room, no surprising loud noises, open theatre doors). Age-perfect for Felix. Wired as `puppetco-tinytots` scraper.
+**What replaces Bethesda Row:** Nothing at scraper level. Bethesda Row Winter Wonderland remains in `data/seasonal.json` — that's a real family event and legit to hand-maintain annually.
+
 ### Sharing: mine only, neutral UI copy
 **Decided:** 2026-09-06
 **Why:** Em owns the app but may screen-share to husband/MIL/nanny. No cute in-jokes on the visible UI. (The chat is where the sweet nothings live.)

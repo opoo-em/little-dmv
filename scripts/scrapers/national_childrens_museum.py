@@ -11,7 +11,7 @@ from . import base, jsonld
 
 ID = "national-childrens-museum"
 NAME = "National Children's Museum"
-URL = "https://nationalchildrensmuseum.org/visit/events/"
+URL = "https://nationalchildrensmuseum.org/explore/events"
 
 
 def fetch() -> list[dict]:

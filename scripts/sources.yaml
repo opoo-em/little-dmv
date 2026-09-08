@@ -58,10 +58,6 @@ scrape:
     module: scripts.scrapers.butlers
     state: MD
 
-  - id: glen-echo-park
-    module: scripts.scrapers.glen_echo
-    state: MD
-
   - id: national-building-museum
     module: scripts.scrapers.nbm
     state: DC
@@ -78,8 +74,10 @@ scrape:
     module: scripts.scrapers.pike_and_rose
     state: MD
 
-  - id: bethesda-row
-    module: scripts.scrapers.bethesda_row
+  # Puppet Co Tiny Tots — 18mo-4yr designed. Replaced glen-echo-park scraper
+  # 2026-09-08 (Glen Echo's main calendar is adult-heavy, kid events are 4+).
+  - id: puppetco-tinytots
+    module: scripts.scrapers.puppetco
     state: MD
 
   # Firehose muni calendar — dumps commission meetings, adult concerts,

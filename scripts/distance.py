@@ -84,6 +84,7 @@ VENUE_COORDS: dict[str, tuple[float, float]] = {
     "locust-grove-nature-center": (39.0107, -77.1728),
     "black-hill-regional-park": (39.2115, -77.2854),
     "glen-echo-park": (38.9689, -77.1428),
+    "puppetco-tinytots": (38.9689, -77.1428),  # on Glen Echo Park grounds
     # Kid-specific / commercial
     "butlers-orchard": (39.2199, -77.2481),
     # DC institutions
@@ -143,6 +144,8 @@ _VENUE_INFERENCE: list[tuple[str, str]] = [
     ("meadowside nature center", "meadowside-nature-center"),
     ("locust grove nature center", "locust-grove-nature-center"),
     ("black hill regional park", "black-hill-regional-park"),
+    ("puppet co", "puppetco-tinytots"),
+    ("puppetco", "puppetco-tinytots"),
     ("glen echo park", "glen-echo-park"),
     ("butler's orchard", "butlers-orchard"),
     ("butlers orchard", "butlers-orchard"),

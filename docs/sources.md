@@ -59,14 +59,15 @@ Ready for Phase 2 (real data). Every entry needs to be classified (feed type), p
 | Pike & Rose | pikeandrose.com | ? | med | not started |
 | Rockville Town Square | rockvilletownsquare.com | ? | med | not started |
 | Congressional Plaza | congressionalplaza.com | manual (likely) | low | not started |
-| Bethesda Row | bethesdarow.com | ? | med | not started |
+| Bethesda Row | bethesdarow.com | — | **skipped** | No real events calendar; store-promo content only. Em ruled 2026-09-08. Winter Wonderland kept as manual seasonal entry. |
 | Rio Washingtonian Center | riowashingtonian.com | ? | low | not started |
 
 ## Kid-specific venues (county)
 
 | Source | URL | Feed | Priority | Status |
 |---|---|---|---|---|
-| Glen Echo Park (Puppet Co, arts, carousel) | glenechopark.org | ? | high | not started |
+| Glen Echo Park (main calendar) | glenechopark.org | — | **skipped** | Content is adult-heavy; kid events are 4+. Em ruled 2026-09-08 (`docs/decisions.md`). |
+| The Puppet Co — Tiny Tots | thepuppetco.org/tiny-tots | scrape | high | scaffold committed 2026-09-08; needs per-site parsing if JSON-LD returns empty |
 | Wheaton Regional Park (train, carousel) | montgomeryparks.org/wheaton | ? (via Montgomery Parks) | high | not started |
 | Cabin John Regional Park (train) | montgomeryparks.org/cabinjohn | ? (via Montgomery Parks) | high | not started |
 | Brookside Gardens | montgomeryparks.org/brookside | ? (via Montgomery Parks) | high | not started |
