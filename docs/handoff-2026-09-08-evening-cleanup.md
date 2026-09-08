@@ -78,18 +78,20 @@ The 🕓 tasks are all "drafts done, awaiting Em executing the claude.ai round" 
 
 ---
 
-## What Em is actively doing right now
+## Butler's Orchard scraper — LANDED (`3091521`)
 
-Pasting the **Butler's Orchard** prompt into claude.ai. When she brings back code, this-Claude will:
+Em pasted the Butler's prompt into claude.ai, claude.ai did WebFetch reconnaissance, and pivoted the plan mid-flight based on what it found. Diagnosis was correct and worth preserving:
 
-1. Diff against `scripts/scrapers/butlers.py` (current state: JSON-LD stub).
-2. Overwrite the file with claude.ai's per-site parser.
-3. Run `python -m pytest scripts/tests/` (should still be 87 passing — no test file references the scraper module directly).
-4. Smoke-import via `python -c "import scripts.scrapers.butlers; print(scripts.scrapers.butlers.fetch())"` if the sandbox proxy allows it, else skip.
-5. Commit + push to main.
-6. Note the next CI refresh (Sunday 12:00 UTC, or manual trigger if Em wants results tonight).
+- `butlersorchard.com/events/` (which redirects to `/visit-the-farm/events-calendar/`) is a WordPress + **Modern Events Calendar** widget that hydrates entirely client-side via AJAX. Server HTML literally says "No event found!" No amount of BeautifulSoup selectors would work there — that's why the earlier JSON-LD attempt returned 0 events too.
+- The real seasonal content — Bunnyland, Spring Festival, Strawberry Festival, Sunflower Spectacular, Pumpkin Festival — lives on ordinary server-rendered WPBakery pages under `/festivals/`. Those pages have "Dates:" / "Hours:" / "Admission:" text blocks that can be parsed.
 
-Then start on the next scraper.
+Scraper now uses `/events/` only to discover festival nav links (which ARE in the static theme markup), then parses each festival page. Multi-date lists ("March 28-29, April 2-4, 6, 11-12") expand to one event per range; continuous spans ("September 25 - November 2") stay as one event. Local smoke test with synthetic markup produced correctly-shaped events; 87 tests still pass.
+
+**Ruling filed in `docs/decisions.md`** — "Butler's Orchard: scrape the festival pages, not `/events/`" — with a "do not fix this back to scraping the calendar URL" warning to future-me. The `URL = "https://butlersorchard.com/events/"` on the module stays per contract, but the meaningful work happens on the discovered festival pages.
+
+Workflow triggered manually via GitHub Actions to see real-site results tonight rather than wait for Sunday 12:00 UTC cadence.
+
+Next up when Em is back at her keyboard: 5 more claude.ai prompts (NBM, Zoo, Pike & Rose, NCM, Puppet Co) + the KFD reconnaissance mission. All in `docs/scraper-prompts.md`.
 
 ---
 
