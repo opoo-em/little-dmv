@@ -1,65 +1,66 @@
 {
-  "last_updated": "2026-09-06T15:06:25.695143Z",
+  "last_updated": "2026-09-08T18:31:18.256952Z",
   "schema_version": 1,
   "sources": {
     "butlers-orchard": {
-      "last_success_at": "2026-09-06T15:06:08.914335Z",
+      "last_success_at": "2026-09-08T18:30:28.739821Z",
       "last_count": 0,
       "last_error": null
     },
     "glen-echo-park": {
-      "last_error_at": "2026-09-06T15:06:09.835407Z",
+      "last_error_at": "2026-09-08T18:30:29.838671Z",
       "last_error": "404 Client Error: Not Found for url: https://glenechopark.org/calendar-of-events"
     },
     "national-building-museum": {
-      "last_success_at": "2026-09-06T15:06:10.382670Z",
+      "last_success_at": "2026-09-08T18:30:32.867581Z",
       "last_count": 0,
       "last_error": null
     },
     "national-childrens-museum": {
-      "last_error_at": "2026-09-06T15:06:11.088011Z",
+      "last_error_at": "2026-09-08T18:30:34.291467Z",
       "last_error": "404 Client Error: Not Found for url: https://nationalchildrensmuseum.org/visit/events"
     },
     "national-zoo": {
-      "last_success_at": "2026-09-06T15:06:11.372637Z",
+      "last_success_at": "2026-09-08T18:30:34.695232Z",
       "last_count": 0,
       "last_error": null
     },
     "pike-and-rose": {
-      "last_success_at": "2026-09-06T15:06:19.447702Z",
+      "last_success_at": "2026-09-08T18:30:41.186164Z",
       "last_count": 0,
       "last_error": null
     },
     "bethesda-row": {
-      "last_error_at": "2026-09-06T15:06:22.439319Z",
+      "last_error_at": "2026-09-08T18:30:45.890843Z",
       "last_error": "404 Client Error: Not Found for url: https://www.bethesdarow.com/events/"
     },
     "rockville-city": {
-      "last_success_at": "2026-09-06T15:06:22.569367Z",
+      "last_success_at": "2026-09-08T18:30:47.088574Z",
       "last_count": 24,
       "last_error": null
     },
     "mcpl": {
-      "last_error_at": "2026-09-06T15:06:22.613417Z",
+      "last_error_at": "2026-09-08T18:30:47.128671Z",
       "last_error": "HTTPSConnectionPool(host='mcpl.libcal.com', port=443): Max retries exceeded with url: /calendar/kids (Caused by NameResolutionError(\"HTTPSConnection(host='mcpl.libcal.com', port=443): Failed to resolve 'mcpl.libcal.com' ([Errno -5] No address associated with hostname)\"))"
     },
     "kennedy-center-millennium": {
-      "last_error_at": "2026-09-06T15:06:22.829847Z",
+      "last_error_at": "2026-09-08T18:30:47.272564Z",
       "last_error": "403 Client Error: Forbidden for url: https://www.kennedy-center.org/whats-on/millennium-stage/"
     },
     "montgomery-parks": {
-      "last_success_at": "2026-09-06T15:06:23.229267Z",
+      "last_success_at": "2026-09-08T18:30:48.155305Z",
       "last_count": 0,
       "last_error": null
     },
     "kidfriendly-dc": {
       "last_success_at": "2026-09-06T15:06:25.694827Z",
       "last_count": 0,
-      "last_error": null
+      "last_error": "HTTPSConnectionPool(host='kidfriendlydc.com', port=443): Max retries exceeded with url: /events/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='kidfriendlydc.com', port=443) at 0x7fe083ddbdd0>, 'Connection to kidfriendlydc.com timed out. (connect timeout=30)'))",
+      "last_error_at": "2026-09-08T18:31:18.254542Z"
     },
     "seasonal": {
-      "last_success_at": "2026-09-06T15:06:25.695129Z",
-      "last_count": 9,
+      "last_success_at": "2026-09-08T18:31:18.256928Z",
+      "last_count": 11,
       "last_error": null
     }
   },
@@ -340,8 +341,8 @@
       "description": "Designed especially for our youngest naturalists, this toddler program introduces children to nature through circle time, sensory activities, and free [\u2026]",
       "url": "https://www.rockvillemd.gov/calendar/events/little-sprouts-2/",
       "source": "rockville-city",
-      "added_at": "2026-09-06T15:06:25.695143Z",
-      "updated_at": "2026-09-06T15:06:25.695143Z",
+      "added_at": "2026-09-08T18:31:18.256952Z",
+      "updated_at": "2026-09-08T18:31:18.256952Z",
       "expires_at": null
     },
     {
@@ -360,8 +361,8 @@
       "description": "Taiwan Sister Cities and Rockville Sister Cities Corporation invite you to the 2026 Taiwan Bubble Tea Festival on Saturday, Sept. [\u2026]",
       "url": "https://www.rockvillemd.gov/calendar/events/2026-taiwan-bubble-tea-festival/",
       "source": "rockville-city",
-      "added_at": "2026-09-06T15:06:25.695143Z",
-      "updated_at": "2026-09-06T15:06:25.695143Z",
+      "added_at": "2026-09-08T18:31:18.256952Z",
+      "updated_at": "2026-09-08T18:31:18.256952Z",
       "expires_at": null
     },
     {
@@ -371,7 +372,7 @@
       "end": "17:00",
       "name": "Butler's Orchard Pumpkin Patch",
       "venue": "Butler's Orchard",
-      "distance_mi_range": "unknown",
+      "distance_mi_range": "11-15",
       "cost_type": "paid",
       "cost_label": "$18-24/person (varies weekday/weekend)",
       "place": "outdoor",
@@ -380,8 +381,8 @@
       "description": "Hayrides, pumpkin picking in the field, kids play area with slides + bounce pillow + farm animals. Buy tickets ahead online for weekend visits.",
       "url": "https://butlersorchard.com/pumpkin-patch/",
       "source": "seasonal",
-      "added_at": "2026-09-06T15:06:25.695143Z",
-      "updated_at": "2026-09-06T15:06:25.695143Z",
+      "added_at": "2026-09-08T18:31:18.256952Z",
+      "updated_at": "2026-09-08T18:31:18.256952Z",
       "expires_at": null
     },
     {
@@ -400,8 +401,28 @@
       "description": "Designed for young children and their caregivers, this nature program encourages slowing down and experiencing the outdoors together. Through sensory [\u2026]",
       "url": "https://www.rockvillemd.gov/calendar/events/gentle-explorers-3/",
       "source": "rockville-city",
-      "added_at": "2026-09-06T15:06:25.695143Z",
-      "updated_at": "2026-09-06T15:06:25.695143Z",
+      "added_at": "2026-09-08T18:31:18.256952Z",
+      "updated_at": "2026-09-08T18:31:18.256952Z",
+      "expires_at": null
+    },
+    {
+      "id": "rockville-city-rockville-city-police-department-open-house-2026-09-19",
+      "date": "2026-09-19",
+      "time": "11:00",
+      "end": "14:00",
+      "name": "Rockville City Police Department Open House",
+      "venue": "Rockville City Police Station",
+      "distance_mi_range": "unknown",
+      "cost_type": "free",
+      "cost_label": "Free",
+      "place": "outdoor",
+      "age": "unspecified",
+      "age_match_reason": "unspecified",
+      "description": "The Rockville City Police Department invites the community to its 2026 open house, a free, family-friendly event offering residents a [\u2026]",
+      "url": "https://www.rockvillemd.gov/calendar/events/rockville-city-police-department-open-house/",
+      "source": "rockville-city",
+      "added_at": "2026-09-08T18:31:18.256952Z",
+      "updated_at": "2026-09-08T18:31:18.256952Z",
       "expires_at": null
     },
     {
@@ -411,7 +432,7 @@
       "end": "17:00",
       "name": "Butler's Orchard Pumpkin Patch",
       "venue": "Butler's Orchard",
-      "distance_mi_range": "unknown",
+      "distance_mi_range": "11-15",
       "cost_type": "paid",
       "cost_label": "$18-24/person (varies weekday/weekend)",
       "place": "outdoor",
@@ -420,8 +441,8 @@
       "description": "Hayrides, pumpkin picking in the field, kids play area with slides + bounce pillow + farm animals. Buy tickets ahead online for weekend visits.",
       "url": "https://butlersorchard.com/pumpkin-patch/",
       "source": "seasonal",
-      "added_at": "2026-09-06T15:06:25.695143Z",
-      "updated_at": "2026-09-06T15:06:25.695143Z",
+      "added_at": "2026-09-08T18:31:18.256952Z",
+      "updated_at": "2026-09-08T18:31:18.256952Z",
       "expires_at": null
     },
     {
@@ -431,7 +452,7 @@
       "end": "17:00",
       "name": "Butler's Orchard Pumpkin Patch",
       "venue": "Butler's Orchard",
-      "distance_mi_range": "unknown",
+      "distance_mi_range": "11-15",
       "cost_type": "paid",
       "cost_label": "$18-24/person (varies weekday/weekend)",
       "place": "outdoor",
@@ -440,8 +461,8 @@
       "description": "Hayrides, pumpkin picking in the field, kids play area with slides + bounce pillow + farm animals. Buy tickets ahead online for weekend visits.",
       "url": "https://butlersorchard.com/pumpkin-patch/",
       "source": "seasonal",
-      "added_at": "2026-09-06T15:06:25.695143Z",
-      "updated_at": "2026-09-06T15:06:25.695143Z",
+      "added_at": "2026-09-08T18:31:18.256952Z",
+      "updated_at": "2026-09-08T18:31:18.256952Z",
       "expires_at": null
     },
     {
@@ -451,7 +472,7 @@
       "end": "17:00",
       "name": "Butler's Orchard Pumpkin Patch",
       "venue": "Butler's Orchard",
-      "distance_mi_range": "unknown",
+      "distance_mi_range": "11-15",
       "cost_type": "paid",
       "cost_label": "$18-24/person (varies weekday/weekend)",
       "place": "outdoor",
@@ -460,8 +481,8 @@
       "description": "Hayrides, pumpkin picking in the field, kids play area with slides + bounce pillow + farm animals. Buy tickets ahead online for weekend visits.",
       "url": "https://butlersorchard.com/pumpkin-patch/",
       "source": "seasonal",
-      "added_at": "2026-09-06T15:06:25.695143Z",
-      "updated_at": "2026-09-06T15:06:25.695143Z",
+      "added_at": "2026-09-08T18:31:18.256952Z",
+      "updated_at": "2026-09-08T18:31:18.256952Z",
       "expires_at": null
     },
     {
@@ -471,7 +492,7 @@
       "end": "17:00",
       "name": "Butler's Orchard Pumpkin Patch",
       "venue": "Butler's Orchard",
-      "distance_mi_range": "unknown",
+      "distance_mi_range": "11-15",
       "cost_type": "paid",
       "cost_label": "$18-24/person (varies weekday/weekend)",
       "place": "outdoor",
@@ -480,8 +501,8 @@
       "description": "Hayrides, pumpkin picking in the field, kids play area with slides + bounce pillow + farm animals. Buy tickets ahead online for weekend visits.",
       "url": "https://butlersorchard.com/pumpkin-patch/",
       "source": "seasonal",
-      "added_at": "2026-09-06T15:06:25.695143Z",
-      "updated_at": "2026-09-06T15:06:25.695143Z",
+      "added_at": "2026-09-08T18:31:18.256952Z",
+      "updated_at": "2026-09-08T18:31:18.256952Z",
       "expires_at": null
     },
     {
@@ -491,7 +512,7 @@
       "end": "17:00",
       "name": "Butler's Orchard Pumpkin Patch",
       "venue": "Butler's Orchard",
-      "distance_mi_range": "unknown",
+      "distance_mi_range": "11-15",
       "cost_type": "paid",
       "cost_label": "$18-24/person (varies weekday/weekend)",
       "place": "outdoor",
@@ -500,8 +521,8 @@
       "description": "Hayrides, pumpkin picking in the field, kids play area with slides + bounce pillow + farm animals. Buy tickets ahead online for weekend visits.",
       "url": "https://butlersorchard.com/pumpkin-patch/",
       "source": "seasonal",
-      "added_at": "2026-09-06T15:06:25.695143Z",
-      "updated_at": "2026-09-06T15:06:25.695143Z",
+      "added_at": "2026-09-08T18:31:18.256952Z",
+      "updated_at": "2026-09-08T18:31:18.256952Z",
       "expires_at": null
     },
     {
@@ -511,7 +532,7 @@
       "end": "17:00",
       "name": "Butler's Orchard Pumpkin Patch",
       "venue": "Butler's Orchard",
-      "distance_mi_range": "unknown",
+      "distance_mi_range": "11-15",
       "cost_type": "paid",
       "cost_label": "$18-24/person (varies weekday/weekend)",
       "place": "outdoor",
@@ -520,8 +541,8 @@
       "description": "Hayrides, pumpkin picking in the field, kids play area with slides + bounce pillow + farm animals. Buy tickets ahead online for weekend visits.",
       "url": "https://butlersorchard.com/pumpkin-patch/",
       "source": "seasonal",
-      "added_at": "2026-09-06T15:06:25.695143Z",
-      "updated_at": "2026-09-06T15:06:25.695143Z",
+      "added_at": "2026-09-08T18:31:18.256952Z",
+      "updated_at": "2026-09-08T18:31:18.256952Z",
       "expires_at": null
     },
     {
@@ -531,7 +552,7 @@
       "end": "17:00",
       "name": "Butler's Orchard Pumpkin Patch",
       "venue": "Butler's Orchard",
-      "distance_mi_range": "unknown",
+      "distance_mi_range": "11-15",
       "cost_type": "paid",
       "cost_label": "$18-24/person (varies weekday/weekend)",
       "place": "outdoor",
@@ -540,8 +561,8 @@
       "description": "Hayrides, pumpkin picking in the field, kids play area with slides + bounce pillow + farm animals. Buy tickets ahead online for weekend visits.",
       "url": "https://butlersorchard.com/pumpkin-patch/",
       "source": "seasonal",
-      "added_at": "2026-09-06T15:06:25.695143Z",
-      "updated_at": "2026-09-06T15:06:25.695143Z",
+      "added_at": "2026-09-08T18:31:18.256952Z",
+      "updated_at": "2026-09-08T18:31:18.256952Z",
       "expires_at": null
     },
     {
@@ -551,7 +572,7 @@
       "end": "17:00",
       "name": "Butler's Orchard Pumpkin Patch",
       "venue": "Butler's Orchard",
-      "distance_mi_range": "unknown",
+      "distance_mi_range": "11-15",
       "cost_type": "paid",
       "cost_label": "$18-24/person (varies weekday/weekend)",
       "place": "outdoor",
@@ -560,8 +581,48 @@
       "description": "Hayrides, pumpkin picking in the field, kids play area with slides + bounce pillow + farm animals. Buy tickets ahead online for weekend visits.",
       "url": "https://butlersorchard.com/pumpkin-patch/",
       "source": "seasonal",
-      "added_at": "2026-09-06T15:06:25.695143Z",
-      "updated_at": "2026-09-06T15:06:25.695143Z",
+      "added_at": "2026-09-08T18:31:18.256952Z",
+      "updated_at": "2026-09-08T18:31:18.256952Z",
+      "expires_at": null
+    },
+    {
+      "id": "seasonal-butler-s-orchard-pumpkin-patch-2026-09-28",
+      "date": "2026-09-28",
+      "time": "10:00",
+      "end": "17:00",
+      "name": "Butler's Orchard Pumpkin Patch",
+      "venue": "Butler's Orchard",
+      "distance_mi_range": "11-15",
+      "cost_type": "paid",
+      "cost_label": "$18-24/person (varies weekday/weekend)",
+      "place": "outdoor",
+      "age": "All ages",
+      "age_match_reason": "all-ages",
+      "description": "Hayrides, pumpkin picking in the field, kids play area with slides + bounce pillow + farm animals. Buy tickets ahead online for weekend visits.",
+      "url": "https://butlersorchard.com/pumpkin-patch/",
+      "source": "seasonal",
+      "added_at": "2026-09-08T18:31:18.256952Z",
+      "updated_at": "2026-09-08T18:31:18.256952Z",
+      "expires_at": null
+    },
+    {
+      "id": "seasonal-butler-s-orchard-pumpkin-patch-2026-09-29",
+      "date": "2026-09-29",
+      "time": "10:00",
+      "end": "17:00",
+      "name": "Butler's Orchard Pumpkin Patch",
+      "venue": "Butler's Orchard",
+      "distance_mi_range": "11-15",
+      "cost_type": "paid",
+      "cost_label": "$18-24/person (varies weekday/weekend)",
+      "place": "outdoor",
+      "age": "All ages",
+      "age_match_reason": "all-ages",
+      "description": "Hayrides, pumpkin picking in the field, kids play area with slides + bounce pillow + farm animals. Buy tickets ahead online for weekend visits.",
+      "url": "https://butlersorchard.com/pumpkin-patch/",
+      "source": "seasonal",
+      "added_at": "2026-09-08T18:31:18.256952Z",
+      "updated_at": "2026-09-08T18:31:18.256952Z",
       "expires_at": null
     }
   ]
