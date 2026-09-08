@@ -23,17 +23,38 @@ Optional fields:
 from __future__ import annotations
 
 import hashlib
+import html
 import re
 from datetime import datetime, timezone
 from typing import Any, Optional
 
 from . import distance
-from .filter import age_passes
+from .filter import age_passes, content_passes
+
+_TAG_RE = re.compile(r"<[^>]+>")
+_WS_RE = re.compile(r"\s+")
+_LITERAL_ESC_RE = re.compile(r"\\[nrt]")
 
 
 def _slug(text: str) -> str:
     s = re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
     return s[:60] or "event"
+
+
+def _clean_text(raw: str) -> str:
+    """Decode HTML entities, strip tags, collapse whitespace.
+
+    Handles double-encoded entities (e.g. `&amp;lt;p&amp;gt;`) by unescaping
+    twice, and normalizes literal `\\n`/`\\t` sequences that show up when a
+    source shoves an escaped string into a description field.
+    """
+    if not raw:
+        return ""
+    s = html.unescape(html.unescape(raw))
+    s = _LITERAL_ESC_RE.sub(" ", s)
+    s = _TAG_RE.sub(" ", s)
+    s = _WS_RE.sub(" ", s)
+    return s.strip()
 
 
 def _iso(dt: Optional[datetime]) -> Optional[str]:
@@ -55,7 +76,7 @@ def to_canonical(raw: dict[str, Any], now: Optional[datetime] = None) -> Optiona
     """Turn one raw event into a canonical event dict, or return None if it
     fails the age filter (or is missing required fields).
     """
-    name = (raw.get("name") or "").strip()
+    name = _clean_text(raw.get("name") or "")
     start = raw.get("start")
     url = (raw.get("url") or "").strip()
     source = (raw.get("source") or "unknown").strip()
@@ -63,6 +84,15 @@ def to_canonical(raw: dict[str, Any], now: Optional[datetime] = None) -> Optiona
     if not name or start is None:
         return None
     if not isinstance(start, datetime):
+        return None
+
+    description = _clean_text(raw.get("description") or "")
+
+    if not content_passes(
+        name,
+        description,
+        require_kid_signal=bool(raw.get("_require_kid_signal")),
+    ):
         return None
 
     passes, reason = age_passes(raw.get("age"))
@@ -90,14 +120,14 @@ def to_canonical(raw: dict[str, Any], now: Optional[datetime] = None) -> Optiona
         "time": start.strftime("%H:%M"),
         "end": end.strftime("%H:%M") if end else None,
         "name": name,
-        "venue": raw.get("venue") or "",
+        "venue": _clean_text(raw.get("venue") or ""),
         "distance_mi_range": band or "unknown",
         "cost_type": cost_type,
         "cost_label": cost_label,
         "place": place,
         "age": raw.get("age") or "unspecified",
         "age_match_reason": reason,
-        "description": (raw.get("description") or "").strip(),
+        "description": description,
         "url": url,
         "source": source,
         "added_at": _iso(now),

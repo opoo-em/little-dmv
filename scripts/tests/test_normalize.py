@@ -71,6 +71,74 @@ def test_missing_start_returns_none():
     assert to_canonical(raw, now=_now()) is None
 
 
+def test_html_entities_and_tags_stripped_from_description():
+    raw = {
+        "name": "Baby Storytime",
+        "start": datetime(2026, 9, 13, 10, 30, tzinfo=timezone.utc),
+        "url": "https://example.com",
+        "source": "mcpl",
+        "description": "&lt;p&gt;Come join us &amp; sing along [&hellip;]&lt;/p&gt;\\n",
+    }
+    e = to_canonical(raw, now=_now())
+    assert e is not None
+    assert "<" not in e["description"]
+    assert "&lt;" not in e["description"]
+    assert "&amp;" not in e["description"]
+    assert "&hellip;" not in e["description"]
+    assert "\\n" not in e["description"]
+    assert "Come join us & sing along" in e["description"]
+
+
+def test_html_entities_in_name_decoded():
+    raw = {
+        "name": "Victorian Lyric Opera Company Presents &#8220;Haddon Hall&#8221;",
+        "start": datetime(2026, 9, 13, 20, 0, tzinfo=timezone.utc),
+        "url": "https://example.com",
+        "source": "test",
+    }
+    e = to_canonical(raw, now=_now())
+    # This one is filtered out for "opera company", so it's None. Verify the
+    # cleanup path separately by using a benign title.
+    raw["name"] = "Family Fun &amp; Games"
+    e = to_canonical(raw, now=_now())
+    assert e is not None
+    assert e["name"] == "Family Fun & Games"
+
+
+def test_content_filter_rejects_adult_event():
+    raw = {
+        "name": "Planning Commission Meeting",
+        "start": datetime(2026, 9, 13, 19, 0, tzinfo=timezone.utc),
+        "url": "https://example.com",
+        "source": "rockville-city",
+    }
+    assert to_canonical(raw, now=_now()) is None
+
+
+def test_require_kid_signal_rejects_generic_event():
+    raw = {
+        "name": "Community Fun Day",
+        "start": datetime(2026, 9, 13, 12, 0, tzinfo=timezone.utc),
+        "url": "https://example.com",
+        "source": "rockville-city",
+        "description": "Come enjoy the afternoon.",
+        "_require_kid_signal": True,
+    }
+    assert to_canonical(raw, now=_now()) is None
+
+
+def test_require_kid_signal_keeps_toddler_program():
+    raw = {
+        "name": "Little Sprouts",
+        "start": datetime(2026, 9, 13, 10, 0, tzinfo=timezone.utc),
+        "url": "https://example.com",
+        "source": "rockville-city",
+        "description": "Toddler nature program for our youngest naturalists.",
+        "_require_kid_signal": True,
+    }
+    assert to_canonical(raw, now=_now()) is not None
+
+
 def test_id_is_stable_across_calls():
     raw = {
         "name": "Baby Storytime",

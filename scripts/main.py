@@ -55,6 +55,15 @@ def _ical_source_from(raw: dict) -> ical_fetch.ICalSource:
     )
 
 
+def _stamp_source_flags(raws: list[dict], src: dict) -> None:
+    """Copy per-source config flags onto every raw event from that source so
+    downstream normalize/filter can act on them without knowing sources.yaml.
+    """
+    if src.get("require_kid_signal"):
+        for e in raws:
+            e["_require_kid_signal"] = True
+
+
 def run_ical(sources: list[dict], only: set[str] | None,
              health: dict[str, dict]) -> tuple[list[dict], list[str]]:
     raws: list[dict] = []
@@ -64,6 +73,7 @@ def run_ical(sources: list[dict], only: set[str] | None,
             continue
         try:
             got = ical_fetch.fetch(_ical_source_from(src))
+            _stamp_source_flags(got, src)
             raws.extend(got)
             _mark_ok(health, src["id"], len(got))
             print(f"  iCal {src['id']}: {len(got)} events", file=sys.stderr)
@@ -86,6 +96,7 @@ def run_scrapers(scrapers: list[dict], only: set[str] | None,
             got = mod.fetch()
             for e in got:
                 e.setdefault("source", entry["id"])
+            _stamp_source_flags(got, entry)
             raws.extend(got)
             _mark_ok(health, entry["id"], len(got))
             print(f"  scrape {entry['id']}: {len(got)} events", file=sys.stderr)

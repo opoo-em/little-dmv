@@ -81,8 +81,11 @@ scrape:
   - id: bethesda-row
     module: scripts.scrapers.bethesda_row
 
+  # Firehose muni calendar — dumps commission meetings, adult concerts,
+  # naloxone training, etc. Require a positive kid signal to keep an event.
   - id: rockville-city
     module: scripts.scrapers.rockville
+    require_kid_signal: true
 
   # MCPL fallback — remove once iCal endpoint is verified and added above,
   # or leave in place so dedupe favors the iCal version.
@@ -90,8 +93,10 @@ scrape:
     module: scripts.scrapers.mcpl
 
   # Kennedy Center fallback — likely permanent (React SPA rarely has iCal).
+  # Millennium Stage is mostly adult performances; require kid signal to keep.
   - id: kennedy-center-millennium
     module: scripts.scrapers.kennedy_center
+    require_kid_signal: true
 
   # Montgomery Parks HTML fallback — remove once iCal endpoint is verified
   # and added above, or leave in place so dedupe favors the iCal version.

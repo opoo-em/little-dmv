@@ -1,12 +1,18 @@
-"""Age filter — the one non-user-facing filter, per docs/decisions.md.
+"""Filters for the pipeline.
 
-Rule: keep events whose age range overlaps ~1-3 years (Felix's toddler range).
-Exclude hard-only-babies (e.g. "hatchlings 4mo") and hard-only-older
-(5+, kindergarten+, elementary).
+Two independent gates:
 
-Input is a raw age string (free-text from a source). Output is a tuple
-(passes: bool, reason: str). The reason is written into event.age_match_reason
-for QA per the schema.
+- `age_passes(raw_age_string)` — keep events whose age range overlaps
+  ~1-3 years (Felix's range). Permissive on unrecognized strings.
+
+- `content_passes(name, description, require_kid_signal)` — reject events
+  whose title/description carries an unambiguous adult-only signal
+  (municipal meetings, adult concerts, adult training). When
+  `require_kid_signal=True` (set per-source in sources.yaml for firehose
+  feeds like Rockville city calendar), also require a positive kid signal
+  in the title/description.
+
+Both return a (passes, reason) shape for QA visibility.
 """
 
 from __future__ import annotations
@@ -95,3 +101,116 @@ def age_passes(raw: str | None) -> Tuple[bool, str]:
     # Nothing recognized — permissive. QA field will show 'unrecognized' so we
     # can revisit if it's a common source pattern we should teach.
     return True, "unrecognized"
+
+
+# =============================================================================
+# Content filter — adult-signal blocklist + kid-signal detector
+# =============================================================================
+
+# Patterns whose presence in the title or description means "not for a toddler,
+# reject regardless of source." Keep this list tight and high-precision — the
+# cost of a false positive is losing a real kid event.
+_ADULT_SIGNALS = [
+    # Municipal governance
+    re.compile(r"\bplanning\s+commission\b", re.I),
+    re.compile(r"\bcity\s+council\b", re.I),
+    re.compile(r"\bmayor\s+(?:and|&)\s+council\b", re.I),
+    re.compile(r"\bcouncil\s+meeting\b", re.I),
+    re.compile(r"\bcommission\s+meeting\b", re.I),
+    re.compile(r"\badvisory\s+(?:committee|commission|board)\b", re.I),
+    re.compile(r"\badvocacy\s+committee\b", re.I),
+    re.compile(r"\bcultural\s+arts\s+commission\b", re.I),
+    re.compile(r"\bcommission\s+on\s+aging\b", re.I),
+    re.compile(r"\bhuman\s+services\s+advisory\b", re.I),
+    re.compile(r"\bpedestrian\s+advisory\b", re.I),
+    re.compile(r"\bboard\s+meeting\b", re.I),
+    re.compile(r"\bcity\s+holiday\b", re.I),
+    re.compile(r"\bpublic\s+hearing\b", re.I),
+    # Adult content / trainings
+    re.compile(r"\bnaloxone\b", re.I),
+    re.compile(r"\bnarcan\b", re.I),
+    re.compile(r"\blunch\s+and\s+learn\b", re.I),
+    re.compile(r"\bnetworking\b", re.I),
+    re.compile(r"\bhappy\s+hour\b", re.I),
+    re.compile(r"\bwine\s+tasting\b", re.I),
+    re.compile(r"\bbeer\s+garden\b", re.I),
+    re.compile(r"\bfundraiser\s+gala\b", re.I),
+    re.compile(r"\bcareer\s+fair\b", re.I),
+    re.compile(r"\bjob\s+fair\b", re.I),
+    re.compile(r"\bremembrance\s+ceremony\b", re.I),
+    # Adult-only markers
+    re.compile(r"\b(?:18|21)\s*\+", re.I),
+    re.compile(r"\badults?\s+only\b", re.I),
+    re.compile(r"\bages?\s+18\+", re.I),
+    re.compile(r"\bages?\s+21\+", re.I),
+    # Adult performance types (these are almost never toddler-appropriate;
+    # legit kid concerts are titled "Kids Concert" and pass on the kid signal)
+    re.compile(r"\bopera\s+company\b", re.I),
+    re.compile(r"\bsymphony\s+orchestra\b", re.I),
+    re.compile(r"\bchamber\s+music\b", re.I),
+]
+
+# Anything the title/description mentions that says "this event is for kids or
+# families." Deliberately broad — false positives here just mean we KEEP an
+# event that a firehose source would otherwise cut.
+_KID_SIGNALS = [
+    re.compile(r"\btoddler(s)?\b", re.I),
+    re.compile(r"\b(baby|babies|infant(s)?|newborn(s)?)\b", re.I),
+    re.compile(r"\b(kid|kids|kiddo|kiddos)\b", re.I),
+    re.compile(r"\bchild(ren)?\b", re.I),
+    re.compile(r"\bfamil(y|ies)\b", re.I),
+    re.compile(r"\bfamily[-\s]friendly\b", re.I),
+    re.compile(r"\bkid[-\s]friendly\b", re.I),
+    re.compile(r"\byouth\b", re.I),
+    re.compile(r"\bpre[-\s]?school(er)?\b", re.I),
+    re.compile(r"\bstory[-\s]?time\b", re.I),
+    re.compile(r"\bstory[-\s]?hour\b", re.I),
+    re.compile(r"\bplay\s?group\b", re.I),
+    re.compile(r"\ball\s+ages\b", re.I),
+    re.compile(r"\bages?\s+\d", re.I),
+    re.compile(r"\bsprouts?\b", re.I),
+    re.compile(r"\bcaterpillars?\b", re.I),
+    re.compile(r"\blittle\s+(explorers?|learners?|scientists?|artists?)\b", re.I),
+    re.compile(r"\bmommy\s+(and|&)\s+me\b", re.I),
+    re.compile(r"\bdaddy\s+(and|&)\s+me\b", re.I),
+    re.compile(r"\bmusic\s+together\b", re.I),
+    re.compile(r"\bstroller\b", re.I),
+    re.compile(r"\bnature\s+program\b", re.I),
+    re.compile(r"\bpetting\s+zoo\b", re.I),
+    re.compile(r"\bfestival\b", re.I),  # marginal — muni festivals are usually family
+]
+
+
+def _matches_any(patterns, *texts) -> bool:
+    for text in texts:
+        if not text:
+            continue
+        for pat in patterns:
+            if pat.search(text):
+                return True
+    return False
+
+
+def has_adult_signal(name: str, description: str = "") -> bool:
+    return _matches_any(_ADULT_SIGNALS, name, description)
+
+
+def has_kid_signal(name: str, description: str = "") -> bool:
+    return _matches_any(_KID_SIGNALS, name, description)
+
+
+def content_passes(name: str, description: str = "",
+                   require_kid_signal: bool = False) -> bool:
+    """Return True if the event's title/description should be kept.
+
+    Rules, in order:
+      1. Reject if any adult-signal pattern matches. Always.
+      2. If require_kid_signal is True (firehose source), require at least one
+         kid-signal pattern in title or description.
+      3. Otherwise keep.
+    """
+    if has_adult_signal(name, description):
+        return False
+    if require_kid_signal and not has_kid_signal(name, description):
+        return False
+    return True
