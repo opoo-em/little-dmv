@@ -61,9 +61,16 @@ def _stamp_source_flags(raws: list[dict], src: dict) -> None:
     """Copy per-source config flags onto every raw event from that source so
     downstream normalize/filter can act on them without knowing sources.yaml.
     """
-    if src.get("require_kid_signal"):
-        for e in raws:
+    require_kid = src.get("require_kid_signal", False)
+    require_dmv = src.get("require_dmv_location", False)
+    state = src.get("state")  # "DC" | "MD" | "VA" or None
+    for e in raws:
+        if require_kid:
             e["_require_kid_signal"] = True
+        if require_dmv:
+            e["_require_dmv_location"] = True
+        if state:
+            e.setdefault("_state", state)
 
 
 def run_ical(sources: list[dict], only: set[str] | None,

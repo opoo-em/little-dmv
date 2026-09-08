@@ -29,6 +29,7 @@ ical:
     venue_default: "MCPL branch"
     place_default: indoor
     source: mcpl
+    state: MD
 
   # Smithsonian — Trumba calendar system. No age filter available at feed
   # level, so require_kid_signal below prunes adult programming.
@@ -37,9 +38,15 @@ ical:
     url: https://www.trumba.com/calendars/smithsonian-events.ics
     venue_default: "Smithsonian"
     place_default: indoor
-    distance_venue_key: smithsonian-national-mall
+    # NOTE: intentionally no distance_venue_key here. The Smithsonian iCal
+    # covers dozens of physical museums plus nationwide affiliates; using a
+    # single fallback (the National Mall) made every out-of-DMV event look
+    # like it was in DC. Let normalize.infer_venue_key work off the actual
+    # venue string, and let looks_out_of_dmv drop anything else.
     source: smithsonian
+    state: DC
     require_kid_signal: true
+    require_dmv_location: true
 
 # =============================================================================
 # HTML scrapers (enabled — Schema.org JSON-LD extraction)
@@ -47,29 +54,37 @@ ical:
 scrape:
   - id: butlers-orchard
     module: scripts.scrapers.butlers
+    state: MD
 
   - id: glen-echo-park
     module: scripts.scrapers.glen_echo
+    state: MD
 
   - id: national-building-museum
     module: scripts.scrapers.nbm
+    state: DC
 
   - id: national-childrens-museum
     module: scripts.scrapers.national_childrens_museum
+    state: DC
 
   - id: national-zoo
     module: scripts.scrapers.national_zoo
+    state: DC
 
   - id: pike-and-rose
     module: scripts.scrapers.pike_and_rose
+    state: MD
 
   - id: bethesda-row
     module: scripts.scrapers.bethesda_row
+    state: MD
 
   # Firehose muni calendar — dumps commission meetings, adult concerts,
   # naloxone training, etc. Require a positive kid signal to keep an event.
   - id: rockville-city
     module: scripts.scrapers.rockville
+    state: MD
     require_kid_signal: true
 
   # MCPL HTML fallback retired 2026-09-08 — canonical iCal at libnet.info
@@ -83,7 +98,9 @@ scrape:
   # the list page); replacement scraper being written per docs/sources.md.
   - id: montgomery-parks
     module: scripts.scrapers.montgomery_parks
+    state: MD
 
   # Aggregator — put LAST so canonical sources win in dedupe.
   - id: kidfriendly-dc
     module: scripts.scrapers.kidfriendly_dc
+    state: DC

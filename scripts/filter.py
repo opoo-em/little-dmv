@@ -138,6 +138,11 @@ _ADULT_SIGNALS = [
     re.compile(r"\bcareer\s+fair\b", re.I),
     re.compile(r"\bjob\s+fair\b", re.I),
     re.compile(r"\bremembrance\s+ceremony\b", re.I),
+    # Smithsonian Associates = the museum system's adult continuing-education
+    # arm. Programming ranges from Renaissance history lectures to wine
+    # tastings; nothing on that side is for toddlers.
+    re.compile(r"\bsmithsonian\s+associates\b", re.I),
+    re.compile(r"smithsonianassociates\.org", re.I),
     # Adult-only markers
     re.compile(r"\b(?:18|21)\s*\+", re.I),
     re.compile(r"\badults?\s+only\b", re.I),
@@ -191,26 +196,52 @@ def _matches_any(patterns, *texts) -> bool:
     return False
 
 
-def has_adult_signal(name: str, description: str = "") -> bool:
-    return _matches_any(_ADULT_SIGNALS, name, description)
+def has_adult_signal(name: str, description: str = "", venue: str = "") -> bool:
+    return _matches_any(_ADULT_SIGNALS, name, description, venue)
 
 
-def has_kid_signal(name: str, description: str = "") -> bool:
-    return _matches_any(_KID_SIGNALS, name, description)
+def has_kid_signal(name: str, description: str = "", venue: str = "") -> bool:
+    return _matches_any(_KID_SIGNALS, name, description, venue)
 
 
-def content_passes(name: str, description: str = "",
+# Geographic guard for national feeds (e.g. Smithsonian via Trumba lists
+# affiliate events across the country). Matches venue strings that end in
+# ", <non-DMV state>" — full names or two-letter codes. DC / Maryland /
+# Virginia stay, everything else is dropped when the source flags itself
+# as require_dmv_location.
+_NON_DMV_STATES = re.compile(
+    r",\s*(?:"
+    r"alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|"
+    r"florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|"
+    r"louisiana|maine|massachusetts|michigan|minnesota|mississippi|missouri|"
+    r"montana|nebraska|nevada|new\s+hampshire|new\s+jersey|new\s+mexico|"
+    r"new\s+york|north\s+carolina|north\s+dakota|ohio|oklahoma|oregon|"
+    r"pennsylvania|rhode\s+island|south\s+carolina|south\s+dakota|tennessee|"
+    r"texas|utah|vermont|west\s+virginia|wisconsin|wyoming"
+    r"|"
+    r"al|ak|az|ar|ca|co|ct|de|fl|ga|hi|id|il|in|ia|ks|ky|la|me|ma|mi|mn|ms|mo|"
+    r"mt|ne|nv|nh|nj|nm|ny|nc|nd|oh|ok|or|pa|ri|sc|sd|tn|tx|ut|vt|wv|wi|wy"
+    r")\b",
+    re.I,
+)
+
+
+def looks_out_of_dmv(venue: str) -> bool:
+    return bool(venue) and bool(_NON_DMV_STATES.search(venue))
+
+
+def content_passes(name: str, description: str = "", venue: str = "",
                    require_kid_signal: bool = False) -> bool:
-    """Return True if the event's title/description should be kept.
+    """Return True if the event's title/description/venue should be kept.
 
     Rules, in order:
       1. Reject if any adult-signal pattern matches. Always.
       2. If require_kid_signal is True (firehose source), require at least one
-         kid-signal pattern in title or description.
+         kid-signal pattern in title, description, or venue.
       3. Otherwise keep.
     """
-    if has_adult_signal(name, description):
+    if has_adult_signal(name, description, venue):
         return False
-    if require_kid_signal and not has_kid_signal(name, description):
+    if require_kid_signal and not has_kid_signal(name, description, venue):
         return False
     return True

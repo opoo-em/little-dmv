@@ -14,7 +14,8 @@ def _now():
 def test_basic_canonical():
     raw = {
         "name": "Baby Storytime",
-        "start": datetime(2026, 9, 13, 10, 30, tzinfo=timezone.utc),
+        # 14:30 UTC = 10:30 AM Eastern (DST). Display is always local.
+        "start": datetime(2026, 9, 13, 14, 30, tzinfo=timezone.utc),
         "url": "https://example.com/e/1",
         "source": "mcpl",
     }
@@ -137,6 +138,87 @@ def test_require_kid_signal_keeps_toddler_program():
         "_require_kid_signal": True,
     }
     assert to_canonical(raw, now=_now()) is not None
+
+
+def test_utc_time_converted_to_eastern():
+    # 22:30 UTC on 2026-09-13 = 6:30 PM EDT (pajama storytime slot).
+    raw = {
+        "name": "Pajama Storytime",
+        "start": datetime(2026, 9, 13, 22, 30, tzinfo=timezone.utc),
+        "url": "https://example.com",
+        "source": "mcpl",
+    }
+    e = to_canonical(raw, now=_now())
+    assert e["time"] == "18:30"
+
+
+def test_dmv_filter_rejects_new_hampshire():
+    raw = {
+        "name": "Duck Race",
+        "start": datetime(2026, 9, 12, 14, 0, tzinfo=timezone.utc),
+        "url": "https://example.com",
+        "source": "smithsonian",
+        "venue": "Auburn Village Auburn, New Hampshire",
+        "_require_dmv_location": True,
+    }
+    assert to_canonical(raw, now=_now()) is None
+
+
+def test_dmv_filter_keeps_dmv_venue():
+    raw = {
+        "name": "Spark!Lab",
+        "start": datetime(2026, 9, 12, 14, 0, tzinfo=timezone.utc),
+        "url": "https://example.com",
+        "source": "smithsonian",
+        "venue": "American History Museum",
+        "_require_dmv_location": True,
+    }
+    assert to_canonical(raw, now=_now()) is not None
+
+
+def test_smithsonian_associates_rejected_everywhere():
+    raw = {
+        "name": "The Fight for Nazi-Looted Art",
+        "start": datetime(2026, 9, 12, 22, 30, tzinfo=timezone.utc),
+        "url": "https://smithsonianassociates.org/x",
+        "source": "smithsonian",
+        "venue": "smithsonianassociates.org",
+    }
+    assert to_canonical(raw, now=_now()) is None
+
+
+def test_state_stamped_on_event():
+    raw = {
+        "name": "Storytime",
+        "start": datetime(2026, 9, 13, 14, 30, tzinfo=timezone.utc),
+        "url": "https://example.com",
+        "source": "mcpl",
+        "_state": "MD",
+    }
+    e = to_canonical(raw, now=_now())
+    assert e["state"] == "MD"
+
+
+def test_venue_inference_gives_distance_band():
+    # When the source doesn't set venue_key but the venue string matches a
+    # known MCPL branch, distance banding should still work.
+    import os
+    os.environ["HOME_LAT"] = "39.0845"
+    os.environ["HOME_LNG"] = "-77.1528"
+    try:
+        raw = {
+            "name": "Baby Storytime",
+            "start": datetime(2026, 9, 13, 14, 30, tzinfo=timezone.utc),
+            "url": "https://example.com",
+            "source": "mcpl",
+            "venue": "Twinbrook Library",
+        }
+        e = to_canonical(raw, now=_now())
+        # Twinbrook is a few miles from Rockville home.
+        assert e["distance_mi_range"] in ("0-5", "6-10")
+    finally:
+        del os.environ["HOME_LAT"]
+        del os.environ["HOME_LNG"]
 
 
 def test_id_is_stable_across_calls():

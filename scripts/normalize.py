@@ -27,9 +27,23 @@ import html
 import re
 from datetime import datetime, timezone
 from typing import Any, Optional
+from zoneinfo import ZoneInfo
 
 from . import distance
-from .filter import age_passes, content_passes
+from .filter import age_passes, content_passes, looks_out_of_dmv
+
+# All display date/time fields are rendered in DMV local time. iCal feeds
+# arrive in a variety of timezones (some UTC, some TZID=America/New_York,
+# some floating). Normalize the presentation so Em never sees a UTC time.
+_LOCAL_TZ = ZoneInfo("America/New_York")
+
+
+def _to_local(dt: Optional[datetime]) -> Optional[datetime]:
+    if dt is None:
+        return None
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt.astimezone(_LOCAL_TZ)
 
 _TAG_RE = re.compile(r"<[^>]+>")
 _WS_RE = re.compile(r"\s+")
@@ -87,12 +101,20 @@ def to_canonical(raw: dict[str, Any], now: Optional[datetime] = None) -> Optiona
         return None
 
     description = _clean_text(raw.get("description") or "")
+    venue = _clean_text(raw.get("venue") or "")
 
     if not content_passes(
         name,
         description,
+        venue,
         require_kid_signal=bool(raw.get("_require_kid_signal")),
     ):
+        return None
+
+    # Geographic guard: some feeds (Smithsonian via Trumba, notably) publish
+    # affiliate events across the country. Reject those when the source is
+    # marked require_dmv_location.
+    if raw.get("_require_dmv_location") and looks_out_of_dmv(venue):
         return None
 
     passes, reason = age_passes(raw.get("age"))
@@ -101,10 +123,15 @@ def to_canonical(raw: dict[str, Any], now: Optional[datetime] = None) -> Optiona
 
     end = raw.get("end") if isinstance(raw.get("end"), datetime) else None
 
+    # If the source gave us a venue string but no venue_key, try to infer one
+    # from the venue text — MCPL library branches, for instance, arrive with
+    # "Rockville Memorial Library" and we know that maps to mcpl-rockville.
+    venue_key = raw.get("venue_key") or distance.infer_venue_key(venue)
+
     band = distance.band_for(
         lat=raw.get("lat"),
         lng=raw.get("lng"),
-        venue_key=raw.get("venue_key"),
+        venue_key=venue_key,
     )
 
     cost_type = raw.get("cost_type") or "free"
@@ -114,17 +141,21 @@ def to_canonical(raw: dict[str, Any], now: Optional[datetime] = None) -> Optiona
 
     now = now or datetime.now(timezone.utc)
 
+    local_start = _to_local(start)
+    local_end = _to_local(end)
+
     return {
         "id": _stable_id(source, name, start),
-        "date": start.strftime("%Y-%m-%d"),
-        "time": start.strftime("%H:%M"),
-        "end": end.strftime("%H:%M") if end else None,
+        "date": local_start.strftime("%Y-%m-%d"),
+        "time": local_start.strftime("%H:%M"),
+        "end": local_end.strftime("%H:%M") if local_end else None,
         "name": name,
-        "venue": _clean_text(raw.get("venue") or ""),
+        "venue": venue,
         "distance_mi_range": band or "unknown",
         "cost_type": cost_type,
         "cost_label": cost_label,
         "place": place,
+        "state": raw.get("_state"),  # for the DC-vs-not filter
         "age": raw.get("age") or "unspecified",
         "age_match_reason": reason,
         "description": description,

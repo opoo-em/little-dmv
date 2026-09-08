@@ -49,14 +49,14 @@ def fetch(source: ICalSource, now: datetime | None = None) -> list[dict]:
 
 
 def _to_raw(component, start: datetime, end: datetime | None, source: ICalSource) -> dict:
-    location = str(component.get("location") or "").strip()
+    location = _ical_str(component.get("location")).strip()
     return {
-        "name": str(component.get("summary") or "").strip(),
+        "name": _ical_str(component.get("summary")).strip(),
         "start": start,
         "end": end,
         "venue": location or source.venue_default,
-        "description": str(component.get("description") or "").strip(),
-        "url": str(component.get("url") or "").strip(),
+        "description": _ical_str(component.get("description")).strip(),
+        "url": _ical_str(component.get("url")).strip(),
         "source": source.source or source.id,
         "place": source.place_default,
         "venue_key": source.distance_venue_key,
@@ -67,13 +67,35 @@ def _to_raw(component, start: datetime, end: datetime | None, source: ICalSource
 _AGE_HINT_KEYS = ("categories", "description", "summary")
 
 
+def _ical_str(val) -> str:
+    """Coerce an icalendar value (vText, vCategory, list of same) to plain str.
+
+    Bare str(val) on a vCategory returns the Python repr —
+    `vCategory([vText(b'NZP Kids and Families')], params=Parameters({}))` —
+    which then leaks into our output. Prefer .to_ical() and decode.
+    """
+    if val is None:
+        return ""
+    try:
+        raw = val.to_ical()
+    except AttributeError:
+        return str(val)
+    if isinstance(raw, bytes):
+        try:
+            return raw.decode("utf-8")
+        except UnicodeDecodeError:
+            return raw.decode("utf-8", errors="replace")
+    return str(raw)
+
+
 def _extract_age(component) -> str:
     parts = []
     for key in _AGE_HINT_KEYS:
         val = component.get(key)
-        if val:
-            parts.append(str(val))
-    return " | ".join(parts)
+        if not val:
+            continue
+        parts.append(_ical_str(val))
+    return " | ".join(p for p in parts if p)
 
 
 def _event_start(component) -> datetime | None:

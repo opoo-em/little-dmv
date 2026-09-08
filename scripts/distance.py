@@ -63,6 +63,7 @@ VENUE_COORDS: dict[str, tuple[float, float]] = {
     "mcpl-potomac": (39.0187, -77.2085),
     "mcpl-quince-orchard": (39.1394, -77.1878),
     "mcpl-white-oak": (39.0400, -76.9877),
+    "mcpl-wheaton": (39.0389, -77.0553),
     # Montgomery Parks kid-heavy venues
     "cabin-john-regional-park": (39.0289, -77.1720),
     "wheaton-regional-park": (39.0451, -77.0355),
@@ -88,6 +89,66 @@ VENUE_COORDS: dict[str, tuple[float, float]] = {
     "bethesda-row": (38.9807, -77.0951),
     "congressional-plaza": (39.0578, -77.1211),
 }
+
+
+# Substrings we can use to infer a venue_key from a raw venue name string
+# when the source (an iCal feed, usually) doesn't set one explicitly. The
+# match is a substring test on lowercased venue text; more specific keys
+# should come first so "Wheaton Library" matches mcpl-* before falling
+# through to the park.
+_VENUE_INFERENCE: list[tuple[str, str]] = [
+    ("rockville memorial library", "mcpl-rockville"),
+    ("twinbrook library", "mcpl-twinbrook"),
+    ("aspen hill library", "mcpl-aspenhill"),
+    ("bethesda library", "mcpl-bethesda"),
+    ("davis library", "mcpl-davis"),
+    ("gaithersburg library", "mcpl-gaithersburg"),
+    ("germantown library", "mcpl-germantown"),
+    ("kensington park library", "mcpl-kensington-park"),
+    ("olney library", "mcpl-olney"),
+    ("potomac library", "mcpl-potomac"),
+    ("quince orchard library", "mcpl-quince-orchard"),
+    ("white oak library", "mcpl-white-oak"),
+    ("wheaton library", "mcpl-wheaton"),  # not yet in VENUE_COORDS; see below
+    ("wheaton regional park", "wheaton-regional-park"),
+    ("cabin john regional park", "cabin-john-regional-park"),
+    ("brookside gardens", "brookside-gardens"),
+    ("meadowside nature center", "meadowside-nature-center"),
+    ("locust grove nature center", "locust-grove-nature-center"),
+    ("black hill regional park", "black-hill-regional-park"),
+    ("glen echo park", "glen-echo-park"),
+    ("butler's orchard", "butlers-orchard"),
+    ("butlers orchard", "butlers-orchard"),
+    ("national zoo", "national-zoo"),
+    ("kennedy center", "kennedy-center"),
+    ("air and space museum", "smithsonian-national-mall"),
+    ("american history museum", "smithsonian-national-mall"),
+    ("american indian museum", "smithsonian-national-mall"),
+    ("african american history and culture", "smithsonian-national-mall"),
+    ("natural history museum", "smithsonian-national-mall"),
+    ("portrait gallery", "smithsonian-national-mall"),
+    ("smithsonian gardens", "smithsonian-national-mall"),
+    ("postal museum", "smithsonian-national-mall"),
+    ("anacostia community museum", "smithsonian-national-mall"),
+    ("african art museum", "smithsonian-national-mall"),
+    ("asian art museum", "smithsonian-national-mall"),
+    ("american art museum", "smithsonian-national-mall"),
+]
+
+
+def infer_venue_key(venue: str) -> Optional[str]:
+    """Best-effort mapping from a venue name string to a VENUE_COORDS key.
+
+    Returns None when no known substring matches — the caller then treats
+    the event as unknown-distance. Case-insensitive substring test.
+    """
+    if not venue:
+        return None
+    v = venue.lower()
+    for needle, key in _VENUE_INFERENCE:
+        if needle in v:
+            return key
+    return None
 
 
 def band_for(

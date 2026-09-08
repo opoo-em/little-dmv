@@ -379,6 +379,13 @@
       <button class="pill" data-cost="free">Free</button>
       <button class="pill" data-cost="paid">Paid</button>
     </div>
+    <div class="pill-row" role="group" aria-label="State filter">
+      <span class="filter-label">State</span>
+      <button class="pill active" data-state="all">All</button>
+      <button class="pill" data-state="MD">MD only</button>
+      <button class="pill" data-state="no-dc">Hide DC</button>
+      <button class="pill" data-state="DC">DC only</button>
+    </div>
   </div>
 
   <main id="list">
@@ -394,7 +401,7 @@
   let EVENTS = [];
   let LAST_UPDATED = null;
 
-  const state = { range: 'weekend', place: 'all', cost: 'all', from: null, to: null };
+  const state = { range: 'weekend', place: 'all', cost: 'all', stateFilter: 'all', from: null, to: null };
 
   const listEl = document.getElementById('list');
   const rangePanel = document.getElementById('rangePanel');
@@ -473,6 +480,9 @@
       if (e.date < from || e.date > to) return false;
       if (state.place !== 'all' && e.place !== state.place) return false;
       if (state.cost !== 'all' && e.cost_type !== state.cost) return false;
+      if (state.stateFilter === 'no-dc' && e.state === 'DC') return false;
+      if (state.stateFilter === 'MD' && e.state !== 'MD') return false;
+      if (state.stateFilter === 'DC' && e.state !== 'DC') return false;
       return true;
     }).sort((a,b) => a.date === b.date ? a.time.localeCompare(b.time) : a.date.localeCompare(b.date));
 
@@ -545,6 +555,14 @@
       document.querySelectorAll('.pill[data-cost]').forEach(x => x.classList.remove('active'));
       p.classList.add('active');
       state.cost = p.dataset.cost;
+      render();
+    });
+  });
+  document.querySelectorAll('.pill[data-state]').forEach(p => {
+    p.addEventListener('click', () => {
+      document.querySelectorAll('.pill[data-state]').forEach(x => x.classList.remove('active'));
+      p.classList.add('active');
+      state.stateFilter = p.dataset.state;
       render();
     });
   });

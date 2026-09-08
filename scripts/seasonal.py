@@ -82,4 +82,30 @@ def _expand_one(entry: dict, on: date, time: str, end_time: str | None) -> dict:
         "url": entry.get("url", ""),
         "description": entry.get("description", ""),
         "source": entry.get("source", "seasonal"),
+        "_state": _state_for(entry),
     }
+
+
+# Small mapping from seasonal.json venue_key values to the state the venue
+# lives in. Add here when a new seasonal entry lands in a state not covered.
+_STATE_BY_VENUE_KEY = {
+    "butlers-orchard": "MD",
+    "rockville-town-square": "MD",
+    "bethesda-row": "MD",
+    "national-zoo": "DC",
+    "national-building-museum": "DC",
+    "national-childrens-museum": "DC",
+    "kennedy-center": "DC",
+    "smithsonian-national-mall": "DC",
+    "wheaton-regional-park": "MD",
+    "cabin-john-regional-park": "MD",
+    "brookside-gardens": "MD",
+    "glen-echo-park": "MD",
+}
+
+
+def _state_for(entry: dict) -> str | None:
+    if entry.get("state"):
+        return entry["state"]
+    key = entry.get("venue_key")
+    return _STATE_BY_VENUE_KEY.get(key) if key else None
