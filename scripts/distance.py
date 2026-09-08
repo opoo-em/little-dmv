@@ -64,6 +64,15 @@ VENUE_COORDS: dict[str, tuple[float, float]] = {
     "mcpl-quince-orchard": (39.1394, -77.1878),
     "mcpl-white-oak": (39.0400, -76.9877),
     "mcpl-wheaton": (39.0389, -77.0553),
+    # More MCPL branches — public addresses, approximate but within a
+    # few hundred meters (haversine bands are 5-mile bins so this is fine).
+    "mcpl-mcgee": (38.9954, -77.0288),           # Brigadier Gen. C.E. McGee Library (Silver Spring)
+    "mcpl-chevy-chase": (38.9822, -77.0805),
+    "mcpl-connie-morella": (38.9836, -77.0951),  # formerly Bethesda Regional
+    "mcpl-little-falls": (38.9670, -77.1155),
+    "mcpl-long-branch": (38.9942, -77.0210),
+    "mcpl-maggie-nightingale": (39.1502, -77.4108),  # Poolesville
+    "mcpl-marilyn-praisner": (39.1023, -76.9410),    # Burtonsville
     # Montgomery Parks kid-heavy venues
     "cabin-john-regional-park": (39.0289, -77.1720),
     "wheaton-regional-park": (39.0451, -77.0355),
@@ -109,7 +118,17 @@ _VENUE_INFERENCE: list[tuple[str, str]] = [
     ("potomac library", "mcpl-potomac"),
     ("quince orchard library", "mcpl-quince-orchard"),
     ("white oak library", "mcpl-white-oak"),
-    ("wheaton library", "mcpl-wheaton"),  # not yet in VENUE_COORDS; see below
+    ("wheaton library", "mcpl-wheaton"),
+    ("brigadier general charles e", "mcpl-mcgee"),
+    ("mcgee library", "mcpl-mcgee"),
+    ("chevy chase library", "mcpl-chevy-chase"),
+    ("connie morella library", "mcpl-connie-morella"),
+    ("little falls library", "mcpl-little-falls"),
+    ("long branch library", "mcpl-long-branch"),
+    ("maggie nightingale library", "mcpl-maggie-nightingale"),
+    ("marilyn j. praisner library", "mcpl-marilyn-praisner"),
+    ("marilyn j praisner library", "mcpl-marilyn-praisner"),
+    ("praisner library", "mcpl-marilyn-praisner"),
     ("wheaton regional park", "wheaton-regional-park"),
     ("cabin john regional park", "cabin-john-regional-park"),
     ("brookside gardens", "brookside-gardens"),

@@ -48,6 +48,10 @@ def _to_local(dt: Optional[datetime]) -> Optional[datetime]:
 _TAG_RE = re.compile(r"<[^>]+>")
 _WS_RE = re.compile(r"\s+")
 _LITERAL_ESC_RE = re.compile(r"\\[nrt]")
+# iCal (RFC 5545) escapes `,` `;` and `\` as `\,` `\;` `\\` in TEXT values.
+# When we round-trip through icalendar's .to_ical(), these come back
+# escaped. Undo them for display.
+_ICAL_ESC_RE = re.compile(r"\\([,;\\])")
 
 
 def _slug(text: str) -> str:
@@ -65,6 +69,7 @@ def _clean_text(raw: str) -> str:
     if not raw:
         return ""
     s = html.unescape(html.unescape(raw))
+    s = _ICAL_ESC_RE.sub(r"\1", s)
     s = _LITERAL_ESC_RE.sub(" ", s)
     s = _TAG_RE.sub(" ", s)
     s = _WS_RE.sub(" ", s)
@@ -156,7 +161,7 @@ def to_canonical(raw: dict[str, Any], now: Optional[datetime] = None) -> Optiona
         "cost_label": cost_label,
         "place": place,
         "state": raw.get("_state"),  # for the DC-vs-not filter
-        "age": raw.get("age") or "unspecified",
+        "age": _clean_text(raw.get("age") or "") or "unspecified",
         "age_match_reason": reason,
         "description": description,
         "url": url,
