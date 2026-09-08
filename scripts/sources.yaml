@@ -30,6 +30,7 @@ ical:
     place_default: indoor
     source: mcpl
     state: MD
+    source_url: https://mcpl.libnet.info/
 
   # Smithsonian — Trumba calendar system. No age filter available at feed
   # level, so require_kid_signal below prunes adult programming.
@@ -47,6 +48,7 @@ ical:
     state: DC
     require_kid_signal: true
     require_dmv_location: true
+    source_url: https://www.si.edu/events
 
 # =============================================================================
 # HTML scrapers (enabled — Schema.org JSON-LD extraction)
@@ -86,6 +88,7 @@ scrape:
     module: scripts.scrapers.rockville
     state: MD
     require_kid_signal: true
+    source_url: https://www.rockvillemd.gov/calendar.aspx
 
   # MCPL HTML fallback retired 2026-09-08 — canonical iCal at libnet.info
   # is wired above.

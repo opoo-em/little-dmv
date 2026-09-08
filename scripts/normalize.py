@@ -214,6 +214,7 @@ def to_canonical(raw: dict[str, Any], now: Optional[datetime] = None) -> Optiona
         "age_match_reason": reason,
         "description": description,
         "url": url,
+        "source_url": raw.get("_source_url"),
         "source": source,
         "added_at": _iso(now),
         "updated_at": _iso(now),

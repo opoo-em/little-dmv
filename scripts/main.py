@@ -64,6 +64,7 @@ def _stamp_source_flags(raws: list[dict], src: dict) -> None:
     require_kid = src.get("require_kid_signal", False)
     require_dmv = src.get("require_dmv_location", False)
     state = src.get("state")  # "DC" | "MD" | "VA" or None
+    source_url = src.get("source_url")  # calendar homepage — fallback for "View source"
     for e in raws:
         if require_kid:
             e["_require_kid_signal"] = True
@@ -71,6 +72,8 @@ def _stamp_source_flags(raws: list[dict], src: dict) -> None:
             e["_require_dmv_location"] = True
         if state:
             e.setdefault("_state", state)
+        if source_url:
+            e.setdefault("_source_url", source_url)
 
 
 def run_ical(sources: list[dict], only: set[str] | None,

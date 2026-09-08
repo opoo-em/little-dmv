@@ -472,6 +472,19 @@
     return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   }
 
+  function renderSourceLink(e) {
+    // Prefer the per-event URL. Fall back to the source's calendar homepage
+    // if that's all we have. If neither exists, don't render a link at all
+    // (an empty href would navigate to the app root).
+    if (e.url) {
+      return `<a class="source-link" href="${esc(e.url)}" target="_blank" rel="noopener">View source →</a>`;
+    }
+    if (e.source_url) {
+      return `<a class="source-link" href="${esc(e.source_url)}" target="_blank" rel="noopener">View ${esc(e.source)} calendar →</a>`;
+    }
+    return '';
+  }
+
   function render() {
     const { from, to } = rangeBounds();
     const filtered = EVENTS.filter(e => {
@@ -508,7 +521,7 @@
               <div class="detail-row"><span class="detail-label">Ages</span><span class="detail-value">${esc(e.age)}</span></div>
               <div class="detail-row"><span class="detail-label">Setting</span><span class="detail-value">${e.place === 'indoor' ? 'Indoor' : 'Outdoor'}</span></div>
               <p class="detail-desc">${esc(e.description)}</p>
-              <a class="source-link" href="${esc(e.url)}" target="_blank" rel="noopener">View source →</a>
+              ${renderSourceLink(e)}
             </div>
           </article>
         `).join('')}
