@@ -68,9 +68,12 @@ def _clean_text(raw: str) -> str:
     """
     if not raw:
         return ""
-    s = html.unescape(html.unescape(raw))
-    s = _ICAL_ESC_RE.sub(r"\1", s)
+    # Order matters: iCal escapes come off first so a source-side sequence
+    # like "&amp\\;" becomes "&amp;" (iCal step) → "&" (HTML step) rather
+    # than "&\\;" → "&;" (which is what happens if HTML runs first).
+    s = _ICAL_ESC_RE.sub(r"\1", raw)
     s = _LITERAL_ESC_RE.sub(" ", s)
+    s = html.unescape(html.unescape(s))
     s = _TAG_RE.sub(" ", s)
     s = _WS_RE.sub(" ", s)
     return s.strip()
