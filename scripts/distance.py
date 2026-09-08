@@ -73,6 +73,9 @@ VENUE_COORDS: dict[str, tuple[float, float]] = {
     "mcpl-long-branch": (38.9942, -77.0210),
     "mcpl-maggie-nightingale": (39.1502, -77.4108),  # Poolesville
     "mcpl-marilyn-praisner": (39.1023, -76.9410),    # Burtonsville
+    # Rockville-city venues that aren't the town square
+    "croydon-creek-nature-center": (39.0937, -77.1425),
+    "rockville-police-station": (39.0843, -77.1554),
     # Montgomery Parks kid-heavy venues
     "cabin-john-regional-park": (39.0289, -77.1720),
     "wheaton-regional-park": (39.0451, -77.0355),
@@ -129,6 +132,11 @@ _VENUE_INFERENCE: list[tuple[str, str]] = [
     ("marilyn j. praisner library", "mcpl-marilyn-praisner"),
     ("marilyn j praisner library", "mcpl-marilyn-praisner"),
     ("praisner library", "mcpl-marilyn-praisner"),
+    ("croydon creek nature center", "croydon-creek-nature-center"),
+    ("square in rockville town center", "rockville-town-square"),
+    ("rockville town square", "rockville-town-square"),
+    ("rockville town center", "rockville-town-square"),
+    ("rockville city police station", "rockville-police-station"),
     ("wheaton regional park", "wheaton-regional-park"),
     ("cabin john regional park", "cabin-john-regional-park"),
     ("brookside gardens", "brookside-gardens"),
@@ -152,6 +160,9 @@ _VENUE_INFERENCE: list[tuple[str, str]] = [
     ("african art museum", "smithsonian-national-mall"),
     ("asian art museum", "smithsonian-national-mall"),
     ("american art museum", "smithsonian-national-mall"),
+    # Catch-all for events whose venue is just "Smithsonian" without a
+    # specific museum — put LAST so specific museum matches win.
+    ("smithsonian", "smithsonian-national-mall"),
 ]
 
 

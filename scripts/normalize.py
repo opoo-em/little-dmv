@@ -79,6 +79,52 @@ def _clean_text(raw: str) -> str:
     return s.strip()
 
 
+_RANGE_YR_RE = re.compile(r"(?<![\w])(\d+)\s*(?:-|to|–|—)\s*(\d+)\s*(?:yr|yrs|year|years?)\b", re.I)
+_AGES_N_TO_M_RE = re.compile(r"\bages?\s+(\d+)\s*(?:-|to|–|—)\s*(\d+)\b", re.I)
+_MO_RE = re.compile(r"\b(\d+)\s*(?:mo|mos|months?)\b", re.I)
+_YR_PLUS_RE = re.compile(r"(?<![\w])(\d+)\s*\+\s*(?:yr|yrs|year|years?)?\b", re.I)
+
+
+def _age_label(match_reason: str, raw_hint: str) -> str:
+    """Turn the internal age_match_reason (and the raw hint text as fallback)
+    into a short human string suitable for the Ages field in the UI.
+
+    Never returns the concatenated description soup — if we can't find a
+    real age range, we say so.
+    """
+    # Handle the reason strings that already ARE the answer.
+    fixed = {
+        "unspecified": "Ages unspecified",
+        "all-ages": "All ages",
+        "toddler": "Toddler",
+        "preschool": "Preschool",
+    }
+    if match_reason in fixed:
+        return fixed[match_reason]
+    m = re.match(r"range-(\d+)-(\d+)yr", match_reason)
+    if m:
+        return f"{m.group(1)}-{m.group(2)} yrs"
+    m = re.match(r"open-(\d+)\+", match_reason)
+    if m:
+        return f"{m.group(1)}+ yrs"
+    m = re.match(r"months-(\d+)mo", match_reason)
+    if m:
+        return f"{m.group(1)}+ mo"
+
+    # Unrecognized: try to pull a range out of the raw hint text ourselves.
+    if raw_hint:
+        m = _AGES_N_TO_M_RE.search(raw_hint) or _RANGE_YR_RE.search(raw_hint)
+        if m:
+            return f"{m.group(1)}-{m.group(2)} yrs"
+        m = _YR_PLUS_RE.search(raw_hint)
+        if m:
+            return f"{m.group(1)}+ yrs"
+        m = _MO_RE.search(raw_hint)
+        if m:
+            return f"{m.group(1)}+ mo"
+    return "Ages unspecified"
+
+
 def _iso(dt: Optional[datetime]) -> Optional[str]:
     if dt is None:
         return None
@@ -164,7 +210,7 @@ def to_canonical(raw: dict[str, Any], now: Optional[datetime] = None) -> Optiona
         "cost_label": cost_label,
         "place": place,
         "state": raw.get("_state"),  # for the DC-vs-not filter
-        "age": _clean_text(raw.get("age") or "") or "unspecified",
+        "age": _age_label(reason, _clean_text(raw.get("age") or "")),
         "age_match_reason": reason,
         "description": description,
         "url": url,

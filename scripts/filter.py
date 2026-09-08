@@ -226,8 +226,27 @@ _NON_DMV_STATES = re.compile(
 )
 
 
+# Cities in DMV states that are still too far for a Rockville-based mom
+# with a toddler. Anywhere else in VA/MD/DC that we can't identify by
+# state alone still passes; these are the surprising outliers Em has hit
+# (Virginia Beach shows up in Smithsonian's national feed).
+_FAR_DMV_CITIES = re.compile(
+    r"\b(?:"
+    r"virginia\s+beach|norfolk|chesapeake|hampton|newport\s+news|"
+    r"portsmouth|suffolk|richmond|roanoke|charlottesville|"
+    r"williamsburg|lynchburg|"
+    r"ocean\s+city|salisbury|cumberland"
+    # Deliberately NOT including Frederick (~35mi, still a weekend drive)
+    # or Baltimore (~35mi, real destination for kid stuff).
+    r")\b",
+    re.I,
+)
+
+
 def looks_out_of_dmv(venue: str) -> bool:
-    return bool(venue) and bool(_NON_DMV_STATES.search(venue))
+    if not venue:
+        return False
+    return bool(_NON_DMV_STATES.search(venue) or _FAR_DMV_CITIES.search(venue))
 
 
 def content_passes(name: str, description: str = "", venue: str = "",
