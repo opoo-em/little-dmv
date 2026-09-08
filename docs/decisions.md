@@ -102,6 +102,11 @@ New data points, new features, new sources, new display ideas — these are 50/5
 **Decided:** 2026-09-06
 **Why:** Em needs to be able to tell "why haven't I seen new MCPL events in a week?" without running the pipeline manually. events.json carries `sources: {<id>: {last_success_at, last_count, last_error}}`. Successful runs clear `last_error` but leave `last_success_at` alone, so staleness is legible even after a subsequent recovery. Not rendered in the dashboard UI yet — future addition.
 
+### Butler's Orchard: scrape the festival pages, not `/events/`
+**Decided:** 2026-09-08 (evening, via claude.ai reconnaissance)
+**Why:** `butlersorchard.com/events/` (which redirects to `/visit-the-farm/events-calendar/`) is a WordPress + Modern Events Calendar (MEC) widget that hydrates entirely client-side via AJAX. Plain `requests.get()` sees only the empty shell — the page literally renders "No event found!" in the server HTML. That's also why the earlier JSON-LD attempt returned 0 events: there's no data server-side to embed structured data around. The scraper still keeps `URL = "https://butlersorchard.com/events/"` per the module contract, but uses it only to discover the "Festivals + Farm Events" nav links (which ARE in the static HTML). The real events — Bunnyland, Spring Festival, Strawberry Festival, Sunflower Spectacular, Pumpkin Festival — live on ordinary server-rendered WPBakery pages under `/festivals/` and are parsed from their own "Dates:" / "Hours:" / "Admission:" text blocks.
+**Do not** "fix" this back to scraping the calendar URL. There is nothing there to scrape. The pipeline expands multi-date festival listings (e.g. "March 28-29, April 2-4, 6, 11-12") into one event per date range.
+
 ### Skipped sources: Glen Echo Park (main calendar) and Bethesda Row
 **Decided:** 2026-09-08
 **Why:** Em checked both sites during URL discovery. Glen Echo Park's calendar-of-events page is mostly adult programming, and even the "kid" listings are 4+ (Felix is 15mo, target range 1-3). Bethesda Row does not have a real events calendar — content is fragmented across marketing pages ("fashion + style," "health + beauty") and reads as store promotions (Joe & the Juice launch, Mejuri sale) rather than family events. Neither source is worth scraper maintenance.
