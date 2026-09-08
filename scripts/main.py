@@ -55,6 +55,8 @@ def _ical_source_from(raw: dict) -> ical_fetch.ICalSource:
     )
 
 
+
+
 def _stamp_source_flags(raws: list[dict], src: dict) -> None:
     """Copy per-source config flags onto every raw event from that source so
     downstream normalize/filter can act on them without knowing sources.yaml.
@@ -195,10 +197,6 @@ def main() -> int:
     events = dedupe(events)
     print(f"  after dedupe: {len(events)} events", file=sys.stderr)
 
-    # Stamp outdoor events with NWS forecast (no-op if HOME_LAT/LNG unset).
-    forecast_map = weather.build_forecast_map()
-    weather.stamp(events, forecast_map)
-
     if args.keep_dummy and EVENTS_FILE.exists():
         with EVENTS_FILE.open() as f:
             prev = json.load(f)
@@ -207,6 +205,11 @@ def main() -> int:
         events = dedupe(prev_events + events)
         print(f"  after merging {len(prev_events)} manual events: {len(events)} total",
               file=sys.stderr)
+
+    # Stamp outdoor events with NWS forecast AFTER the manual-merge, so
+    # events pulled from the prior events.json also get today's forecast.
+    forecast_map = weather.build_forecast_map()
+    weather.stamp(events, forecast_map)
 
     events.sort(key=lambda e: (e["date"], e["time"], e["name"]))
 

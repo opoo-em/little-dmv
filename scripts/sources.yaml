@@ -16,45 +16,30 @@
 #       # module exposes: ID, NAME, URL, fetch() -> list[dict]
 
 # =============================================================================
-# iCal feeds (unverified — fill in real endpoints during Phase 2 investigation)
+# iCal feeds (verified endpoints)
 # =============================================================================
-#
-# These four venues almost certainly publish iCal feeds; the exact URLs need
-# verification from a network that can reach them (this pipeline runs from
-# GitHub Actions, which can). Steps to verify each — see docs/sources.md
-# investigation notes.
-#
-# ical:
-#   - id: mcpl-kids
-#     name: MCPL — Kids programming
-#     url: https://mcpl.libcal.com/calendar/kids?cid=...&audience=...&iCal=1
-#     venue_default: "MCPL branch"
-#     place_default: indoor
-#     source: mcpl
-#
-#   - id: montgomery-parks
-#     name: Montgomery Parks — Events
-#     url: https://www.montgomeryparks.org/events/feed/ical/  # WordPress + Events Calendar Pro
-#     venue_default: "Montgomery County park"
-#     place_default: outdoor
-#     source: montgomery-parks
-#
-#   - id: kennedy-center-millennium
-#     name: Kennedy Center Millennium Stage
-#     url: https://www.kennedy-center.org/whats-on/millennium-stage/?format=ical
-#     venue_default: "Kennedy Center Millennium Stage"
-#     place_default: indoor
-#     distance_venue_key: kennedy-center
-#     source: kennedy-center
-#
-#   - id: smithsonian-events
-#     name: Smithsonian — Events
-#     url: https://www.si.edu/events/feed/ical  # verify — Smithsonian's Drupal likely serves this
-#     venue_default: "Smithsonian"
-#     place_default: indoor
-#     distance_venue_key: smithsonian-national-mall
-#     source: smithsonian
-ical: []
+ical:
+  # MCPL — LibNet feeds API. Config is a base64-encoded JSON blob URL param.
+  # Ours filters ages=[Toddler, Baby], all locations, days=30 (our lookahead
+  # is 21, +buffer). The feed emits BEGIN:VCALENDAR text/calendar. Feed itself
+  # already applies the age filter, so age_passes is redundant but harmless.
+  - id: mcpl-kids
+    name: MCPL — Toddler & Baby programming
+    url: https://mcpl.libnet.info/feeds?data=eyJmZWVkVHlwZSI6ImljYWwiLCJmaWx0ZXJzIjp7ImxvY2F0aW9uIjpbImFsbCJdLCJhZ2VzIjpbIlRvZGRsZXIiLCJCYWJ5Il0sInR5cGVzIjpbImFsbCJdLCJ0YWdzIjpbXSwidGVybSI6IiIsImRheXMiOjMwfX0=
+    venue_default: "MCPL branch"
+    place_default: indoor
+    source: mcpl
+
+  # Smithsonian — Trumba calendar system. No age filter available at feed
+  # level, so require_kid_signal below prunes adult programming.
+  - id: smithsonian-events
+    name: Smithsonian — Events
+    url: https://www.trumba.com/calendars/smithsonian-events.ics
+    venue_default: "Smithsonian"
+    place_default: indoor
+    distance_venue_key: smithsonian-national-mall
+    source: smithsonian
+    require_kid_signal: true
 
 # =============================================================================
 # HTML scrapers (enabled — Schema.org JSON-LD extraction)
@@ -87,19 +72,15 @@ scrape:
     module: scripts.scrapers.rockville
     require_kid_signal: true
 
-  # MCPL fallback — remove once iCal endpoint is verified and added above,
-  # or leave in place so dedupe favors the iCal version.
-  - id: mcpl
-    module: scripts.scrapers.mcpl
+  # MCPL HTML fallback retired 2026-09-08 — canonical iCal at libnet.info
+  # is wired above.
 
-  # Kennedy Center fallback — likely permanent (React SPA rarely has iCal).
-  # Millennium Stage is mostly adult performances; require kid signal to keep.
-  - id: kennedy-center-millennium
-    module: scripts.scrapers.kennedy_center
-    require_kid_signal: true
+  # Kennedy Center Millennium Stage retired 2026-09-08 — Felix is still too
+  # young for the mostly-adult programming; revisit when he's ~3+.
 
-  # Montgomery Parks HTML fallback — remove once iCal endpoint is verified
-  # and added above, or leave in place so dedupe favors the iCal version.
+  # Montgomery Parks HTML fallback — kept for now; iCal endpoint not found
+  # on their WordPress install. Currently returns 0 events (JSON-LD not on
+  # the list page); replacement scraper being written per docs/sources.md.
   - id: montgomery-parks
     module: scripts.scrapers.montgomery_parks
 
