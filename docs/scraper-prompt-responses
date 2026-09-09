@@ -454,13 +454,5 @@ if __name__ == "__main__":
 
 If it returns 0 events when you run it live, the most likely culprits are (a) NBM's actual TEC theme uses different class names than the documented `Views v2` set, or (b) `/programs-events/` is a landing page whose real dated listings live one level down (e.g. `/adult-programs/`, `/programs-events/kids-programs/`) — worth checking those URLs too if the top-level page comes up empty.
 
-
-
-
-
-
-
-
-
 # 3. Smithsonian National Zoo - output below
 
