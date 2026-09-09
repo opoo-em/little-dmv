@@ -9,7 +9,7 @@ A phone-first dashboard of kid-friendly events across Montgomery County MD and D
 ## Status
 
 **Phase 1 (dashboard + schema): DONE, deployed.**
-**Phase 2 (real data sources): IN PROGRESS.** Pipeline scaffold + 4 HTML scrapers landed. iCal endpoints for MCPL / Montgomery Parks / Kennedy Center / Smithsonian pending URL verification (see `docs/sources.md`). Dummy events still in `events.json` — will be replaced on the next successful pipeline run.
+**Phase 2 (real data sources): LIVE.** MCPL + Smithsonian iCal feeds are pulling; 7 per-site HTML scrapers plus a Rockville fallback are wired (Butler's Orchard, National Building Museum, National Children's Museum, Smithsonian National Zoo, Pike & Rose, Puppet Co Tiny Tots, Montgomery Parks, City of Rockville). Kennedy Center, Glen Echo, Bethesda Row, and KidFriendly DC are deliberately skipped — see `docs/decisions.md` for each ruling. Dummy data has been replaced. See `docs/sources.md` for current wiring.
 
 ## Repo structure
 
@@ -17,27 +17,39 @@ A phone-first dashboard of kid-friendly events across Montgomery County MD and D
 ├── index.html              — the dashboard (reader of events.json)
 ├── favicon.svg             — rainbow heart, Lisa Frank vibes
 ├── data/
-│   └── events.json         — source of truth (dummy data for now)
+│   ├── events.json         — canonical events (rewritten each pipeline run)
+│   └── seasonal.json       — manually-curated annual events
 ├── scripts/
 │   ├── main.py             — pipeline orchestrator (writes data/events.json)
 │   ├── sources.yaml        — registry of iCal feeds and HTML scrapers
 │   ├── ical_fetch.py       — iCal fetching + RRULE expansion
+│   ├── seasonal.py         — reads data/seasonal.json into the pipeline
 │   ├── filter.py           — age filter (~1-3yr overlap rule)
 │   ├── distance.py         — haversine + banding (reads HOME_LAT/HOME_LNG env)
+│   ├── weather.py          — NWS weather stamp for outdoor events
 │   ├── normalize.py        — raw event → canonical schema
 │   ├── add_event.py        — manual add flow ("I saw a sign for X")
 │   ├── requirements.txt
-│   └── scrapers/           — per-site HTML scrapers (Schema.org JSON-LD first)
+│   ├── tests/              — pytest suite
+│   └── scrapers/           — per-site HTML scrapers
+│       ├── base.py         — shared HTTP client
 │       ├── jsonld.py       — shared JSON-LD Event extractor
 │       ├── butlers.py
-│       ├── glen_echo.py
 │       ├── nbm.py
-│       └── kidfriendly_dc.py
+│       ├── national_childrens_museum.py
+│       ├── national_zoo.py
+│       ├── pike_and_rose.py
+│       ├── puppetco.py
+│       ├── montgomery_parks.py
+│       └── rockville.py
 ├── .github/workflows/
 │   └── refresh.yml         — Sunday 8am ET cron + manual trigger
 ├── docs/
 │   ├── decisions.md        — settled design decisions + WHY (read before proposing changes)
-│   └── sources.md          — Phase 2 attack plan: source inventory + priorities + investigation notes
+│   ├── sources.md          — source inventory: what's wired, what's skipped, what's next
+│   ├── scraper-prompts.md  — copy-paste prompts for claude.ai when we need per-site parsers
+│   ├── scraper-prompt-responses/  — claude.ai deliveries, one file per scraper
+│   └── handoff-*.md        — session handoffs (read newest first)
 └── README.md               — this file
 ```
 
@@ -107,7 +119,7 @@ export HOME_LAT=... HOME_LNG=...        # optional; without them, distance is 'u
 python -m scripts.main                  # writes data/events.json
 python -m scripts.main --dry-run        # print to stdout instead
 python -m scripts.main --keep-dummy     # merge with existing manual events
-python -m scripts.main --only butlers-orchard,glen-echo-park   # subset run
+python -m scripts.main --only butlers-orchard,national-zoo     # subset run
 ```
 
 Runs automatically Sunday 12:00 UTC (8am ET) via `.github/workflows/refresh.yml`.
@@ -118,14 +130,15 @@ Add a one-off event you spotted on a sign:
 python -m scripts.add_event                 # interactive prompts
 ```
 
-## Phase 2 roadmap
+## Phase 2 status
 
-Rough order of attack (from `docs/sources.md`):
+Current state (as of the last handoff — see `docs/handoff-*.md` for the newest one):
 
-1. **iCal-having sources** — MCPL, Montgomery Parks, Kennedy Center, Smithsonian. *Endpoints still need verification from a network that can reach them.* See `docs/sources.md` → Investigation notes.
-2. **HTML scrapers for high-volume sources** — Butler's Orchard, Glen Echo, National Building Museum, KidFriendly DC. *Landed, using Schema.org JSON-LD extraction.*
-3. **Newsletter / manual for the long tail** — Congressional Plaza signage, farmers market seasonal quirks. Use `scripts/add_event.py`.
+1. **iCal:** MCPL (Toddler + Baby feed) and Smithsonian (Trumba) are wired and pulling. Montgomery Parks has no iCal endpoint despite the plugin shape — scraper wired for the Featured Events carousel only. Kennedy Center retired (age mismatch).
+2. **HTML scrapers:** Butler's Orchard, National Building Museum, National Children's Museum, Smithsonian National Zoo, Pike & Rose, Puppet Co Tiny Tots, Montgomery Parks, and City of Rockville. Most use per-site parsers rather than JSON-LD (the sites don't emit it). See `docs/decisions.md` for per-source rulings.
+3. **Skipped:** Glen Echo (age mismatch), Bethesda Row (no real events calendar), KidFriendly DC (no structured events on site — replaced by newsletter copy-paste flow via `scripts/add_event.py`).
 
-Also pending in Phase 2:
-- **Home coordinates** need to be added as GitHub Secrets `HOME_LAT` and `HOME_LNG` before distance banding is meaningful.
-- **On-demand refresh via Claude Code** — Em says "refresh little dmv", I run `python -m scripts.main` locally and push. Also the "Run workflow" button in the Actions tab.
+Still pending:
+- **Home coordinates** need to be set as GitHub Secrets `HOME_LAT` and `HOME_LNG` for distance banding to be meaningful.
+- **On-demand refresh via Claude Code** — Em says "refresh little dmv", I trigger the Actions workflow or run `python -m scripts.main` and push.
+- **Newsletter copy-paste flow** for KidFriendly DC and any other unstructured aggregators — Em pastes when she's in a session anyway, Claude files via `add_event.py`.
