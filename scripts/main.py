@@ -120,14 +120,22 @@ def run_scrapers(scrapers: list[dict], only: set[str] | None,
     return raws, errors
 
 
-def _load_prev_health() -> dict[str, dict]:
+def _load_prev_health(live_ids: set[str]) -> dict[str, dict]:
+    """Return the previous health map, pruned to only the IDs that are still
+    live in sources.yaml (plus the always-live "seasonal" pseudo-source).
+    Without this prune, once a source is added its entry lives in the health
+    map forever — retired sources like glen-echo-park would keep showing
+    stale errors long after being removed from sources.yaml.
+    """
     if not EVENTS_FILE.exists():
         return {}
     try:
         with EVENTS_FILE.open() as f:
-            return (json.load(f) or {}).get("sources", {}) or {}
+            prev = (json.load(f) or {}).get("sources", {}) or {}
     except (json.JSONDecodeError, OSError):
         return {}
+    keep = live_ids | {"seasonal"}
+    return {sid: entry for sid, entry in prev.items() if sid in keep}
 
 
 def _mark_ok(health: dict[str, dict], source_id: str, count: int) -> None:
@@ -182,7 +190,8 @@ def main() -> int:
           file=sys.stderr)
 
     raws: list[dict] = []
-    health = _load_prev_health()  # start from previous state; each run updates it
+    live_ids = {s["id"] for s in sources["ical"]} | {s["id"] for s in sources["scrape"]}
+    health = _load_prev_health(live_ids)  # start from previous state; each run updates it
     ical_raws, ical_errs = run_ical(sources["ical"], only, health)
     raws.extend(ical_raws)
     scrape_raws, scrape_errs = run_scrapers(sources["scrape"], only, health)
