@@ -101,7 +101,7 @@ scrape:
     module: scripts.scrapers.montgomery_parks
     state: MD
 
-  # Aggregator — put LAST so canonical sources win in dedupe.
-  - id: kidfriendly-dc
-    module: scripts.scrapers.kidfriendly_dc
-    state: DC
+  # KidFriendly DC was here as an aggregator scraper. Retired 2026-09-09
+  # -- site has no structured events; content lives inside prose blog
+  # posts. Replaced by newsletter copy-paste flow via add_event.py. See
+  # docs/decisions.md.

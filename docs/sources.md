@@ -106,7 +106,7 @@ Not really "sources" — one-off events with predictable annual timing. Should b
 
 | Source | URL | Feed | Priority | Status |
 |---|---|---|---|---|
-| KidFriendly DC | kidfriendlydc.com | scrape | high | not started |
+| KidFriendly DC | kidfriendlydc.com | — | **skipped** | No events listing on the site; content is prose inside WP blog posts. Em ruled 2026-09-09 (`docs/decisions.md`). Newsletter forward: Em copy-pastes into chat, `add_event.py` files them. |
 | Washington Parent Magazine | washingtonparent.com | ? | med | not started |
 | Washington Family Magazine | washingtonfamily.com | ? | med | not started |
 | DC Urban Moms & Dads | dcurbanmom.com | manual (forum, no feed) | low | not started |
@@ -166,6 +166,5 @@ Four scrapers are enabled now and will run on the next pipeline invocation:
 | Butler's Orchard | `scripts.scrapers.butlers` | JSON-LD from `butlersorchard.com/events/` |
 | Glen Echo Park | `scripts.scrapers.glen_echo` | JSON-LD from `glenechopark.org/calendar-of-events` |
 | National Building Museum | `scripts.scrapers.nbm` | JSON-LD from `nbm.org/programs-events/` |
-| KidFriendly DC | `scripts.scrapers.kidfriendly_dc` | JSON-LD from `kidfriendlydc.com/events/` |
 
 All four use the shared `scrapers/jsonld.py` extractor. First real run will happen in GitHub Actions (network egress is restricted in the local Claude Code environment). If any scraper returns zero events, the site probably doesn't emit Schema.org Event nodes — patch the module with per-site HTML parsing.
