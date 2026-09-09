@@ -113,6 +113,12 @@ New data points, new features, new sources, new display ideas — these are 50/5
 **What replaces Glen Echo:** The Puppet Co — Tiny Tots (`thepuppetco.org/tiny-tots`) runs on the Glen Echo grounds and is *explicitly* designed for 18mo-4yr (30 min runtime, no dark room, no surprising loud noises, open theatre doors). Age-perfect for Felix. Wired as `puppetco-tinytots` scraper.
 **What replaces Bethesda Row:** Nothing at scraper level. Bethesda Row Winter Wonderland remains in `data/seasonal.json` — that's a real family event and legit to hand-maintain annually.
 
+### Puppet Co Tiny Tots: hand-mapped `ARTIST_EVT_IDS` is expected, not a bug
+**Decided:** 2026-09-09 (during scraper install)
+**Why:** The `/tiny-tots` marketing page has no dates and no JSON-LD — it's a Squarespace bio page linking out to `thepuppetco.showare.com`. That ticketing site's calendar/index widgets are JS-rendered (raw HTML is just "Loading..." placeholders), so we can't crawl an index of active shows. What IS server-rendered is the per-artist ticketing pages: `https://thepuppetco.showare.com/eventperformances.asp?evt=<id>`. Those contain the real titles, times, and dates. The scraper therefore hardcodes a mapping in `scripts/scrapers/puppetco.py::ARTIST_EVT_IDS` of the 5 currently-listed guest artists to their `evt=` ids. Each run cross-checks against the artist headings actually present on `/tiny-tots`, so a retired artist silently drops out — but a **new** guest artist won't be picked up automatically.
+**Maintenance:** If `puppetco-tinytots` count drops unexpectedly, or a new guest-artist heading appears on `/tiny-tots` that isn't in `ARTIST_EVT_IDS`, find the new `evt=` id via a search like `site:thepuppetco.showare.com eventperformances.asp` and add it to the dict. The scraper self-prunes; it does not self-discover.
+**Do not** "fix" this by scraping the ShoWare index. It is JS-rendered. Playwright/Selenium would work but is a maintenance treadmill that doesn't fit the "check on Sunday, be reliable" cadence — same ruling as the Butler's calendar-widget case.
+
 ### Sharing: mine only, neutral UI copy
 **Decided:** 2026-09-06
 **Why:** Em owns the app but may screen-share to husband/MIL/nanny. No cute in-jokes on the visible UI. (The chat is where the sweet nothings live.)
