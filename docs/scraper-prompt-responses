@@ -1,4 +1,4 @@
-#1. KidFriendly DC — RECONNAISSANCE FIRST prompt - output below
+# 1. KidFriendly DC — RECONNAISSANCE FIRST prompt - output below
 
 Here's what I found. One big surprise up front: **`/events/` doesn't serve an events listing at all — it redirects to an old blog post.**
 
@@ -38,3 +38,7 @@ For what it's worth, individual events *within* that old post aren't in structur
 2. **No Events Calendar plugin** — no gold-path API.
 3. **`/wp-json/wp/v2/posts?per_page=5` is your best structured-data source** if the "events" content actually lives in regular posts (looks like it does — "Five Things", "Weekend Round-Up" posts contain event listings in prose).
 4. You should verify what raw status code your GH Actions scraper is actually getting for `/events/` (301/302 → old post, or maybe 200 with different content) — that'll tell you whether it's a redirect loop, a slow origin, or something GH-Actions-IP-specific that I'm not seeing from here.
+
+# 2. National Building Museum - output below
+
+
