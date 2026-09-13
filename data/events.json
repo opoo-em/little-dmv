@@ -1,62 +1,62 @@
 {
-  "last_updated": "2026-09-11T15:02:47.715082Z",
+  "last_updated": "2026-09-13T15:48:33.333577Z",
   "schema_version": 1,
   "sources": {
     "butlers-orchard": {
-      "last_success_at": "2026-09-11T15:02:00.299815Z",
+      "last_success_at": "2026-09-13T15:48:02.593339Z",
       "last_count": 0,
       "last_error": null
     },
     "national-building-museum": {
-      "last_success_at": "2026-09-11T15:02:01.457168Z",
+      "last_success_at": "2026-09-13T15:48:03.471800Z",
       "last_count": 0,
       "last_error": null
     },
     "national-childrens-museum": {
       "last_error_at": "2026-09-08T19:21:28.806399Z",
       "last_error": null,
-      "last_success_at": "2026-09-11T15:02:04.266451Z",
+      "last_success_at": "2026-09-13T15:48:05.162494Z",
       "last_count": 0
     },
     "national-zoo": {
-      "last_success_at": "2026-09-11T15:02:04.600848Z",
+      "last_success_at": "2026-09-13T15:48:05.552921Z",
       "last_count": 0,
       "last_error": null
     },
     "pike-and-rose": {
-      "last_success_at": "2026-09-11T15:02:28.624993Z",
-      "last_count": 26,
+      "last_success_at": "2026-09-13T15:48:19.424878Z",
+      "last_count": 24,
       "last_error": null,
       "last_error_at": "2026-09-08T19:06:45.969118Z"
     },
     "rockville-city": {
-      "last_success_at": "2026-09-11T15:02:31.285081Z",
+      "last_success_at": "2026-09-13T15:48:21.293881Z",
       "last_count": 24,
       "last_error": null
     },
     "montgomery-parks": {
-      "last_success_at": "2026-09-11T15:02:47.714637Z",
-      "last_count": 24,
+      "last_success_at": "2026-09-13T15:48:33.333199Z",
+      "last_count": 21,
       "last_error": null
     },
     "seasonal": {
-      "last_success_at": "2026-09-11T15:02:47.715060Z",
-      "last_count": 14,
+      "last_success_at": "2026-09-13T15:48:33.333554Z",
+      "last_count": 16,
       "last_error": null
     },
     "mcpl-kids": {
-      "last_success_at": "2026-09-11T15:01:50.243018Z",
+      "last_success_at": "2026-09-13T15:47:50.564610Z",
       "last_count": 124,
       "last_error": null
     },
     "smithsonian-events": {
-      "last_success_at": "2026-09-11T15:01:52.413437Z",
-      "last_count": 522,
+      "last_success_at": "2026-09-13T15:47:53.362233Z",
+      "last_count": 519,
       "last_error": null
     },
     "puppetco-tinytots": {
-      "last_success_at": "2026-09-11T15:02:31.023498Z",
-      "last_count": 8,
+      "last_success_at": "2026-09-13T15:48:21.146090Z",
+      "last_count": 7,
       "last_error": null
     }
   },
@@ -79,582 +79,8 @@
       "url": "https://pikeandrose.com/event/skinceuticals-power-peptide-event/",
       "source_url": null,
       "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
-    },
-    {
-      "id": "pike-and-rose-kids-club-2026-07-11",
-      "date": "2026-07-11",
-      "time": "05:00",
-      "end": "06:00",
-      "name": "Kids Club",
-      "venue": "Pinstripes",
-      "distance_mi_range": "0-5",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "outdoor",
-      "state": "MD",
-      "age": "All ages",
-      "age_match_reason": "all-ages",
-      "description": "Families are invited to enjoy hands-on activities, seasonal themes, and a lively atmosphere while creating lasting memories. Brunch follows the Kids Club activities and is complimentary for kids, giving families the opportunity to continue the experience together while enjoying a delicious meal at Pinstripes. Please note that participation in Kids Club does not include a reservation for brunch following the activities. If you would like to join us for brunch afterward, we highly recommend making a reservation here in our Bistro to ensure availability. Start Your Fun Here",
-      "url": "https://pikeandrose.com/event/kids-club-2/",
-      "source_url": null,
-      "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
-    },
-    {
-      "id": "pike-and-rose-live-music-fridays-2026-09-11",
-      "date": "2026-09-11",
-      "time": "14:00",
-      "end": null,
-      "name": "Live Music Fridays",
-      "venue": "Pinstripes",
-      "distance_mi_range": "0-5",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "outdoor",
-      "state": "MD",
-      "age": "Ages unspecified",
-      "age_match_reason": "unspecified",
-      "description": "Drinks, dinner, and the perfect vibes to start your weekend! Kick off your weekend at Pinstripes every Friday from 6:30 PM to 9:30 PM with live music on our patio. Sip on handcrafted cocktails and enjoy our chef-driven menu while talented local bands set the perfect vibe. Great music, fresh air, and a lively crowd make Friday nights unforgettable at Pinstripes. Want the best seat in the house? Book a patio reservation on Tock for front-row access to the music.",
-      "url": "https://pikeandrose.com/event/live-music-fridays/",
-      "source_url": null,
-      "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null,
-      "weather": {
-        "summary": "Mostly Cloudy",
-        "high_f": 81,
-        "precip_pct": 13,
-        "low_f": 66
-      }
-    },
-    {
-      "id": "mcpl-lego-construction-crew-and-duplos-too-2026-09-11",
-      "date": "2026-09-11",
-      "time": "15:30",
-      "end": "17:00",
-      "name": "LEGO Construction Crew and Duplos Too!",
-      "venue": "Quince Orchard Library -",
-      "distance_mi_range": "6-10",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "indoor",
-      "state": "MD",
-      "age": "Ages unspecified",
-      "age_match_reason": "unrecognized",
-      "description": "Join us on Friday afternoons to build with LEGO and Duplos too!",
-      "url": "",
-      "source_url": "https://mcpl.libnet.info/",
-      "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
-    },
-    {
-      "id": "smithsonian-kaagaz-ke-phool-aka-paper-flowers-2026-09-11",
-      "date": "2026-09-11",
-      "time": "19:00",
-      "end": "21:30",
-      "name": "Kaagaz Ke Phool (aka Paper Flowers)",
-      "venue": "Asian Art Museum",
-      "distance_mi_range": "11-15",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "indoor",
-      "state": "DC",
-      "age": "Ages unspecified",
-      "age_match_reason": "unrecognized",
-      "description": "Watch the Trailer Introduced by Lalitha Gopalan, associate professor of Cinema Studies at the University of Texas at Austin and author of the book Kaagaz Ke Phool (Paper Flowers): BFI Film Classics . Buy her book here in person before the show starts! The first Indian film shot in CinemaScope, Guru Dutt\u2019s masterpiece follows the successful filmmaker Suresh Sinha (played by Dutt) as rumors of his affair with actress Shanti (Waheeda Rehman) lead him to lose his family, descend into alcoholism, and ultimately retreat from the film industry. Initially a critical and commercial failure, the film is now revered for its technical prowess, stunning chiaroscuro images, beautiful songs, and heartbreaking, self-reflexive narrative. Shown in a digital restoration by the National Film Archive of India. Director: Guru Dutt. Country: India. Released: 1959. Length: 148 min. Format: DCP, B&W. Language: Hindi with English subtitles. Kaagaz Still: Courtesy of the National Film Archive of India Book Cover: Courtesy of the British Film Institute",
-      "url": "",
-      "source_url": "https://www.si.edu/events",
-      "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
-    },
-    {
-      "id": "montgomery-parks-registration-closed-weed-warrior-workday-at-northwest-branch-20-59b18c01",
-      "date": "2026-09-12",
-      "time": "05:00",
-      "end": "07:00",
-      "name": "REGISTRATION CLOSED - Weed Warrior Workday at Northwest Branch SVU3",
-      "venue": "The exact meeting location will be emailed to all pre-registrants.",
-      "distance_mi_range": "unknown",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "outdoor",
-      "state": "MD",
-      "age": "Ages unspecified",
-      "age_match_reason": "unspecified",
-      "description": "Join Weed Warrior Supervisors Nick and Scott for a non-native, invasive plant removal workday in Northwest Branch Stream Valley. The exact meeting location will be emailed to all pre-registrants. We will mainly work behind the Northwest Park Apartments (400 Southampton Drive, 20903) on Montgomery Parkland right before the Northwest Branch crosses the Montgomery/PG County line. Parking is available.",
-      "url": "https://montgomeryparks.org/events/weed-warrior-northwest-branch-svu3/",
-      "source_url": null,
-      "source": "montgomery-parks",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null,
-      "weather": {
-        "summary": "Showers And Thunderstorms Likely",
-        "high_f": 81,
-        "precip_pct": 66,
-        "low_f": 67
-      }
-    },
-    {
-      "id": "puppetco-tinytots-come-see-tree-songs-2026-09-12",
-      "date": "2026-09-12",
-      "time": "06:00",
-      "end": "06:30",
-      "name": "Come see Tree Songs",
-      "venue": "The Puppet Co at Glen Echo Park",
-      "distance_mi_range": "6-10",
-      "cost_type": "paid",
-      "cost_label": "$10 per person",
-      "place": "indoor",
-      "state": "MD",
-      "age": "18+ mo",
-      "age_match_reason": "months-18mo",
-      "description": "Penny Russell is one of the Puppet Co.'s favorite Teaching Artists and we're so glad to have her share some great stories with our Tiny Tots audiences! Penny Russell (she/hers) is a Puppeteer, Musician, and Teaching Artist based in Prince George\u2019s County, MD. She is a Master Teaching Artist with Wolf Trap Institute for Early Learning Through the Arts; and teaches Music, Drama, Puppetry, and Self-Advocacy through the Arts to children and adults on the autism spectrum for ArtStream. Penny studied Folklore and Mythology at the University of Maryland, College Park where she received degrees in Sociology and English. She has performed for Wolf Trap, The Kennedy Center, Adventure Theater, The Puppet Company, and the National Theater among others; and has presented workshops for the National Science Teachers Convention, Virginia STEM and Library Conference, Wolf Trap, The Kennedy Center, The Actor\u2019s Center, and schools across the country. Penny volunteers in her community [Warm Nights, Community Caf\u00e9, Yard Dramas] and beyond [International Guest House, The Iona Community, Mt Harmony Drama]; and was an original cast member of \u201cAm I Welcome?\u201d, an LGBT+ puppet show about inclusion. She loves connecting and communicating through the arts; and believes that the arts are for everyone",
-      "url": "https://thepuppetco.showare.com/eventperformances.asp?evt=8",
-      "source_url": null,
-      "source": "puppetco-tinytots",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
-    },
-    {
-      "id": "montgomery-parks-registration-closed-weed-warrior-workday-at-burning-tree-par-20-08908caa",
-      "date": "2026-09-12",
-      "time": "06:00",
-      "end": "08:00",
-      "name": "REGISTRATION CLOSED - Weed Warrior Workday at Burning Tree Park",
-      "venue": "Pre-Registrants will receive exact parking and meeting instructions.",
-      "distance_mi_range": "unknown",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "outdoor",
-      "state": "MD",
-      "age": "Ages unspecified",
-      "age_match_reason": "unspecified",
-      "description": "Join Weed Warrior Supervisor Jesse for a non-native, invasive plant removal workday in Burning Tree Park (7904 Beechtree Road, Bethesda) .",
-      "url": "https://montgomeryparks.org/events/weed-warrior-burning-tree-local-park/",
-      "source_url": null,
-      "source": "montgomery-parks",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null,
-      "weather": {
-        "summary": "Showers And Thunderstorms Likely",
-        "high_f": 81,
-        "precip_pct": 66,
-        "low_f": 67
-      }
-    },
-    {
-      "id": "montgomery-parks-bluegrass-on-the-farm-2026-09-12",
-      "date": "2026-09-12",
-      "time": "07:30",
-      "end": "14:00",
-      "name": "Bluegrass on the Farm",
-      "venue": "Agricultural History Farm Park",
-      "distance_mi_range": "unknown",
-      "cost_type": "paid",
-      "cost_label": "$25",
-      "place": "outdoor",
-      "state": "MD",
-      "age": "Ages unspecified",
-      "age_match_reason": "unspecified",
-      "description": "The Friends of The Agricultural History Farm Park hosts this event. For additional event information including day-of updates please visit their website .",
-      "url": "https://montgomeryparks.org/events/bluegrass-on-the-farm/",
-      "source_url": null,
-      "source": "montgomery-parks",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null,
-      "weather": {
-        "summary": "Showers And Thunderstorms Likely",
-        "high_f": 81,
-        "precip_pct": 66,
-        "low_f": 67
-      }
-    },
-    {
-      "id": "smithsonian-cancelled-little-critters-nature-play-at-the-bird-house-day--2026-09-e1b287d9",
-      "date": "2026-09-12",
-      "time": "09:30",
-      "end": "13:30",
-      "name": "CANCELLED - Little Critters: Nature Play at the Bird House (Day and Night)",
-      "venue": "National Zoo",
-      "distance_mi_range": "6-10",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "indoor",
-      "state": "DC",
-      "age": "All ages",
-      "age_match_reason": "all-ages",
-      "description": "Goodnight pandas, goodnight elephants, goodnight cows! Join us for creative, drop-in play at the Zoo as we learn about what happens at night when the moon comes out. Little Critters: Nature Play is designed for ages 0-5 and their caregivers and families. Activities are designed with early learners in mind, but all ages are welcome. Parents and guardians must remain with their children. Location: Bird House Classroom",
-      "url": "https://nationalzoo.si.edu/education/kids-and-families",
-      "source_url": "https://www.si.edu/events",
-      "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
-    },
-    {
-      "id": "smithsonian-spark-lab-2026-09-12",
-      "date": "2026-09-12",
-      "time": "10:00",
-      "end": "16:00",
-      "name": "Spark!Lab",
-      "venue": "American History Museum",
-      "distance_mi_range": "11-15",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "indoor",
-      "state": "DC",
-      "age": "Ages unspecified",
-      "age_match_reason": "unrecognized",
-      "description": "Spark!Lab is where museum visitors become inventors. The Lemelson Center for the Study of Invention and Innovation invites children between the ages of 6 and 12 to create, collaborate, explore, test, experiment and invent. Activities for children and families incorporate traditional science, technology, engineering and math (STEM) with art, history and creativity.",
-      "url": "http://invention.si.edu/current-sparklab-activities",
-      "source_url": "https://www.si.edu/events",
-      "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
-    },
-    {
-      "id": "smithsonian-the-world-me-pulse-with-company-e-and-sound-impact-2026-09-12",
-      "date": "2026-09-12",
-      "time": "10:00",
-      "end": "12:30",
-      "name": "The World & Me: Pulse with Company E and Sound Impact",
-      "venue": "Natural History Museum",
-      "distance_mi_range": "11-15",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "indoor",
-      "state": "DC",
-      "age": "All ages",
-      "age_match_reason": "all-ages",
-      "description": "Join us for a special The World & Me as we celebrate unique movement and patterns on the planet we call home with local dancers from Company | E , musicians from Sound Impact , and educators from the National Museum of Natural History. Watch a performance titled PULSE* and stay afterwards to explore different hands-on activities with museum specimens. Performance will be 10:30 - 11:20. Hands-on stations and activities will be open 11:30 - 12:30. More about Pulse Everything, including the Earth, has its own unique pulse, and those pulses form the heartbeat of the Earth and of us all. COMPANY E\u2019s PULSE is a 45 minute performance created by storytellers, choreographers, dancers, musicians and scientists.Told with humour and empathy, the show deploys dance, live and recorded music, storytelling, and student engagement to embrace the power, the joy and the magic of the Earth and all its inhabitants. It\u2019s all told through one character\u2019s search for his own heartbeat, his own pulse, in place of his preoccupation with his technology. It\u2019s a STEAM-based journey through time and space discovering in every living thing, including the planet itself, a PULSE, and that ultimately our impulse to protect it in the end serves as well to protect us. About Company | E Company | E is a DC-based repertory dance company whose work is created through international artistic and cultural exchanges. Using dance, music, storytelling, filmmaking and the Metaverse, the Company uses art to bridge cultural divides, speak to the critical issues of our time and honor the idea that \u201cthere is more than unites us than divides us,\u201d Company | E serves as Cultural Diplomats with the U.S. Department of State, and educators of artists of all ages around the globe. The Company embraces the overarching \u201cE\u201d words that it was named for: ecology, equity, excitement, energy, education, engagement, and so many more. Location : This program is held in Q?rius, The Coralyn W. Whitney Science Education Center, on the Ground Floor of the museum. Please enter through the Constitution Avenue entrance. Q?rius is located on the right as you enter the museum. Accessibility : Access services such as American Sign Language interpretation, real-time captioning (CART), or audio-description are available with advanced notice. However, accommodations may not be possible with less than two-weeks advanced notice. To request this service, please call (202) 633-5238 or e-mail NMNHAccessibility@si.edu . Image credits: Company E",
-      "url": "",
-      "source_url": "https://www.si.edu/events",
-      "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
-    },
-    {
-      "id": "smithsonian-wonderplace-2026-09-12",
-      "date": "2026-09-12",
-      "time": "10:00",
-      "end": "16:00",
-      "name": "Wonderplace",
-      "venue": "American History Museum",
-      "distance_mi_range": "11-15",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "indoor",
-      "state": "DC",
-      "age": "Ages unspecified",
-      "age_match_reason": "unrecognized",
-      "description": "This learning space designed especially for children ages six and under combines age appropriate activities with museum collections and touchable objects to provide a gateway to history and a place to exercise curiosity for the youngest historians. Admission to Wonderplace is on a first come, first-served basis. At busy times, we may use FREE, timed tickets to minimize wait time if needed. Tickets are available for 30-minute visits on a first-come, first-served basis. No tickets are required for the first session from 10:00 a.m. - 10:30 a.m. To visit during a later half-hour session, visitors may pick up a ticket at Wonderplace in 1 West. The last entry using timed tickets is at 3:30 p.m. Hours are subject to change.",
-      "url": "",
-      "source_url": "https://www.si.edu/events",
-      "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
-    },
-    {
-      "id": "mcpl-family-storytime-2026-09-12",
-      "date": "2026-09-12",
-      "time": "10:30",
-      "end": "11:30",
-      "name": "Family Storytime",
-      "venue": "Aspen Hill Library -",
-      "distance_mi_range": "0-5",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "indoor",
-      "state": "MD",
-      "age": "All ages",
-      "age_match_reason": "all-ages",
-      "description": "These 25-30-minute programs are designed to delight children of all ages and are filled with diverse stories and activities that promote and develop language skills and imagination.",
-      "url": "",
-      "source_url": "https://mcpl.libnet.info/",
-      "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
-    },
-    {
-      "id": "mcpl-play-date-at-the-library-2026-09-12",
-      "date": "2026-09-12",
-      "time": "10:30",
-      "end": "12:30",
-      "name": "Play Date at the Library",
-      "venue": "Olney Library -",
-      "distance_mi_range": "6-10",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "indoor",
-      "state": "MD",
-      "age": "Ages unspecified",
-      "age_match_reason": "unrecognized",
-      "description": "A drop-in playtime for children and their caregivers.",
-      "url": "",
-      "source_url": "https://mcpl.libnet.info/",
-      "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
-    },
-    {
-      "id": "mcpl-playtime-the-library-2026-09-12",
-      "date": "2026-09-12",
-      "time": "10:30",
-      "end": "11:30",
-      "name": "Playtime @ the Library",
-      "venue": "Quince Orchard Library -",
-      "distance_mi_range": "6-10",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "indoor",
-      "state": "MD",
-      "age": "Ages unspecified",
-      "age_match_reason": "unrecognized",
-      "description": "Come to our meeting room to play and meet new friends. A simple craft will be available.",
-      "url": "",
-      "source_url": "https://mcpl.libnet.info/",
-      "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
-    },
-    {
-      "id": "mcpl-sensory-storytelling-with-readability-2026-09-12",
-      "date": "2026-09-12",
-      "time": "11:00",
-      "end": "11:30",
-      "name": "Sensory Storytelling with ReadAbility",
-      "venue": "Gaithersburg Library -",
-      "distance_mi_range": "6-10",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "indoor",
-      "state": "MD",
-      "age": "Ages unspecified",
-      "age_match_reason": "unrecognized",
-      "description": "Join us for a multisensory book and storytelling session for neurodivergent children & children with intellectual disabilities who learn best through sensory play.",
-      "url": "",
-      "source_url": "https://mcpl.libnet.info/",
-      "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
-    },
-    {
-      "id": "smithsonian-cancelled-ny-story-time-2026-09-12",
-      "date": "2026-09-12",
-      "time": "11:15",
-      "end": "11:45",
-      "name": "CANCELLED - NY | Story Time",
-      "venue": "American Indian Museum NY",
-      "distance_mi_range": "11-15",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "indoor",
-      "state": "DC",
-      "age": "3-9 yrs",
-      "age_match_reason": "unrecognized",
-      "description": "Families are invited to an interactive story time featuring a children\u2019s book by a Native author, illustrator, or created in collaboration with an Indigenous community. They will have the opportunity to engage with objects from the museum's teaching collection, such as photographs, textiles, or natural materials, which can deepen their understanding of the community represented in the story, along with a craft or other activity. All are welcome. * Recommended for visitors ages 3 \u2013 9 years old accompanied by an adult caregiver. **Schedule subject to change.",
-      "url": "",
-      "source_url": "https://www.si.edu/events",
-      "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
-    },
-    {
-      "id": "smithsonian-dc-story-time-2026-09-12",
-      "date": "2026-09-12",
-      "time": "11:15",
-      "end": "11:45",
-      "name": "DC | Story Time",
-      "venue": "American Indian Museum DC",
-      "distance_mi_range": "11-15",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "indoor",
-      "state": "DC",
-      "age": "3-9 yrs",
-      "age_match_reason": "range-3-9yr",
-      "description": "Families are invited to an interactive story time featuring a children\u2019s book by a Native author, illustrator, or created in collaboration with an Indigenous community. They will have the opportunity to engage with objects from the museum's Teaching Collection such as photographs, textiles, or natural materials that can deepen their understanding of the community represented in the story, along with a craft or other activity. * Due to limited capacity in our spaces, tickets may be needed to enter the Activity Center and therefore the Story room (limited to 25 persons max). Please see staff at the entrance desk of the imagiNATIONS Activity Center on Level 3. **Recommended for visitors ages 3-9 years old accompanied by an adult caregiver. ***Schedule subject to change without prior notice.",
-      "url": "",
-      "source_url": "https://www.si.edu/events",
-      "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
-    },
-    {
-      "id": "smithsonian-broad-stripes-and-bright-stars-2026-09-12",
-      "date": "2026-09-12",
-      "time": "11:30",
-      "end": "12:00",
-      "name": "Broad Stripes and Bright Stars",
-      "venue": "American History Museum",
-      "distance_mi_range": "11-15",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "indoor",
-      "state": "DC",
-      "age": "Ages unspecified",
-      "age_match_reason": "unrecognized",
-      "description": "Meet Mary Pickersgill, seamstress of the enormous garrison flag that inspired the lyrics to America\u2019s national anthem and later became known as the Star-Spangled Banner. What was it like to live in a nation defending its sovereignty? Learn about the War of 1812, considered America\u2019s Second War of Independence, and about ways that widows like Mary expressed patriotism and resourcefulness through acquired skills and family connections.",
-      "url": "",
-      "source_url": "https://www.si.edu/events",
-      "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
-    },
-    {
-      "id": "smithsonian-where-home-takes-flight-painting-mini-birdhouses-2026-09-12",
-      "date": "2026-09-12",
-      "time": "12:00",
-      "end": "14:00",
-      "name": "Where Home Takes Flight: Painting Mini-Birdhouses",
-      "venue": "Anacostia Community Museum",
-      "distance_mi_range": "11-15",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "indoor",
-      "state": "DC",
-      "age": "All ages",
-      "age_match_reason": "all-ages",
-      "description": "Celebrate creativity, family, and the idea of \u201chome\u201d in this hands-on mini-birdhouse painting workshop designed for all ages. Inspired by the beauty of nature and the meaning of safe spaces, participants will decorate their own wooden mini-birdhouses using vibrant paints, patterns, and personal touches. Families are invited to work together to design birdhouses that reflect their unique stories, cultures, and creativity. Whether you choose bold colors, meaningful symbols, or playful designs, each piece becomes a one-of-a-kind expression of what \u201chome\u201d means to you\u2014and a welcoming space for our feathered neighbors. All materials will be provided, including birdhouses, paints, brushes, and decorative elements. No prior experience is necessary\u2014just bring your imagination! What to Expect: *Fun painting activity for families and children *Creative exploration of themes of home, nature, and community * A take-home mini-birdhouse to inspire the family to build a larger more practical birdhouse",
-      "url": "",
-      "source_url": "https://www.si.edu/events",
-      "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
-    },
-    {
-      "id": "smithsonian-feed-me-now-and-evermore-the-enduring-power-of-african-ameri-2026-09-30e4fccf",
-      "date": "2026-09-12",
-      "time": "13:00",
-      "end": "14:15",
-      "name": "Feed Me Now and Evermore: The Enduring Power of African American Sunday Suppers",
-      "venue": "American History Museum",
-      "distance_mi_range": "11-15",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "indoor",
-      "state": "DC",
-      "age": "Ages unspecified",
-      "age_match_reason": "unrecognized",
-      "description": "Rhythms, Roots, Recipes: Community Stories of Food and Music brings together cooking demonstrations, live music, and storytelling. Each program in the series explores traditions that animate families and communities across the United States\u2014and beyond. In many African American homes, the Sunday supper remains an important moment to reconnect among family, honor ancestral ties, and share recipes reflecting history, faith, and community. In this cooking demonstration, chef and artist Roscoe Hall and author and food historian Adrian Miller explore why the Sunday supper continues to be a cornerstone of family and cultural life. As Hall prepares brown butter crab rice and gumbo, Arkansas-based S. Juain Young and Artists United perform songs from the African American church that have long nourished hearts, souls, and movements.",
-      "url": "https://festival.si.edu/2026/rhythms-roots-recipes",
-      "source_url": "https://www.si.edu/events",
-      "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
-    },
-    {
-      "id": "smithsonian-teaching-africa-day-2026-09-12",
-      "date": "2026-09-12",
-      "time": "13:00",
-      "end": "17:00",
-      "name": "Teaching Africa Day",
-      "venue": "African Art Museum",
-      "distance_mi_range": "11-15",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "indoor",
-      "state": "DC",
-      "age": "Ages unspecified",
-      "age_match_reason": "unrecognized",
-      "description": "Afrofuturism & Innovation: Imagining Africa's Tomorrow Teaching Africa Day 2026 focuses on \u201cAfrofuturism & Innovation: Imagining Africa\u2019s Tomorrow\u201d. Now in its 11th year, Teaching Africa Day provides a platform for educators, families, and the DMV community to showcase books, films, games, programs, and other resources on Africa and its rich and vibrant heritage in one place. Through a panel discussion, innovative displays and presentations, an educational resource marketplace, and artmaking workshops, Teaching Africa Day offers diverse narratives to teach, engage, and increase students\u2019 appreciation for the arts of Africa.",
-      "url": "",
-      "source_url": "https://www.si.edu/events",
-      "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
-    },
-    {
-      "id": "smithsonian-dc-look-learn-create-water-s-edge-for-families-2026-09-12",
-      "date": "2026-09-12",
-      "time": "13:15",
-      "end": "14:00",
-      "name": "DC | Look, Learn, Create: \"Water's Edge\" for Families",
-      "venue": "American Indian Museum DC",
-      "distance_mi_range": "11-15",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "indoor",
-      "state": "DC",
-      "age": "All ages",
-      "age_match_reason": "all-ages",
-      "description": "Join a museum educator for a family-friendly interactive tour of the Water's Edge: The Art of Truman Lowe exhibition! Visitors will engage with three of his artworks and can participate in guided discussions, and experience items from the museum's Teaching Collection. After finding inspiration from Truman Lowe\u2019s artworks, families can continue into the imagiNATIONS Activity Center and create their own water-inspired artwork to take home. Recommended for children ages 4-10 and their families. All ages welcome. *Visitors 18 and under must be accompanied by an adult. First come, first served, capacity and supplies are limited. **This program can accommodate approximately 30 young visitors and their adult caregiver. Leading support provided by Bank of America. Major support provided by the Henry Luce Foundation. Generous support provided by the Terra Foundation for American Art and Ameriprise Financial. Additional support provided by John and Meryl Lavine, Greg and Cathy Tibbles, and Leslie A. Wheelock.",
-      "url": "",
-      "source_url": "https://www.si.edu/events",
-      "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
-    },
-    {
-      "id": "smithsonian-kronos-quartet-2026-09-12",
-      "date": "2026-09-12",
-      "time": "15:00",
-      "end": "17:00",
-      "name": "Kronos Quartet",
-      "venue": "American History Museum",
-      "distance_mi_range": "11-15",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "indoor",
-      "state": "DC",
-      "age": "All ages",
-      "age_match_reason": "all-ages",
-      "description": "As part of our commemoration of the 25th anniversary of the September 11 attacks, the National Museum of American History invites visitors to join us in the Warner Bros. Theater as the internationally acclaimed Kronos Quartet presents an afternoon of music spanning cultures and generations, exploring themes of resilience, loss, preservation, and remembrance. At the center of the program is Steve Reich\u2019s WTC 9/11 , a work that weaves together live performance with recorded voices from NORAD communications, FDNY radio transmissions, and interviews with people who lived and worked in lower Manhattan. The program includes works by Terry Riley, Neil Young, Laurie Anderson, Trevor Weston, and Aftab Darvishi, among others. Kronos will also perform Stacy Garrop\u2019s Glorious Mahalia , a work recently released on the Smithsonian Folkways label that utilizes recordings of civil rights visionary Mahalia Jackson. Following the performance, members of the Kronos Quartet will join museum staff for a conversation about the music and its themes. ------------ Full Program: John Oswald / Excerpt from Spectre * Terry Riley / One Earth, One People, One Love from Sun Rings * Neil Young (arr. Paul Wiancko) / Ohio + Ramallah Underground (arr. Jacob Garchik) / Tashweesh * Aftab Darvishi / Daughters of Sol ** Steve Reich / WTC 9/11 * 1. 9/11/01 2. 2010 3. WTC Laurie Anderson (arr. Jacob Garchik) / Flow + INTERMISSION Traditional (arr. Jacob Garchik) / A Shout (from Trinidad) + J. Fred Coots and Nina Simone (arr. Jacob Garchik) / For All We Know + Trevor Weston / Kumbaya * Zachary James Watkins / Excerpt from Peace Be Till * featuring the recorded voice of Dr. Clarence B. Jones and video by Evan Neff Stacy Garrop / Glorious Mahalia * I. Hold on II. Stave in the ground III. Are you being treated right IV. Sometime I feel like a motherless child V. This world will make you think featuring the recorded voices of Mahalia Jackson and Studs Terkel * Written for Kronos ** Written for Kronos Fifty for the Future + Arranged for Kronos ------------ This program is made possible by the John Hammond Performance Series Endowment Fund. The National Museum of American History welcomes visitors of all ages and abilities. This event is wheelchair accessible. Assistive listening devices will be provided. Additional accommodations are available upon request; please email nmahprograms@si.edu . Two weeks\u2019 notice is preferred. Seating is limited and reservations are recommended. Seating will be opened first to Eventbrite-registered attendees and then to walk-in visitors. When we reach maximum capacity, the event will be closed to the public.",
-      "url": "",
-      "source_url": "https://www.si.edu/events",
-      "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
-    },
-    {
-      "id": "mcpl-crafts-at-the-library-beehive-cards-2026-09-12",
-      "date": "2026-09-12",
-      "time": "16:00",
-      "end": "16:30",
-      "name": "Crafts at the Library: Beehive Cards",
-      "venue": "Marilyn J. Praisner Library -",
-      "distance_mi_range": "6-10",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "indoor",
-      "state": "MD",
-      "age": "Ages unspecified",
-      "age_match_reason": "unrecognized",
-      "description": "Make a homemade beehive stamp and use it to create a beautiful card!",
-      "url": "",
-      "source_url": "https://mcpl.libnet.info/",
-      "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -675,81 +101,15 @@
       "url": "https://pikeandrose.com/event/2887/",
       "source_url": null,
       "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null,
       "weather": {
-        "summary": "Rain Showers Likely then Partly Sunny",
-        "high_f": 85,
-        "precip_pct": 56,
-        "low_f": 67
+        "summary": "Mostly Sunny then Isolated Showers And Thunderstorms",
+        "high_f": 86,
+        "precip_pct": 24,
+        "low_f": 68
       }
-    },
-    {
-      "id": "smithsonian-spark-lab-2026-09-13",
-      "date": "2026-09-13",
-      "time": "10:00",
-      "end": "16:00",
-      "name": "Spark!Lab",
-      "venue": "American History Museum",
-      "distance_mi_range": "11-15",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "indoor",
-      "state": "DC",
-      "age": "Ages unspecified",
-      "age_match_reason": "unrecognized",
-      "description": "Spark!Lab is where museum visitors become inventors. The Lemelson Center for the Study of Invention and Innovation invites children between the ages of 6 and 12 to create, collaborate, explore, test, experiment and invent. Activities for children and families incorporate traditional science, technology, engineering and math (STEM) with art, history and creativity.",
-      "url": "http://invention.si.edu/current-sparklab-activities",
-      "source_url": "https://www.si.edu/events",
-      "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
-    },
-    {
-      "id": "smithsonian-wonderplace-2026-09-13",
-      "date": "2026-09-13",
-      "time": "10:00",
-      "end": "16:00",
-      "name": "Wonderplace",
-      "venue": "American History Museum",
-      "distance_mi_range": "11-15",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "indoor",
-      "state": "DC",
-      "age": "Ages unspecified",
-      "age_match_reason": "unrecognized",
-      "description": "This learning space designed especially for children ages six and under combines age appropriate activities with museum collections and touchable objects to provide a gateway to history and a place to exercise curiosity for the youngest historians. Admission to Wonderplace is on a first come, first-served basis. At busy times, we may use FREE, timed tickets to minimize wait time if needed. Tickets are available for 30-minute visits on a first-come, first-served basis. No tickets are required for the first session from 10:00 a.m. - 10:30 a.m. To visit during a later half-hour session, visitors may pick up a ticket at Wonderplace in 1 West. The last entry using timed tickets is at 3:30 p.m. Hours are subject to change.",
-      "url": "",
-      "source_url": "https://www.si.edu/events",
-      "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
-    },
-    {
-      "id": "mcpl-family-storytime-2026-09-13",
-      "date": "2026-09-13",
-      "time": "10:30",
-      "end": "11:00",
-      "name": "Family Storytime",
-      "venue": "Rockville Memorial Library -",
-      "distance_mi_range": "0-5",
-      "cost_type": "free",
-      "cost_label": "Free",
-      "place": "indoor",
-      "state": "MD",
-      "age": "All ages",
-      "age_match_reason": "all-ages",
-      "description": "These 25-30-minute programs are designed to delight children of all ages and are filled with diverse stories and activities that promote and develop language skills and imagination. TICKETS REQUIRED.",
-      "url": "",
-      "source_url": "https://mcpl.libnet.info/",
-      "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
     },
     {
       "id": "mcpl-little-hands-signing-with-kathy-macmillan-2026-09-13",
@@ -769,8 +129,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -791,8 +151,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -813,8 +173,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -835,8 +195,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -857,8 +217,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -879,8 +239,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -901,8 +261,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -923,8 +283,8 @@
       "url": "https://www.eventbrite.com/e/in-gallery-portrait-gallery-kids-tickets-654254040447?aff=oddtdtcreator&utm-campaign=social&utm-content=attendeeshare&utm-share-source=organizer-profile&utm-medium=discovery&utm-term=organizer-profile",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -945,16 +305,16 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
-      "id": "smithsonian-little-critters-nature-play-at-the-bird-house-day-and-night-2026-09--6e5bb67a",
+      "id": "smithsonian-cancelled-little-critters-nature-play-at-the-bird-house-day--2026-09-cc96e191",
       "date": "2026-09-15",
       "time": "09:30",
       "end": "13:30",
-      "name": "Little Critters: Nature Play at the Bird House (Day and Night)",
+      "name": "CANCELLED Little Critters: Nature Play at the Bird House (Day and Night)",
       "venue": "National Zoo",
       "distance_mi_range": "6-10",
       "cost_type": "free",
@@ -967,8 +327,8 @@
       "url": "https://nationalzoo.si.edu/education/kids-and-families",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -989,8 +349,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1011,8 +371,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1033,8 +393,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1055,8 +415,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1077,8 +437,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1099,8 +459,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1121,8 +481,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1143,8 +503,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1165,8 +525,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1187,8 +547,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1209,8 +569,8 @@
       "url": "https://airandspace.si.edu/whats-on/events/story-time-sun-my-favorite-star-2",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1231,8 +591,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1253,8 +613,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1275,8 +635,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1297,8 +657,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1319,8 +679,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1341,8 +701,8 @@
       "url": "http://invention.si.edu/current-sparklab-activities",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1363,8 +723,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1385,8 +745,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1407,8 +767,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1429,8 +789,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1451,8 +811,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1473,8 +833,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1495,8 +855,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1517,8 +877,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1539,8 +899,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1561,8 +921,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1583,8 +943,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1605,8 +965,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1627,16 +987,16 @@
       "url": "https://www.eventbrite.com/e/history-film-forum-presents-faith-on-film-american-muslims-tickets-1998387647248?aff=trumba",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
-      "id": "smithsonian-little-critters-nature-play-at-the-bird-house-day-and-night-2026-09--6cc3bce5",
+      "id": "smithsonian-cancelled-little-critters-nature-play-at-the-bird-house-day--2026-09-40cc1bad",
       "date": "2026-09-17",
       "time": "09:30",
       "end": "13:30",
-      "name": "Little Critters: Nature Play at the Bird House (Day and Night)",
+      "name": "CANCELLED Little Critters: Nature Play at the Bird House (Day and Night)",
       "venue": "National Zoo",
       "distance_mi_range": "6-10",
       "cost_type": "free",
@@ -1649,8 +1009,8 @@
       "url": "https://nationalzoo.si.edu/education/kids-and-families",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1671,14 +1031,14 @@
       "url": "https://www.rockvillemd.gov/calendar/events/little-sprouts-2/",
       "source_url": "https://www.rockvillemd.gov/calendar.aspx",
       "source": "rockville-city",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null,
       "weather": {
-        "summary": "Mostly Sunny then Chance Rain Showers",
+        "summary": "Sunny",
         "high_f": 86,
-        "precip_pct": 32,
-        "low_f": 66
+        "precip_pct": 8,
+        "low_f": 65
       }
     },
     {
@@ -1699,8 +1059,8 @@
       "url": "http://invention.si.edu/current-sparklab-activities",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1721,8 +1081,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1743,8 +1103,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1765,8 +1125,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1787,8 +1147,8 @@
       "url": "https://airandspace.si.edu/whats-on/events/story-time-sun-my-favorite-star-2",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1809,8 +1169,8 @@
       "url": "https://airandspace.si.edu/whats-on/events/story-time-sun-my-favorite-star-2",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1831,8 +1191,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1853,8 +1213,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1875,8 +1235,8 @@
       "url": "http://invention.si.edu/current-sparklab-activities",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1897,8 +1257,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1919,8 +1279,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1941,8 +1301,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1963,8 +1323,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -1985,8 +1345,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2007,8 +1367,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2029,8 +1389,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2051,8 +1411,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2073,8 +1433,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2095,8 +1455,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2117,9 +1477,15 @@
       "url": "https://montgomeryparks.org/events/bottleworks-lane-park-opening/",
       "source_url": null,
       "source": "montgomery-parks",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null,
+      "weather": {
+        "summary": "Mostly Sunny then Chance Rain Showers",
+        "high_f": 86,
+        "precip_pct": 31,
+        "low_f": 64
+      }
     },
     {
       "id": "pike-and-rose-live-music-fridays-2026-09-18",
@@ -2139,9 +1505,15 @@
       "url": "https://pikeandrose.com/event/live-music-fridays/",
       "source_url": null,
       "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null,
+      "weather": {
+        "summary": "Mostly Sunny then Chance Rain Showers",
+        "high_f": 86,
+        "precip_pct": 31,
+        "low_f": 64
+      }
     },
     {
       "id": "mcpl-games-puzzles-coloring-the-connie-morella-library-2026-09-18",
@@ -2161,8 +1533,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2183,8 +1555,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2205,9 +1577,15 @@
       "url": "https://butlersorchard.com/pumpkin-patch/",
       "source_url": null,
       "source": "seasonal",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null,
+      "weather": {
+        "summary": "Chance Rain Showers",
+        "high_f": 82,
+        "precip_pct": 38,
+        "low_f": 62
+      }
     },
     {
       "id": "montgomery-parks-children-s-day-2026-09-19",
@@ -2227,9 +1605,15 @@
       "url": "https://montgomeryparks.org/events/childrens-day-2026/",
       "source_url": null,
       "source": "montgomery-parks",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null,
+      "weather": {
+        "summary": "Chance Rain Showers",
+        "high_f": 82,
+        "precip_pct": 38,
+        "low_f": 62
+      }
     },
     {
       "id": "montgomery-parks-cleanup-at-rock-creek-stream-valley-park-with-rock-creek-con-20-144320bf",
@@ -2249,16 +1633,22 @@
       "url": "https://montgomeryparks.org/events/cleanup-at-rock-creek-stream-valley-park-with-rock-creek-conservancy/",
       "source_url": null,
       "source": "montgomery-parks",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null,
+      "weather": {
+        "summary": "Chance Rain Showers",
+        "high_f": 82,
+        "precip_pct": 38,
+        "low_f": 62
+      }
     },
     {
-      "id": "smithsonian-little-critters-nature-play-at-the-bird-house-gardens-2026-09-19",
+      "id": "smithsonian-little-critters-nature-play-at-the-bird-house-day-and-night-2026-09--0c3655d9",
       "date": "2026-09-19",
       "time": "09:30",
       "end": "13:30",
-      "name": "Little Critters: Nature Play at the Bird House (Gardens)",
+      "name": "Little Critters: Nature Play at the Bird House (Day and Night)",
       "venue": "National Zoo",
       "distance_mi_range": "6-10",
       "cost_type": "free",
@@ -2267,12 +1657,12 @@
       "state": "DC",
       "age": "All ages",
       "age_match_reason": "all-ages",
-      "description": "Celebrate the seasons with us! Join us for creative, drop-in play at the Zoo as we explore the beautiful plants that grow in gardens year-round. Little Critters: Nature Play is designed for ages 0-5 and their caregivers and families. Activities are designed with early learners in mind, but all ages are welcome. Parents and guardians must remain with their children. Location: Bird House Classroom",
+      "description": "Goodnight pandas, goodnight elephants, goodnight cows! Join us for creative, drop-in play at the Zoo as we learn about what happens at night when the moon comes out. Little Critters: Nature Play is designed for ages 0-5 and their caregivers and families. Activities are designed with early learners in mind, but all ages are welcome. Parents and guardians must remain with their children. Location: Bird House Classroom",
       "url": "https://nationalzoo.si.edu/education/kids-and-families",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2293,9 +1683,15 @@
       "url": "https://www.rockvillemd.gov/calendar/events/2026-taiwan-bubble-tea-festival/",
       "source_url": "https://www.rockvillemd.gov/calendar.aspx",
       "source": "rockville-city",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null,
+      "weather": {
+        "summary": "Chance Rain Showers",
+        "high_f": 82,
+        "precip_pct": 38,
+        "low_f": 62
+      }
     },
     {
       "id": "smithsonian-freedmen-s-bureau-project-transcribe-a-thon-2026-09-19",
@@ -2315,8 +1711,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2337,9 +1733,15 @@
       "url": "https://www.rockvillemd.gov/calendar/events/gentle-explorers-3/",
       "source_url": "https://www.rockvillemd.gov/calendar.aspx",
       "source": "rockville-city",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null,
+      "weather": {
+        "summary": "Chance Rain Showers",
+        "high_f": 82,
+        "precip_pct": 38,
+        "low_f": 62
+      }
     },
     {
       "id": "smithsonian-spark-lab-2026-09-19",
@@ -2359,8 +1761,8 @@
       "url": "http://invention.si.edu/current-sparklab-activities",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2381,8 +1783,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2403,8 +1805,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2425,8 +1827,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2447,8 +1849,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2469,8 +1871,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2491,8 +1893,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2513,8 +1915,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2535,8 +1937,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2557,9 +1959,15 @@
       "url": "https://www.rockvillemd.gov/calendar/events/rockville-city-police-department-open-house/",
       "source_url": "https://www.rockvillemd.gov/calendar.aspx",
       "source": "rockville-city",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
-      "expires_at": null
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null,
+      "weather": {
+        "summary": "Chance Rain Showers",
+        "high_f": 82,
+        "precip_pct": 38,
+        "low_f": 62
+      }
     },
     {
       "id": "smithsonian-dc-story-time-2026-09-19",
@@ -2579,8 +1987,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2601,8 +2009,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2623,8 +2031,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2645,8 +2053,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2667,8 +2075,8 @@
       "url": "https://pikeandrose.com/event/2887/",
       "source_url": null,
       "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2689,8 +2097,8 @@
       "url": "https://butlersorchard.com/pumpkin-patch/",
       "source_url": null,
       "source": "seasonal",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2711,8 +2119,8 @@
       "url": "http://invention.si.edu/current-sparklab-activities",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2733,8 +2141,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2755,8 +2163,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2777,8 +2185,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2799,8 +2207,8 @@
       "url": "https://butlersorchard.com/pumpkin-patch/",
       "source_url": null,
       "source": "seasonal",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2821,8 +2229,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2843,8 +2251,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2865,8 +2273,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2887,8 +2295,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2909,8 +2317,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2931,8 +2339,8 @@
       "url": "https://www.eventbrite.com/e/in-gallery-portrait-gallery-kids-tickets-654254040447?aff=oddtdtcreator&utm-campaign=social&utm-content=attendeeshare&utm-share-source=organizer-profile&utm-medium=discovery&utm-term=organizer-profile",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2953,8 +2361,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -2975,16 +2383,16 @@
       "url": "https://butlersorchard.com/pumpkin-patch/",
       "source_url": null,
       "source": "seasonal",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
-      "id": "smithsonian-little-critters-nature-play-at-the-bird-house-gardens-2026-09-22",
+      "id": "smithsonian-little-critters-nature-play-at-the-bird-house-day-and-night-2026-09--5cfa7cba",
       "date": "2026-09-22",
       "time": "09:30",
       "end": "13:30",
-      "name": "Little Critters: Nature Play at the Bird House (Gardens)",
+      "name": "Little Critters: Nature Play at the Bird House (Day and Night)",
       "venue": "National Zoo",
       "distance_mi_range": "6-10",
       "cost_type": "free",
@@ -2993,12 +2401,12 @@
       "state": "DC",
       "age": "All ages",
       "age_match_reason": "all-ages",
-      "description": "Celebrate the seasons with us! Join us for creative, drop-in play at the Zoo as we explore the beautiful plants that grow in gardens year-round. Little Critters: Nature Play is designed for ages 0-5 and their caregivers and families. Activities are designed with early learners in mind, but all ages are welcome. Parents and guardians must remain with their children. Location: Bird House Classroom",
+      "description": "Goodnight pandas, goodnight elephants, goodnight cows! Join us for creative, drop-in play at the Zoo as we learn about what happens at night when the moon comes out. Little Critters: Nature Play is designed for ages 0-5 and their caregivers and families. Activities are designed with early learners in mind, but all ages are welcome. Parents and guardians must remain with their children. Location: Bird House Classroom",
       "url": "https://nationalzoo.si.edu/education/kids-and-families",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3019,8 +2427,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3041,8 +2449,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3063,8 +2471,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3085,8 +2493,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3107,8 +2515,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3129,8 +2537,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3151,8 +2559,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3173,8 +2581,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3195,8 +2603,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3217,8 +2625,8 @@
       "url": "https://airandspace.si.edu/whats-on/events/story-time-sun-my-favorite-star-2",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3239,8 +2647,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3261,8 +2669,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3283,8 +2691,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3305,8 +2713,8 @@
       "url": "https://butlersorchard.com/pumpkin-patch/",
       "source_url": null,
       "source": "seasonal",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3327,8 +2735,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3349,8 +2757,8 @@
       "url": "http://invention.si.edu/current-sparklab-activities",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3371,8 +2779,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3393,8 +2801,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3415,8 +2823,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3437,8 +2845,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3459,8 +2867,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3481,8 +2889,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3503,8 +2911,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3525,8 +2933,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3547,8 +2955,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3569,8 +2977,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3591,8 +2999,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3613,8 +3021,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3635,16 +3043,16 @@
       "url": "https://butlersorchard.com/pumpkin-patch/",
       "source_url": null,
       "source": "seasonal",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
-      "id": "smithsonian-little-critters-nature-play-at-the-bird-house-gardens-2026-09-24",
+      "id": "smithsonian-little-critters-nature-play-at-the-bird-house-day-and-night-2026-09--0957f8c7",
       "date": "2026-09-24",
       "time": "09:30",
       "end": "13:30",
-      "name": "Little Critters: Nature Play at the Bird House (Gardens)",
+      "name": "Little Critters: Nature Play at the Bird House (Day and Night)",
       "venue": "National Zoo",
       "distance_mi_range": "6-10",
       "cost_type": "free",
@@ -3653,12 +3061,12 @@
       "state": "DC",
       "age": "All ages",
       "age_match_reason": "all-ages",
-      "description": "Celebrate the seasons with us! Join us for creative, drop-in play at the Zoo as we explore the beautiful plants that grow in gardens year-round. Little Critters: Nature Play is designed for ages 0-5 and their caregivers and families. Activities are designed with early learners in mind, but all ages are welcome. Parents and guardians must remain with their children. Location: Bird House Classroom",
+      "description": "Goodnight pandas, goodnight elephants, goodnight cows! Join us for creative, drop-in play at the Zoo as we learn about what happens at night when the moon comes out. Little Critters: Nature Play is designed for ages 0-5 and their caregivers and families. Activities are designed with early learners in mind, but all ages are welcome. Parents and guardians must remain with their children. Location: Bird House Classroom",
       "url": "https://nationalzoo.si.edu/education/kids-and-families",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3679,8 +3087,8 @@
       "url": "http://invention.si.edu/current-sparklab-activities",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3701,8 +3109,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3723,8 +3131,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3745,8 +3153,8 @@
       "url": "",
       "source_url": "https://mcpl.libnet.info/",
       "source": "mcpl",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3767,8 +3175,8 @@
       "url": "https://airandspace.si.edu/whats-on/events/story-time-sun-my-favorite-star-2",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3789,8 +3197,74 @@
       "url": "https://airandspace.si.edu/whats-on/events/story-time-sun-my-favorite-star-2",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null
+    },
+    {
+      "id": "mcpl-stem-at-the-library-build-a-bee-house-in-person-2026-09-24",
+      "date": "2026-09-24",
+      "time": "17:00",
+      "end": "17:30",
+      "name": "STEM at the Library: Build a Bee House - In Person",
+      "venue": "Marilyn J. Praisner Library -",
+      "distance_mi_range": "6-10",
+      "cost_type": "free",
+      "cost_label": "Free",
+      "place": "indoor",
+      "state": "MD",
+      "age": "Ages unspecified",
+      "age_match_reason": "unrecognized",
+      "description": "Create your own bee house while learning about engineering, nature, and the important role bees play in our environment.",
+      "url": "",
+      "source_url": "https://mcpl.libnet.info/",
+      "source": "mcpl",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null
+    },
+    {
+      "id": "mcpl-pajama-storytime-2026-09-24",
+      "date": "2026-09-24",
+      "time": "18:30",
+      "end": "19:15",
+      "name": "Pajama Storytime",
+      "venue": "Germantown Library -",
+      "distance_mi_range": "11-15",
+      "cost_type": "free",
+      "cost_label": "Free",
+      "place": "indoor",
+      "state": "MD",
+      "age": "Ages unspecified",
+      "age_match_reason": "unrecognized",
+      "description": "An evening storytime where pajamas are encouraged but not required.",
+      "url": "",
+      "source_url": "https://mcpl.libnet.info/",
+      "source": "mcpl",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null
+    },
+    {
+      "id": "mcpl-dreamtime-dance-party-2026-09-24",
+      "date": "2026-09-24",
+      "time": "19:00",
+      "end": "19:45",
+      "name": "Dreamtime Dance Party",
+      "venue": "White Oak Library -",
+      "distance_mi_range": "6-10",
+      "cost_type": "free",
+      "cost_label": "Free",
+      "place": "indoor",
+      "state": "MD",
+      "age": "Ages unspecified",
+      "age_match_reason": "unrecognized",
+      "description": "Dance your wiggles away, then settle down for a bedtime story & a goodnight song.",
+      "url": "",
+      "source_url": "https://mcpl.libnet.info/",
+      "source": "mcpl",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3811,8 +3285,8 @@
       "url": "https://butlersorchard.com/pumpkin-patch/",
       "source_url": null,
       "source": "seasonal",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3833,8 +3307,8 @@
       "url": "http://invention.si.edu/current-sparklab-activities",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3855,8 +3329,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3877,8 +3351,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3899,8 +3373,52 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null
+    },
+    {
+      "id": "mcpl-play-date-at-the-library-2026-09-25",
+      "date": "2026-09-25",
+      "time": "10:30",
+      "end": "12:30",
+      "name": "Play Date at the Library",
+      "venue": "Olney Library -",
+      "distance_mi_range": "6-10",
+      "cost_type": "free",
+      "cost_label": "Free",
+      "place": "indoor",
+      "state": "MD",
+      "age": "Ages unspecified",
+      "age_match_reason": "unrecognized",
+      "description": "A drop-in playtime for children and their caregivers.",
+      "url": "",
+      "source_url": "https://mcpl.libnet.info/",
+      "source": "mcpl",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null
+    },
+    {
+      "id": "mcpl-spanish-english-bilingual-storytime-2026-09-25",
+      "date": "2026-09-25",
+      "time": "10:30",
+      "end": "11:00",
+      "name": "Spanish/English Bilingual Storytime",
+      "venue": "Connie Morella Library -",
+      "distance_mi_range": "6-10",
+      "cost_type": "free",
+      "cost_label": "Free",
+      "place": "indoor",
+      "state": "MD",
+      "age": "Ages unspecified",
+      "age_match_reason": "unrecognized",
+      "description": "Please join us for a fun and interactive bilingual Spanish/English storytime! Together we\u0092ll read, sing, clap, and rhyme. Space is limited. TICKETS REQUIRED!",
+      "url": "",
+      "source_url": "https://mcpl.libnet.info/",
+      "source": "mcpl",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3921,8 +3439,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3943,8 +3461,30 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null
+    },
+    {
+      "id": "mcpl-stories-and-movement-with-metropolitan-ballet-theatre-2026-09-25",
+      "date": "2026-09-25",
+      "time": "11:00",
+      "end": "11:45",
+      "name": "Stories and Movement with Metropolitan Ballet Theatre",
+      "venue": "Little Falls Library -",
+      "distance_mi_range": "6-10",
+      "cost_type": "free",
+      "cost_label": "Free",
+      "place": "indoor",
+      "state": "MD",
+      "age": "Ages unspecified",
+      "age_match_reason": "unrecognized",
+      "description": "This 45-min. monthly REGISTRATION program will engage children in creative movement in connection with a story of the day. REGISTRATION REQUIRED!",
+      "url": "",
+      "source_url": "https://mcpl.libnet.info/",
+      "source": "mcpl",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3965,8 +3505,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -3987,8 +3527,8 @@
       "url": "https://pikeandrose.com/event/live-music-fridays/",
       "source_url": null,
       "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4009,8 +3549,8 @@
       "url": "https://butlersorchard.com/pumpkin-patch/",
       "source_url": null,
       "source": "seasonal",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4031,8 +3571,8 @@
       "url": "https://montgomeryparks.org/events/cleanup-at-columbia-park-national-public-lands-day-ssl/",
       "source_url": null,
       "source": "montgomery-parks",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4053,8 +3593,8 @@
       "url": "https://thepuppetco.showare.com/eventperformances.asp?evt=12",
       "source_url": null,
       "source": "puppetco-tinytots",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4075,8 +3615,8 @@
       "url": "https://montgomeryparks.org/events/weed-warrior-capital-crescent-trail-at-river-rd/",
       "source_url": null,
       "source": "montgomery-parks",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4097,8 +3637,8 @@
       "url": "https://montgomeryparks.org/events/cleanup-at-beret-neighborhood-conservation-area-public-lands-day/",
       "source_url": null,
       "source": "montgomery-parks",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4119,8 +3659,8 @@
       "url": "https://nationalzoo.si.edu/education/kids-and-families",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4141,8 +3681,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4163,8 +3703,8 @@
       "url": "https://www.rockvillemd.gov/calendar/events/little-explorers-3/",
       "source_url": "https://www.rockvillemd.gov/calendar.aspx",
       "source": "rockville-city",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4185,8 +3725,8 @@
       "url": "http://invention.si.edu/current-sparklab-activities",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4207,8 +3747,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4229,8 +3769,8 @@
       "url": "https://wisinstitute.org/art-event/postal-museum/",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4251,8 +3791,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4273,8 +3813,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4295,8 +3835,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4317,8 +3857,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4339,8 +3879,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4361,8 +3901,8 @@
       "url": "https://www.eventbrite.com/e/1998255541115?aff=oddtdtcreator",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4383,8 +3923,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4405,8 +3945,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4427,8 +3967,8 @@
       "url": "https://pikeandrose.com/event/2887/",
       "source_url": null,
       "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4449,8 +3989,8 @@
       "url": "https://butlersorchard.com/pumpkin-patch/",
       "source_url": null,
       "source": "seasonal",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4471,8 +4011,8 @@
       "url": "https://thepuppetco.showare.com/eventperformances.asp?evt=51",
       "source_url": null,
       "source": "puppetco-tinytots",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4493,8 +4033,8 @@
       "url": "http://invention.si.edu/current-sparklab-activities",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4515,8 +4055,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4537,8 +4077,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4559,8 +4099,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4581,8 +4121,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4603,8 +4143,8 @@
       "url": "https://butlersorchard.com/pumpkin-patch/",
       "source_url": null,
       "source": "seasonal",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4625,8 +4165,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4647,8 +4187,8 @@
       "url": "https://www.eventbrite.com/e/in-gallery-portrait-gallery-kids-tickets-654254040447?aff=oddtdtcreator&utm-campaign=social&utm-content=attendeeshare&utm-share-source=organizer-profile&utm-medium=discovery&utm-term=organizer-profile",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4669,8 +4209,8 @@
       "url": "https://butlersorchard.com/pumpkin-patch/",
       "source_url": null,
       "source": "seasonal",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4691,8 +4231,8 @@
       "url": "https://nationalzoo.si.edu/education/kids-and-families",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4713,8 +4253,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4735,8 +4275,8 @@
       "url": "https://airandspace.si.edu/whats-on/events/story-time-sun-my-favorite-star-2",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4757,8 +4297,8 @@
       "url": "https://butlersorchard.com/pumpkin-patch/",
       "source_url": null,
       "source": "seasonal",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4779,8 +4319,8 @@
       "url": "http://invention.si.edu/current-sparklab-activities",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4801,8 +4341,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4823,8 +4363,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4845,8 +4385,8 @@
       "url": "https://butlersorchard.com/pumpkin-patch/",
       "source_url": null,
       "source": "seasonal",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4867,8 +4407,8 @@
       "url": "https://nationalzoo.si.edu/education/kids-and-families",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4889,8 +4429,8 @@
       "url": "http://invention.si.edu/current-sparklab-activities",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4911,8 +4451,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4933,8 +4473,8 @@
       "url": "https://airandspace.si.edu/whats-on/events/story-time-space-spinners-1",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4955,8 +4495,8 @@
       "url": "https://airandspace.si.edu/whats-on/events/story-time-space-spinners-1",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4977,8 +4517,8 @@
       "url": "https://butlersorchard.com/pumpkin-patch/",
       "source_url": null,
       "source": "seasonal",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -4999,8 +4539,8 @@
       "url": "http://invention.si.edu/current-sparklab-activities",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5021,8 +4561,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5043,8 +4583,8 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5065,8 +4605,30 @@
       "url": "",
       "source_url": "https://www.si.edu/events",
       "source": "smithsonian",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null
+    },
+    {
+      "id": "smithsonian-artful-movement-sel-webinar-for-students-k-3-2026-10-02",
+      "date": "2026-10-02",
+      "time": "13:00",
+      "end": "13:30",
+      "name": "Artful Movement | SEL Webinar for Students K\u20133",
+      "venue": "smithsonian.zoom.us\u2026",
+      "distance_mi_range": "11-15",
+      "cost_type": "free",
+      "cost_label": "Free",
+      "place": "indoor",
+      "state": "DC",
+      "age": "All ages",
+      "age_match_reason": "all-ages",
+      "description": "Get ready to observe, chat, and move with art! In these webinars, students (grades K\u20133) will look carefully at a work of art through facilitated exploration. Then, they will breathe, stretch, and flow through a guided mindful movement. This month\u2019s theme is \u201cAutumn Leaves: Let Go and Change.\u201d These sessions are perfect for families, homeschool groups, virtual schools, and teachers who may want to review a recording with their students after the live session. Everyone who registers gets a link to the recording. Each session includes American Sign Language interpretation. Sessions take place on Fridays from 1 to 1:30 p.m. We present these webinars in partnership with Create Calm. Sakai Oho (1808\u20131841); Japanese Maple and Autumn Plants (detail); Japan, early 19th century; ink and color on paper; National Museum of Asian Art, Smithsonian Institution, Freer Collection, Purchase\u2014Charles Lang Freer Endowment, F1976.10a\u2013h",
+      "url": "",
+      "source_url": "https://www.si.edu/events",
+      "source": "smithsonian",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5087,8 +4649,228 @@
       "url": "https://pikeandrose.com/event/live-music-fridays/",
       "source_url": null,
       "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null
+    },
+    {
+      "id": "seasonal-butler-s-orchard-pumpkin-patch-2026-10-03",
+      "date": "2026-10-03",
+      "time": "06:00",
+      "end": "13:00",
+      "name": "Butler's Orchard Pumpkin Patch",
+      "venue": "Butler's Orchard",
+      "distance_mi_range": "11-15",
+      "cost_type": "paid",
+      "cost_label": "$18-24/person (varies weekday/weekend)",
+      "place": "outdoor",
+      "state": "MD",
+      "age": "All ages",
+      "age_match_reason": "all-ages",
+      "description": "Hayrides, pumpkin picking in the field, kids play area with slides + bounce pillow + farm animals. Buy tickets ahead online for weekend visits.",
+      "url": "https://butlersorchard.com/pumpkin-patch/",
+      "source_url": null,
+      "source": "seasonal",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null
+    },
+    {
+      "id": "smithsonian-little-critters-nature-play-at-kids-farm-world-farm-animals--2026-10-e23d20b4",
+      "date": "2026-10-03",
+      "time": "10:00",
+      "end": "14:00",
+      "name": "Little Critters: Nature Play at Kids' Farm (World Farm Animals Day)",
+      "venue": "National Zoo",
+      "distance_mi_range": "6-10",
+      "cost_type": "free",
+      "cost_label": "Free",
+      "place": "indoor",
+      "state": "DC",
+      "age": "All ages",
+      "age_match_reason": "all-ages",
+      "description": "MOO! OINK! CLUCK! Join us for creative, drop-in play at the Zoo as we learn about different animals that live on the farm. Little Critters: Nature Play is designed for ages 0-5 and their caregivers and families. Activities are designed with early learners in mind, but all ages are welcome. Parents and guardians must remain with their children. Location: Kids' Farm",
+      "url": "https://nationalzoo.si.edu/education/kids-and-families",
+      "source_url": "https://www.si.edu/events",
+      "source": "smithsonian",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null
+    },
+    {
+      "id": "smithsonian-spark-lab-2026-10-03",
+      "date": "2026-10-03",
+      "time": "10:00",
+      "end": "16:00",
+      "name": "Spark!Lab",
+      "venue": "American History Museum",
+      "distance_mi_range": "11-15",
+      "cost_type": "free",
+      "cost_label": "Free",
+      "place": "indoor",
+      "state": "DC",
+      "age": "Ages unspecified",
+      "age_match_reason": "unrecognized",
+      "description": "Spark!Lab is where museum visitors become inventors. The Lemelson Center for the Study of Invention and Innovation invites children between the ages of 6 and 12 to create, collaborate, explore, test, experiment and invent. Activities for children and families incorporate traditional science, technology, engineering and math (STEM) with art, history and creativity.",
+      "url": "http://invention.si.edu/current-sparklab-activities",
+      "source_url": "https://www.si.edu/events",
+      "source": "smithsonian",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null
+    },
+    {
+      "id": "smithsonian-wonderplace-2026-10-03",
+      "date": "2026-10-03",
+      "time": "10:00",
+      "end": "16:00",
+      "name": "Wonderplace",
+      "venue": "American History Museum",
+      "distance_mi_range": "11-15",
+      "cost_type": "free",
+      "cost_label": "Free",
+      "place": "indoor",
+      "state": "DC",
+      "age": "Ages unspecified",
+      "age_match_reason": "unrecognized",
+      "description": "This learning space designed especially for children ages six and under combines age appropriate activities with museum collections and touchable objects to provide a gateway to history and a place to exercise curiosity for the youngest historians. Admission to Wonderplace is on a first come, first-served basis. At busy times, we may use FREE, timed tickets to minimize wait time if needed. Tickets are available for 30-minute visits on a first-come, first-served basis. No tickets are required for the first session from 10:00 a.m. - 10:30 a.m. To visit during a later half-hour session, visitors may pick up a ticket at Wonderplace in 1 West. The last entry using timed tickets is at 3:30 p.m. Hours are subject to change.",
+      "url": "",
+      "source_url": "https://www.si.edu/events",
+      "source": "smithsonian",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null
+    },
+    {
+      "id": "smithsonian-art-walk-2026-10-03",
+      "date": "2026-10-03",
+      "time": "11:00",
+      "end": "11:30",
+      "name": "Art Walk",
+      "venue": "Smithsonian",
+      "distance_mi_range": "11-15",
+      "cost_type": "free",
+      "cost_label": "Free",
+      "place": "indoor",
+      "state": "DC",
+      "age": "All ages",
+      "age_match_reason": "all-ages",
+      "description": "Join the National Portrait Gallery every Saturday morning for a themed sketching tour featuring up to three portraits from the museum\u2019s collection. During each session, Portrait Gallery educators will encourage participants to look closely, sketch what they see, and make connections. This program is designed for visitors of all ages, and no prior drawing experience is necessary. Anyone under 18 must be accompanied by an adult. After the tour, participants are invited to continue creating in the Education Center through a hands-on artmaking activity. All art materials are provided by the National Portrait Gallery.",
+      "url": "",
+      "source_url": "https://www.si.edu/events",
+      "source": "smithsonian",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null
+    },
+    {
+      "id": "smithsonian-dc-story-time-2026-10-03",
+      "date": "2026-10-03",
+      "time": "11:15",
+      "end": "11:45",
+      "name": "DC | Story Time",
+      "venue": "American Indian Museum DC",
+      "distance_mi_range": "11-15",
+      "cost_type": "free",
+      "cost_label": "Free",
+      "place": "indoor",
+      "state": "DC",
+      "age": "3-9 yrs",
+      "age_match_reason": "range-3-9yr",
+      "description": "Families are invited to an interactive story time featuring a children\u2019s book by a Native author, illustrator, or created in collaboration with an Indigenous community. They will have the opportunity to engage with objects from the museum's Teaching Collection such as photographs, textiles, or natural materials that can deepen their understanding of the community represented in the story, along with a craft or other activity. * Due to limited capacity in our spaces, tickets may be needed to enter the Activity Center and therefore the Story room (limited to 25 persons max). Please see staff at the entrance desk of the imagiNATIONS Activity Center on Level 3. **Recommended for visitors ages 3-9 years old accompanied by an adult caregiver. ***Schedule subject to change without prior notice.",
+      "url": "",
+      "source_url": "https://www.si.edu/events",
+      "source": "smithsonian",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null
+    },
+    {
+      "id": "smithsonian-art-studio-2026-10-03",
+      "date": "2026-10-03",
+      "time": "11:30",
+      "end": "13:30",
+      "name": "Art Studio",
+      "venue": "Portrait Gallery",
+      "distance_mi_range": "11-15",
+      "cost_type": "free",
+      "cost_label": "Free",
+      "place": "indoor",
+      "state": "DC",
+      "age": "All ages",
+      "age_match_reason": "all-ages",
+      "description": "Calling all artists! Join the Portrait Gallery for a free, drop-in art program, where creativity knows no bounds. Every weekend, visitors of all ages are invited to explore a different artistic medium while drawing inspiration from the Portrait Gallery\u2019s collections and exhibitions. On select weekends, learn from a featured guest artist, who will lead specialized workshops and share their expertise. To stay informed about upcoming guest artist workshops, please check the Portrait Gallery\u2019s Eventbrite page.",
+      "url": "https://www.eventbrite.com/e/in-gallery-art-studio-tickets-1112707681629?aff=oddtdtcreator&utm-campaign=social&utm-content=attendeeshare&utm-share-source=organizer-profile&utm-medium=discovery&utm-term=organizer-profile",
+      "source_url": "https://www.si.edu/events",
+      "source": "smithsonian",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null
+    },
+    {
+      "id": "smithsonian-broad-stripes-and-bright-stars-2026-10-03",
+      "date": "2026-10-03",
+      "time": "11:30",
+      "end": "12:00",
+      "name": "Broad Stripes and Bright Stars",
+      "venue": "American History Museum",
+      "distance_mi_range": "11-15",
+      "cost_type": "free",
+      "cost_label": "Free",
+      "place": "indoor",
+      "state": "DC",
+      "age": "Ages unspecified",
+      "age_match_reason": "unrecognized",
+      "description": "Meet Mary Pickersgill, seamstress of the enormous garrison flag that inspired the lyrics to America\u2019s national anthem and later became known as the Star-Spangled Banner. What was it like to live in a nation defending its sovereignty? Learn about the War of 1812, considered America\u2019s Second War of Independence, and about ways that widows like Mary expressed patriotism and resourcefulness through acquired skills and family connections.",
+      "url": "",
+      "source_url": "https://www.si.edu/events",
+      "source": "smithsonian",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null
+    },
+    {
+      "id": "smithsonian-dc-look-learn-create-water-s-edge-for-families-2026-10-03",
+      "date": "2026-10-03",
+      "time": "13:15",
+      "end": "14:00",
+      "name": "DC | Look, Learn, Create: \"Water's Edge\" for Families",
+      "venue": "American Indian Museum DC",
+      "distance_mi_range": "11-15",
+      "cost_type": "free",
+      "cost_label": "Free",
+      "place": "indoor",
+      "state": "DC",
+      "age": "All ages",
+      "age_match_reason": "all-ages",
+      "description": "Join a museum educator for a family-friendly interactive tour of the Water's Edge: The Art of Truman Lowe exhibition! Visitors will engage with three of his artworks and can participate in guided discussions, and experience items from the museum's Teaching Collection. After finding inspiration from Truman Lowe\u2019s artworks, families can continue into the imagiNATIONS Activity Center and create their own water-inspired artwork to take home. Recommended for children ages 4-10 and their families. All ages welcome. *Visitors 18 and under must be accompanied by an adult. First come, first served, capacity and supplies are limited. **This program can accommodate approximately 30 young visitors and their adult caregiver. Leading support provided by Bank of America. Major support provided by the Henry Luce Foundation. Generous support provided by the Terra Foundation for American Art and Ameriprise Financial. Additional support provided by John and Meryl Lavine, Greg and Cathy Tibbles, and Leslie A. Wheelock.",
+      "url": "",
+      "source_url": "https://www.si.edu/events",
+      "source": "smithsonian",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null
+    },
+    {
+      "id": "seasonal-butler-s-orchard-pumpkin-patch-2026-10-04",
+      "date": "2026-10-04",
+      "time": "06:00",
+      "end": "13:00",
+      "name": "Butler's Orchard Pumpkin Patch",
+      "venue": "Butler's Orchard",
+      "distance_mi_range": "11-15",
+      "cost_type": "paid",
+      "cost_label": "$18-24/person (varies weekday/weekend)",
+      "place": "outdoor",
+      "state": "MD",
+      "age": "All ages",
+      "age_match_reason": "all-ages",
+      "description": "Hayrides, pumpkin picking in the field, kids play area with slides + bounce pillow + farm animals. Buy tickets ahead online for weekend visits.",
+      "url": "https://butlersorchard.com/pumpkin-patch/",
+      "source_url": null,
+      "source": "seasonal",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5109,8 +4891,52 @@
       "url": "https://pikeandrose.com/event/piketoberfest/",
       "source_url": null,
       "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null
+    },
+    {
+      "id": "smithsonian-spark-lab-2026-10-04",
+      "date": "2026-10-04",
+      "time": "10:00",
+      "end": "16:00",
+      "name": "Spark!Lab",
+      "venue": "American History Museum",
+      "distance_mi_range": "11-15",
+      "cost_type": "free",
+      "cost_label": "Free",
+      "place": "indoor",
+      "state": "DC",
+      "age": "Ages unspecified",
+      "age_match_reason": "unrecognized",
+      "description": "Spark!Lab is where museum visitors become inventors. The Lemelson Center for the Study of Invention and Innovation invites children between the ages of 6 and 12 to create, collaborate, explore, test, experiment and invent. Activities for children and families incorporate traditional science, technology, engineering and math (STEM) with art, history and creativity.",
+      "url": "http://invention.si.edu/current-sparklab-activities",
+      "source_url": "https://www.si.edu/events",
+      "source": "smithsonian",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null
+    },
+    {
+      "id": "smithsonian-wonderplace-2026-10-04",
+      "date": "2026-10-04",
+      "time": "10:00",
+      "end": "16:00",
+      "name": "Wonderplace",
+      "venue": "American History Museum",
+      "distance_mi_range": "11-15",
+      "cost_type": "free",
+      "cost_label": "Free",
+      "place": "indoor",
+      "state": "DC",
+      "age": "Ages unspecified",
+      "age_match_reason": "unrecognized",
+      "description": "This learning space designed especially for children ages six and under combines age appropriate activities with museum collections and touchable objects to provide a gateway to history and a place to exercise curiosity for the youngest historians. Admission to Wonderplace is on a first come, first-served basis. At busy times, we may use FREE, timed tickets to minimize wait time if needed. Tickets are available for 30-minute visits on a first-come, first-served basis. No tickets are required for the first session from 10:00 a.m. - 10:30 a.m. To visit during a later half-hour session, visitors may pick up a ticket at Wonderplace in 1 West. The last entry using timed tickets is at 3:30 p.m. Hours are subject to change.",
+      "url": "",
+      "source_url": "https://www.si.edu/events",
+      "source": "smithsonian",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5131,8 +4957,8 @@
       "url": "https://pikeandrose.com/event/live-music-fridays/",
       "source_url": null,
       "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5153,8 +4979,8 @@
       "url": "https://pikeandrose.com/event/pinstripes-kids-club/",
       "source_url": null,
       "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5175,8 +5001,8 @@
       "url": "https://montgomeryparks.org/events/weed-warrior-willard-avenue/",
       "source_url": null,
       "source": "montgomery-parks",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5197,8 +5023,30 @@
       "url": "https://pikeandrose.com/event/live-music-fridays/",
       "source_url": null,
       "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
+      "expires_at": null
+    },
+    {
+      "id": "montgomery-parks-weed-warrior-workday-at-rock-creek-svu6-parklawn-community-g-20-3150e2ea",
+      "date": "2026-10-17",
+      "time": "05:00",
+      "end": "07:00",
+      "name": "Weed Warrior Workday at Rock Creek SVU6 (Parklawn Community Garden)",
+      "venue": "Meet at the Parklawn Community Garden (12718 Veirs Mill Road, Rockville).",
+      "distance_mi_range": "unknown",
+      "cost_type": "free",
+      "cost_label": "Free",
+      "place": "outdoor",
+      "state": "MD",
+      "age": "Ages unspecified",
+      "age_match_reason": "unspecified",
+      "description": "Join Weed Warrior Supervisor Maria for a non-native, invasive plant removal workday in Rock Creek Stream Valley Unit 6. We will focus on non-native, invasive vines, especially wisteria ( Wisteria floribunda ). Native vines, including native grape, are also present and beneficial, so we will avoid those.",
+      "url": "https://montgomeryparks.org/events/weed-warrior-rock-creek-svu6-saturday/",
+      "source_url": null,
+      "source": "montgomery-parks",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5219,8 +5067,8 @@
       "url": "https://montgomeryparks.org/events/cleanup-at-great-seneca-stream-valley-park/",
       "source_url": null,
       "source": "montgomery-parks",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5241,8 +5089,8 @@
       "url": "https://montgomeryparks.org/events/weed-warrior-little-falls-macarthur-blvd/",
       "source_url": null,
       "source": "montgomery-parks",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5263,8 +5111,8 @@
       "url": "https://montgomeryparks.org/events/weed-warrior-planting-at-rachel-carson-conservation-park-meadow/",
       "source_url": null,
       "source": "montgomery-parks",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5285,8 +5133,8 @@
       "url": "https://pikeandrose.com/event/live-music-fridays/",
       "source_url": null,
       "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5307,8 +5155,8 @@
       "url": "https://pikeandrose.com/event/live-music-fridays/",
       "source_url": null,
       "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5329,8 +5177,8 @@
       "url": "https://montgomeryparks.org/events/cleanup-at-northwest-branch-stream-valley-park-2/",
       "source_url": null,
       "source": "montgomery-parks",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5351,8 +5199,8 @@
       "url": "https://pikeandrose.com/event/pikekids-2/",
       "source_url": null,
       "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5373,8 +5221,8 @@
       "url": "https://montgomeryparks.org/events/weed-warrior-cct-bethesda-pool/",
       "source_url": null,
       "source": "montgomery-parks",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5395,8 +5243,8 @@
       "url": "https://montgomeryparks.org/events/weed-warrior-rachel-carson-conservationpark/",
       "source_url": null,
       "source": "montgomery-parks",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5417,8 +5265,8 @@
       "url": "https://pikeandrose.com/event/live-music-fridays/",
       "source_url": null,
       "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5439,8 +5287,8 @@
       "url": "https://pikeandrose.com/event/live-music-fridays/",
       "source_url": null,
       "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5461,8 +5309,8 @@
       "url": "https://pikeandrose.com/event/pinstripes-kids-club/",
       "source_url": null,
       "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5483,8 +5331,8 @@
       "url": "https://thepuppetco.showare.com/eventperformances.asp?evt=18",
       "source_url": null,
       "source": "puppetco-tinytots",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5505,8 +5353,8 @@
       "url": "https://pikeandrose.com/event/live-music-fridays/",
       "source_url": null,
       "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5527,8 +5375,8 @@
       "url": "https://thepuppetco.showare.com/eventperformances.asp?evt=18",
       "source_url": null,
       "source": "puppetco-tinytots",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5549,8 +5397,8 @@
       "url": "https://pikeandrose.com/event/live-music-fridays/",
       "source_url": null,
       "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5571,8 +5419,8 @@
       "url": "https://thepuppetco.showare.com/eventperformances.asp?evt=18",
       "source_url": null,
       "source": "puppetco-tinytots",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5593,8 +5441,8 @@
       "url": "https://pikeandrose.com/event/live-music-fridays/",
       "source_url": null,
       "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5615,8 +5463,8 @@
       "url": "https://montgomeryparks.org/events/the-lodge-at-little-seneca-creek-winter-open-house-and-vendor-showcase/",
       "source_url": null,
       "source": "montgomery-parks",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5637,8 +5485,8 @@
       "url": "https://thepuppetco.showare.com/eventperformances.asp?evt=18",
       "source_url": null,
       "source": "puppetco-tinytots",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5659,8 +5507,8 @@
       "url": "https://pikeandrose.com/event/live-music-fridays/",
       "source_url": null,
       "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5681,8 +5529,8 @@
       "url": "https://thepuppetco.showare.com/eventperformances.asp?evt=18",
       "source_url": null,
       "source": "puppetco-tinytots",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5703,8 +5551,8 @@
       "url": "https://pikeandrose.com/event/live-music-fridays/",
       "source_url": null,
       "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5725,8 +5573,8 @@
       "url": "https://pikeandrose.com/event/live-music-fridays/",
       "source_url": null,
       "source": "pike-and-rose",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5747,8 +5595,8 @@
       "url": "https://montgomeryparks.org/events/frozen-family-fun/",
       "source_url": null,
       "source": "montgomery-parks",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     },
     {
@@ -5769,8 +5617,8 @@
       "url": "https://montgomeryparks.org/events/frozen-family-fun-copy/",
       "source_url": null,
       "source": "montgomery-parks",
-      "added_at": "2026-09-11T15:02:47.715082Z",
-      "updated_at": "2026-09-11T15:02:47.715082Z",
+      "added_at": "2026-09-13T15:48:33.333577Z",
+      "updated_at": "2026-09-13T15:48:33.333577Z",
       "expires_at": null
     }
   ]
