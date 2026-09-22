@@ -79,6 +79,78 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  /* ── Gate overlay ──────────────────────────────────────────── */
+  #gate {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .gate-box {
+    max-width: 340px;
+    width: 100%;
+    text-align: center;
+  }
+  .gate-logo {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: 32px;
+    letter-spacing: -0.01em;
+    margin: 0 0 6px;
+    color: var(--ink);
+  }
+  .gate-sub {
+    color: var(--ink-muted);
+    font-size: 14px;
+    margin: 0 0 24px;
+    line-height: 1.5;
+  }
+  .gate-input {
+    width: 100%;
+    font: inherit;
+    font-size: 14px;
+    padding: 10px 12px;
+    background: var(--surface);
+    color: var(--ink);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    margin-bottom: 10px;
+    display: block;
+  }
+  .gate-input:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: transparent; }
+  .gate-btn {
+    width: 100%;
+    padding: 11px;
+    background: var(--ink);
+    color: var(--bg);
+    border: none;
+    border-radius: var(--radius-sm);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 120ms;
+  }
+  .gate-btn:hover { opacity: 0.85; }
+  .gate-btn:disabled { opacity: 0.45; cursor: default; }
+  .gate-error {
+    color: var(--accent);
+    font-size: 13px;
+    margin-top: 10px;
+    min-height: 20px;
+  }
+  .gate-hint {
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin-top: 18px;
+    line-height: 1.5;
+  }
+
+  /* ── App chrome ────────────────────────────────────────────── */
   .page {
     max-width: 640px;
     margin: 0 auto;
@@ -150,6 +222,11 @@
     color: var(--bg);
     border-color: var(--ink);
   }
+  .pill.active.saved-pill {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
 
   .filter-label {
     font-size: 11px;
@@ -184,6 +261,7 @@
     border-radius: 6px;
   }
 
+  /* ── Event list ────────────────────────────────────────────── */
   .date-group { margin-top: 20px; }
   .date-header {
     font-family: 'Fraunces', Georgia, serif;
@@ -273,6 +351,28 @@
   .chip.cost-free { background: var(--sage-soft); color: var(--sage); }
   .chip.cost-paid { background: var(--accent-soft); color: var(--accent-ink); }
 
+  /* ── Heart button ──────────────────────────────────────────── */
+  .heart-btn {
+    appearance: none;
+    background: none;
+    border: none;
+    padding: 2px 4px;
+    margin-top: 2px;
+    cursor: pointer;
+    font-size: 17px;
+    line-height: 1;
+    color: var(--border-strong);
+    transition: color 120ms, transform 100ms;
+    display: block;
+  }
+  .heart-btn:hover { color: var(--accent); }
+  .heart-btn:active { transform: scale(1.25); }
+  .heart-btn.hearted { color: var(--accent); }
+  @media (prefers-reduced-motion: reduce) {
+    .heart-btn:active { transform: none; }
+  }
+
+  /* ── Event detail ──────────────────────────────────────────── */
   .detail {
     display: none;
     padding: 12px 14px 14px;
@@ -345,9 +445,38 @@
     text-align: center;
     letter-spacing: 0.04em;
   }
+  .sign-out-btn {
+    appearance: none;
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    font-size: 11px;
+    color: var(--ink-faint);
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: 6px;
+    display: inline-block;
+    letter-spacing: 0.04em;
+  }
+  .sign-out-btn:hover { color: var(--ink-muted); }
 </style>
 </head>
 <body>
+
+<!-- ── Token gate ─────────────────────────────────────────────── -->
+<div id="gate">
+  <div class="gate-box">
+    <h1 class="gate-logo">Little DMV</h1>
+    <p class="gate-sub">Enter your GitHub personal access token to continue.</p>
+    <input type="password" id="gatePat" class="gate-input" placeholder="ghp_…" autocomplete="off" spellcheck="false">
+    <button id="gateSubmit" class="gate-btn">Unlock</button>
+    <p id="gateError" class="gate-error" aria-live="polite"></p>
+    <p class="gate-hint">Token is stored only in this browser.<br>Fine-grained PAT · Contents: read &amp; write · this repo only.</p>
+  </div>
+</div>
+
+<!-- ── App ───────────────────────────────────────────────────── -->
 <div class="page">
   <header class="app">
     <h1 class="app-name">Little DMV</h1>
@@ -363,6 +492,7 @@
       <button class="pill" data-range="7d">Next 7 Days</button>
       <button class="pill" data-range="14d">Next 14 Days</button>
       <button class="pill" data-range="custom">Custom…</button>
+      <button class="pill saved-pill" data-range="saved">♥ Saved</button>
     </div>
     <div class="range-panel" id="rangePanel">
       <label>From <input type="date" id="fromDate"></label>
@@ -392,20 +522,31 @@
 
   <footer class="foot">
     Little DMV · Kid-friendly events for Montgomery County + DC
+    <br><button class="sign-out-btn" id="signOut">Sign out</button>
   </footer>
 </div>
 
 <script>
+  const GH_REPO = 'opoo-em/little-dmv';
+
   let EVENTS = [];
   let LAST_UPDATED = null;
+  let HEARTS = new Set();
+  let GH_PAT = null;
+  let _heartsSha = null;
+  let _saveChain = Promise.resolve();
 
   const state = { range: 'weekend', place: 'all', cost: 'all', stateFilter: 'MD', from: null, to: null };
 
-  const listEl = document.getElementById('list');
+  const listEl    = document.getElementById('list');
   const rangePanel = document.getElementById('rangePanel');
-  const fromDate = document.getElementById('fromDate');
-  const toDate = document.getElementById('toDate');
+  const fromDate  = document.getElementById('fromDate');
+  const toDate    = document.getElementById('toDate');
   const updatedEl = document.getElementById('updated');
+  const gateEl    = document.getElementById('gate');
+  const gatePatEl = document.getElementById('gatePat');
+  const gateSubmitEl = document.getElementById('gateSubmit');
+  const gateErrorEl  = document.getElementById('gateError');
 
   const TODAY = (() => { const d = new Date(); d.setHours(0,0,0,0); return d; })();
 
@@ -417,6 +558,127 @@
 
   fromDate.value = isoDate(TODAY);
   toDate.value = isoDate(daysAdd(TODAY, 14));
+
+  // ── Gate ────────────────────────────────────────────────────
+
+  function showGate(errorMsg) {
+    gateEl.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    gatePatEl.value = '';
+    gateSubmitEl.disabled = false;
+    gateSubmitEl.textContent = 'Unlock';
+    gateErrorEl.textContent = errorMsg || '';
+  }
+
+  function hideGate() {
+    gateEl.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  async function validatePAT(pat) {
+    const r = await fetch(`https://api.github.com/repos/${GH_REPO}`, {
+      headers: { Authorization: `Bearer ${pat}` },
+    });
+    return r.ok;
+  }
+
+  gateSubmitEl.addEventListener('click', async () => {
+    const pat = gatePatEl.value.trim();
+    if (!pat) return;
+    gateSubmitEl.disabled = true;
+    gateSubmitEl.textContent = 'Checking…';
+    gateErrorEl.textContent = '';
+    try {
+      const ok = await validatePAT(pat);
+      if (ok) {
+        try { localStorage.setItem('gh_pat', pat); } catch (_) {}
+        GH_PAT = pat;
+        hideGate();
+        loadApp();
+      } else {
+        showGate('Token not valid — check it and try again.');
+      }
+    } catch (_) {
+      showGate('Network error — check your connection and try again.');
+    }
+  });
+
+  gatePatEl.addEventListener('keydown', e => {
+    if (e.key === 'Enter') gateSubmitEl.click();
+  });
+
+  document.getElementById('signOut').addEventListener('click', () => {
+    try { localStorage.removeItem('gh_pat'); } catch (_) {}
+    GH_PAT = null;
+    HEARTS = new Set();
+    _heartsSha = null;
+    showGate();
+  });
+
+  // ── Hearts persistence ───────────────────────────────────────
+
+  async function _doSave() {
+    const content = JSON.stringify({ ids: [...HEARTS].sort() }, null, 2) + '\n';
+    const encoded = btoa(unescape(encodeURIComponent(content)));
+
+    if (!_heartsSha) {
+      const r = await fetch(
+        `https://api.github.com/repos/${GH_REPO}/contents/data/hearts.json`,
+        { headers: { Authorization: `Bearer ${GH_PAT}` } }
+      );
+      if (!r.ok) throw new Error('fetch-sha-' + r.status);
+      _heartsSha = (await r.json()).sha;
+    }
+
+    const r = await fetch(
+      `https://api.github.com/repos/${GH_REPO}/contents/data/hearts.json`,
+      {
+        method: 'PUT',
+        headers: { Authorization: `Bearer ${GH_PAT}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: 'Update hearts', content: encoded, sha: _heartsSha }),
+      }
+    );
+
+    if (r.status === 409) {
+      // SHA is stale (conflict) — reset and retry once
+      _heartsSha = null;
+      return _doSave();
+    }
+    if (r.status === 401) {
+      try { localStorage.removeItem('gh_pat'); } catch (_) {}
+      GH_PAT = null;
+      showGate('Your token has expired. Please enter a new one.');
+      throw new Error('token-expired');
+    }
+    if (!r.ok) throw new Error('save-' + r.status);
+
+    _heartsSha = (await r.json()).content.sha;
+  }
+
+  function queueSave() {
+    _saveChain = _saveChain.then(_doSave).catch(err => {
+      if (!String(err.message).startsWith('token-expired')) {
+        console.error('Hearts save failed:', err);
+      }
+    });
+  }
+
+  function toggleHeart(id) {
+    if (HEARTS.has(id)) {
+      HEARTS.delete(id);
+    } else {
+      HEARTS.add(id);
+    }
+    const hearted = HEARTS.has(id);
+    document.querySelectorAll(`.heart-btn[data-heart="${id}"]`).forEach(btn => {
+      btn.classList.toggle('hearted', hearted);
+      btn.setAttribute('aria-label', hearted ? 'Remove from saved' : 'Save event');
+    });
+    if (state.range === 'saved') render();
+    queueSave();
+  }
+
+  // ── Formatting helpers ───────────────────────────────────────
 
   function fmtUpdated(iso) {
     if (!iso) return '';
@@ -473,9 +735,6 @@
   }
 
   function renderSourceLink(e) {
-    // Prefer the per-event URL. Fall back to the source's calendar homepage
-    // if that's all we have. If neither exists, don't render a link at all
-    // (an empty href would navigate to the app root).
     if (e.url) {
       return `<a class="source-link" href="${esc(e.url)}" target="_blank" rel="noopener">View source →</a>`;
     }
@@ -485,18 +744,37 @@
     return '';
   }
 
+  // ── Render ───────────────────────────────────────────────────
+
   function render() {
-    const { from, to } = rangeBounds();
-    const filtered = EVENTS.filter(e => {
-      if (e.date < from || e.date > to) return false;
-      if (state.place !== 'all' && e.place !== state.place) return false;
-      if (state.cost !== 'all' && e.cost_type !== state.cost) return false;
-      if (state.stateFilter === 'MD' && e.state !== 'MD') return false;
-      return true;
-    }).sort((a,b) => a.date === b.date ? a.time.localeCompare(b.time) : a.date.localeCompare(b.date));
+    let filtered;
+
+    if (state.range === 'saved') {
+      filtered = EVENTS.filter(e => {
+        if (!HEARTS.has(e.id)) return false;
+        if (state.place !== 'all' && e.place !== state.place) return false;
+        if (state.cost !== 'all' && e.cost_type !== state.cost) return false;
+        if (state.stateFilter === 'MD' && e.state !== 'MD') return false;
+        return true;
+      });
+    } else {
+      const { from, to } = rangeBounds();
+      filtered = EVENTS.filter(e => {
+        if (e.date < from || e.date > to) return false;
+        if (state.place !== 'all' && e.place !== state.place) return false;
+        if (state.cost !== 'all' && e.cost_type !== state.cost) return false;
+        if (state.stateFilter === 'MD' && e.state !== 'MD') return false;
+        return true;
+      });
+    }
+
+    filtered.sort((a,b) => a.date === b.date ? a.time.localeCompare(b.time) : a.date.localeCompare(b.date));
 
     if (!filtered.length) {
-      listEl.innerHTML = `<div class="empty"><span class="em">Nothing in this window.</span>Try widening the date range or clearing a filter.</div>`;
+      const msg = state.range === 'saved'
+        ? `<div class="empty"><span class="em">No saved events yet.</span>Tap ♥ on any event to save it here.</div>`
+        : `<div class="empty"><span class="em">Nothing in this window.</span>Try widening the date range or clearing a filter.</div>`;
+      listEl.innerHTML = msg;
       return;
     }
 
@@ -514,6 +792,7 @@
               <div class="chips">
                 <span class="chip distance">${esc(e.distance_mi_range)} mi</span>
                 <span class="chip ${e.cost_type === 'free' ? 'cost-free' : 'cost-paid'}">${esc(e.cost_label)}</span>
+                <button class="heart-btn${HEARTS.has(e.id) ? ' hearted' : ''}" data-heart="${esc(e.id)}" aria-label="${HEARTS.has(e.id) ? 'Remove from saved' : 'Save event'}">♥</button>
               </div>
             </div>
             <div class="detail">
@@ -530,8 +809,15 @@
 
     listEl.querySelectorAll('.event-summary').forEach(sum => {
       sum.addEventListener('click', () => toggle(sum));
-      sum.addEventListener('keydown', (e) => {
+      sum.addEventListener('keydown', e => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(sum); }
+      });
+    });
+
+    listEl.querySelectorAll('.heart-btn').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+        toggleHeart(btn.dataset.heart);
       });
     });
   }
@@ -541,6 +827,8 @@
     const open = card.classList.toggle('open');
     sum.setAttribute('aria-expanded', open ? 'true' : 'false');
   }
+
+  // ── Filter pill handlers ─────────────────────────────────────
 
   document.querySelectorAll('.pill[data-range]').forEach(p => {
     p.addEventListener('click', () => {
@@ -581,21 +869,41 @@
     render();
   });
 
-  fetch('./data/events.json?v=' + Date.now())
-    .then(r => {
-      if (!r.ok) throw new Error('Failed to load events: ' + r.status);
-      return r.json();
-    })
-    .then(data => {
-      EVENTS = data.events || [];
-      LAST_UPDATED = data.last_updated;
+  // ── Boot ─────────────────────────────────────────────────────
+
+  async function loadApp() {
+    try {
+      const [eventsRes, heartsRes] = await Promise.all([
+        fetch('./data/events.json?v=' + Date.now()),
+        fetch('./data/hearts.json?v=' + Date.now()),
+      ]);
+      if (!eventsRes.ok) throw new Error('Failed to load events: ' + eventsRes.status);
+      const evData = await eventsRes.json();
+      EVENTS = evData.events || [];
+      LAST_UPDATED = evData.last_updated;
       updatedEl.textContent = fmtUpdated(LAST_UPDATED);
+      if (heartsRes.ok) {
+        const hData = await heartsRes.json();
+        HEARTS = new Set(hData.ids || []);
+      }
       render();
-    })
-    .catch(err => {
+    } catch (err) {
       listEl.innerHTML = `<div class="empty"><span class="em">Couldn't load events.</span>${esc(err.message)}</div>`;
       updatedEl.textContent = '';
-    });
+    }
+  }
+
+  // Check for stored token and start
+  (() => {
+    let stored = null;
+    try { stored = localStorage.getItem('gh_pat'); } catch (_) {}
+    if (stored) {
+      GH_PAT = stored;
+      hideGate();
+      loadApp();
+    }
+    // else gate stays visible (default display: flex)
+  })();
 </script>
 </body>
 </html>
